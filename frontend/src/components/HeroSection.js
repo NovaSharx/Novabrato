@@ -1,7 +1,5 @@
 import * as Mui from '@mui/material';
 
-import Navigation from './Navigation';
-
 export default function HeroSection() {
 
     return (
@@ -13,7 +11,7 @@ export default function HeroSection() {
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
             backgroundBlendMode: 'multiply'
         }}>
-            <Mui.Container className='hero-image' maxWidth='x1' disableGutters sx={{
+            <Mui.Container maxWidth='x1' disableGutters sx={{
                 height: '800px',
                 backdropFilter: 'blur(5px)'
             }}>

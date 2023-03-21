@@ -9,8 +9,9 @@ export default function Navigation() {
     const navigate = useNavigate()
 
     return (
-        <Mui.AppBar position='fixed' sx={{
-            backgroundColor: 'rgba(0,0,0,0.3)',
+        <Mui.AppBar position='fixed' elevation={0} sx={{
+            backgroundColor: 'rgba(0,0,0,0.8)',
+            backdropFilter: 'blur(5px)'
         }}>
             <Mui.Container maxWidth='x1'>
                 <Mui.Toolbar disableGutters>

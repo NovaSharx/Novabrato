@@ -5,9 +5,9 @@ import * as Mui from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HeroSection from './components/HeroSection';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -40,6 +40,7 @@ function App() {
             <Routes>
               <Route exact path='/' element={<Home />} />
             </Routes>
+            <Footer />
           </Mui.Paper>
         </ThemeProvider>
       </Router>
