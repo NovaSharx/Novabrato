@@ -1,6 +1,6 @@
 import * as Mui from '@mui/material';
 
-import VirtualFretboard from './VirtualFretboard';
+import VirtualFretboard from './Virtual Guitar/VirtualGuitarNeck';
 
 export default function VirtualFretboardContainer() {
 
