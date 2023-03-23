@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import Fretboard from './components/Fretboard';
 
 function App() {
 
@@ -39,9 +40,10 @@ function App() {
             <Navigation />
             <Routes>
               <Route exact path='/' element={<Home />} />
+              <Route exact path='/fretboard' element={<Fretboard />} />
             </Routes>
-            <Footer />
           </Mui.Paper>
+          <Footer />
         </ThemeProvider>
       </Router>
     </div>

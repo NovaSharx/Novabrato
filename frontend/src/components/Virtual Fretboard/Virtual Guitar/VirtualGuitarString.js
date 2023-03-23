@@ -1,35 +1,10 @@
 import * as Mui from '@mui/material';
 
-import styled from '@emotion/styled';
 import VirtualGuitarNote from './VirtualGuitarNote';
 
-export default function VirtualGuitarString({ stringTuning }) {
-
-    const NoteButtonStyling = styled(Mui.Box)({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#3EC199',
-        fontFamily: 'Inter',
-        fontSize: '1.2em',
-        width: '40px',
-        height: '40px',
-        borderRadius: '40px',
-        border: 'solid 1px #3EC199',
-        backgroundColor: 'black',
-        '&:hover': {
-            cursor: 'pointer',
-            color: 'white',
-            width: '35px',
-            height: '35px',
-            border: 'solid 3px #3EA7C1'
-        }
-    })
+export default function VirtualGuitarString({ stringNote, stringOctave }) {
 
     const noteLibrary = [
-        'A',
-        'A#/Bb',
-        'B',
         'C',
         'C#/Db',
         'D',
@@ -38,21 +13,52 @@ export default function VirtualGuitarString({ stringTuning }) {
         'F',
         'F#/Gb',
         'G',
-        'G#/Ab'
+        'G#/Ab',
+        'A',
+        'A#/Bb',
+        'B'
     ]
 
-    const noteIndex = noteLibrary.indexOf(stringTuning)
+    const baseFrequencyLibrary = [
+        16.35,
+        17.32,
+        18.35,
+        19.45,
+        20.60,
+        21.83,
+        23.12,
+        24.50,
+        25.96,
+        27.50,
+        29.14,
+        30.87
+    ]
+
+    const noteIndex = noteLibrary.indexOf(stringNote)
     let stringNotesArray = []
+    let stringFrequencyArray = []
 
     for (let iteration = 0; iteration < 25; iteration++) {
         let index = (iteration + noteIndex) % noteLibrary.length
+        let currentOctave = Math.floor((iteration + noteIndex) / noteLibrary.length) + stringOctave
 
+        const recursivelyMultiplyBYTwo = (num, recursiveDepth = currentOctave) => {
+            if (recursiveDepth <= 0) {
+                return num
+            } else {
+                return recursivelyMultiplyBYTwo(num * 2, recursiveDepth - 1)
+            }
+        }
+
+        let frequency = recursivelyMultiplyBYTwo(baseFrequencyLibrary[index])
+
+        stringFrequencyArray.push(frequency)
         stringNotesArray.push(noteLibrary[index])
     }
 
     const renderVirtualGuitarNotes = stringNotesArray.map((note, index) => {
         return (
-            <VirtualGuitarNote key={index} note={note} />
+            <VirtualGuitarNote key={index} note={note} frequency={stringFrequencyArray[index]} />
         )
     })
 

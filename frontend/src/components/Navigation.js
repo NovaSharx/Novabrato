@@ -9,8 +9,8 @@ export default function Navigation() {
     const navigate = useNavigate()
 
     return (
-        <Mui.AppBar position='fixed' elevation={0} sx={{
-            backgroundColor: 'rgba(0,0,0,0.8)',
+        <Mui.AppBar position='static' elevation={0} sx={{
+            backgroundColor: 'rgba(0, 0, 0, 1)',
             backdropFilter: 'blur(5px)'
         }}>
             <Mui.Container maxWidth='x1'>
@@ -18,7 +18,7 @@ export default function Navigation() {
 
                     <Mui.Grid container direction='row'>
 
-                        <Mui.Grid item xs sx={{ display: 'flex' }}>
+                        <Mui.Grid item xs={8} sx={{ display: 'flex' }}>
                             <Mui.Link component='button' underline='none' onClick={() => navigate("/")}>
                                 <Mui.Typography sx={{ fontFamily: 'Inter, sans-serif', fontSize: '2em', color: 'white' }}>
                                     <span style={{ color: theme.palette.primary.main }}>NOVA</span>
@@ -27,22 +27,22 @@ export default function Navigation() {
                             </Mui.Link>
                         </Mui.Grid>
 
-                        <Mui.Grid item xs={3} sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Mui.Grid item xs={4} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
 
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/")}>
-                                <Mui.Typography color='white' fontSize={20} pl={3}>Fretboard</Mui.Typography>
+                            <Mui.Link component='button' underline='none' onClick={() => navigate("/fretboard")}>
+                                <Mui.Typography color='white' fontSize={20} mr={2}>Fretboard</Mui.Typography>
                             </Mui.Link>
 
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/")}>
-                                <Mui.Typography color='white' fontSize={20} pl={3}>Exercises</Mui.Typography>
+                            <Mui.Link component='button' underline='none' onClick={() => navigate("/exercises")}>
+                                <Mui.Typography color='white' fontSize={20} mr={2}>Exercises</Mui.Typography>
                             </Mui.Link>
 
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/")}>
-                                <Mui.Typography color='white' fontSize={20} pl={3}>About</Mui.Typography>
+                            <Mui.Link component='button' underline='none' onClick={() => navigate("/about")}>
+                                <Mui.Typography color='white' fontSize={20} mr={2}>About</Mui.Typography>
                             </Mui.Link>
 
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/")}>
-                                <Mui.Typography color='white' fontSize={20} pl={3}>Login</Mui.Typography>
+                            <Mui.Link component='button' underline='none' onClick={() => navigate("/login")}>
+                                <Mui.Typography color='white' fontSize={20} mr={2}>Login</Mui.Typography>
                             </Mui.Link>
 
                         </Mui.Grid>

@@ -33,7 +33,6 @@ export default function VirtualGuitarNeck() {
             <img src="./guitar-neck/Neck.svg" alt="virtual guitar neck" style={{ position: 'absolute', width: '2580px', height: 'auto', left: '126px' }} />
             <img src="./guitar-neck/Frets.svg" alt="virtual guitar frets" style={{ position: 'absolute', width: '2600px', height: 'auto', left: '126px' }} />
             <img src="./guitar-neck/Strings.svg" alt="virtual guitar strings" style={{ position: 'absolute', width: '2622px', height: 'auto', top: '90px', left: '87px' }} />
-            {/* <img src="./guitar-neck/Notes (Full).svg" alt="virtual guitar notes" style={{ position: 'absolute', width: '2622px', height: 'auto', top: '70px', left: '62px', opacity: '20%' }} /> */}
 
             <Mui.Box sx={{
                 position: 'relative',
@@ -41,14 +40,13 @@ export default function VirtualGuitarNeck() {
                 bottom: '15px',
                 width: '2663px',
                 height: '307px',
-                // backgroundColor: 'rgba(255, 0, 0, 0.2)'
             }}>
-                <VirtualGuitarString stringTuning={'E'} />
-                <VirtualGuitarString stringTuning={'B'} />
-                <VirtualGuitarString stringTuning={'G'} />
-                <VirtualGuitarString stringTuning={'D'} />
-                <VirtualGuitarString stringTuning={'A'} />
-                <VirtualGuitarString stringTuning={'E'} />
+                <VirtualGuitarString stringNote={'E'} stringOctave={4} />
+                <VirtualGuitarString stringNote={'B'} stringOctave={3} />
+                <VirtualGuitarString stringNote={'G'} stringOctave={3} />
+                <VirtualGuitarString stringNote={'D'} stringOctave={3} />
+                <VirtualGuitarString stringNote={'A'} stringOctave={2} />
+                <VirtualGuitarString stringNote={'E'} stringOctave={2} />
             </Mui.Box>
 
         </Mui.Box>
