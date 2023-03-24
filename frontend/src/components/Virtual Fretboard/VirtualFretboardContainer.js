@@ -2,7 +2,7 @@ import * as Mui from '@mui/material';
 
 import VirtualGuitarProvider from '../context/VirtualGuitar';
 
-import VirtualFretboard from './Virtual Guitar/VirtualGuitarNeck';
+import VirtualFretboard from './virtual guitar/VirtualGuitarNeck';
 
 export default function VirtualFretboardContainer() {
 

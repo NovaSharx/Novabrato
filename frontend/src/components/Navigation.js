@@ -30,19 +30,15 @@ export default function Navigation() {
                         <Mui.Grid item xs={4} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
 
                             <Mui.Link component='button' underline='none' onClick={() => navigate("/fretboard")}>
-                                <Mui.Typography color='white' fontSize={20} mr={2}>Fretboard</Mui.Typography>
+                                <Mui.Typography color='white' fontSize={20} mr={5}>Fretboard</Mui.Typography>
                             </Mui.Link>
 
                             <Mui.Link component='button' underline='none' onClick={() => navigate("/exercises")}>
-                                <Mui.Typography color='white' fontSize={20} mr={2}>Exercises</Mui.Typography>
-                            </Mui.Link>
-
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/about")}>
-                                <Mui.Typography color='white' fontSize={20} mr={2}>About</Mui.Typography>
+                                <Mui.Typography color='white' fontSize={20} mr={5}>Exercises</Mui.Typography>
                             </Mui.Link>
 
                             <Mui.Link component='button' underline='none' onClick={() => navigate("/login")}>
-                                <Mui.Typography color='white' fontSize={20} mr={2}>Login</Mui.Typography>
+                                <Mui.Typography color='white' fontSize={20} mr={5}>Login</Mui.Typography>
                             </Mui.Link>
 
                         </Mui.Grid>

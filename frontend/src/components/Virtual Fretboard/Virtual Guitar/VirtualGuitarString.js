@@ -1,38 +1,12 @@
 import * as Mui from '@mui/material';
+import { useContext } from 'react';
+import { VirtualGuitar } from '../../context/VirtualGuitar';
 
 import VirtualGuitarNote from './VirtualGuitarNote';
 
 export default function VirtualGuitarString({ stringNote, stringOctave }) {
 
-    const noteLibrary = [
-        'C',
-        'C#/Db',
-        'D',
-        'D#/Eb',
-        'E',
-        'F',
-        'F#/Gb',
-        'G',
-        'G#/Ab',
-        'A',
-        'A#/Bb',
-        'B'
-    ]
-
-    const baseFrequencyLibrary = [
-        16.35,
-        17.32,
-        18.35,
-        19.45,
-        20.60,
-        21.83,
-        23.12,
-        24.50,
-        25.96,
-        27.50,
-        29.14,
-        30.87
-    ]
+    const { noteLibrary, baseFrequencyLibrary } = useContext(VirtualGuitar)
 
     const noteIndex = noteLibrary.indexOf(stringNote)
     let stringNotesArray = []
@@ -42,15 +16,15 @@ export default function VirtualGuitarString({ stringNote, stringOctave }) {
         let index = (iteration + noteIndex) % noteLibrary.length
         let currentOctave = Math.floor((iteration + noteIndex) / noteLibrary.length) + stringOctave
 
-        const recursivelyMultiplyBYTwo = (num, recursiveDepth = currentOctave) => {
+        const recursivelyMultiplyByTwo = (num, recursiveDepth = currentOctave) => {
             if (recursiveDepth <= 0) {
                 return num
             } else {
-                return recursivelyMultiplyBYTwo(num * 2, recursiveDepth - 1)
+                return recursivelyMultiplyByTwo(num * 2, recursiveDepth - 1)
             }
         }
 
-        let frequency = recursivelyMultiplyBYTwo(baseFrequencyLibrary[index])
+        let frequency = recursivelyMultiplyByTwo(baseFrequencyLibrary[index])
 
         stringFrequencyArray.push(frequency)
         stringNotesArray.push(noteLibrary[index])

@@ -15,7 +15,7 @@ export default function VirtualGuitarNote({ note, frequency }) {
         alignItems: 'center',
         color: selectedNotes.includes(note) ? 'white' : '#3EC199',
         fontFamily: 'Inter',
-        fontSize: '1.2em',
+        fontSize: note.length < 2 ? '1.2em' : '0.8em',
         width: '40px',
         height: '40px',
         borderRadius: '40px',
@@ -30,9 +30,7 @@ export default function VirtualGuitarNote({ note, frequency }) {
         }
     })
 
-    const handleClick = (event) => {
-        event.preventDefault()
-        console.log(frequency)
+    const handleClick = () => {
         playNote(frequency)
     }
 
@@ -54,7 +52,8 @@ export default function VirtualGuitarNote({ note, frequency }) {
         <Mui.Box sx={{
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'center'
+            alignItems: 'center',
+            WebkitUserSelect: 'none'
         }}>
 
             <Mui.Box sx={{
@@ -65,7 +64,7 @@ export default function VirtualGuitarNote({ note, frequency }) {
                 alignItems: 'center'
             }}>
                 <NoteButtonStyling
-                    onClick={event => handleClick(event)}
+                    onClick={() => handleClick()}
                     onContextMenu={event => handleRightClick(event)}
                 >
                     {note}
