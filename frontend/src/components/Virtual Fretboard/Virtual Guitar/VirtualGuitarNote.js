@@ -7,7 +7,7 @@ import { useContext } from 'react';
 
 export default function VirtualGuitarNote({ note, frequency }) {
 
-    const { selectedNotes, setSelectedNotes } = useContext(VirtualGuitar)
+    const { selectedNotes, setSelectedNotes, playNote } = useContext(VirtualGuitar)
 
     const NoteButtonStyling = styled(Mui.Box)({
         display: 'flex',
@@ -29,21 +29,6 @@ export default function VirtualGuitarNote({ note, frequency }) {
             border: 'solid 5px #3EA7C1'
         }
     })
-
-    function playNote(frequency) {
-        setTimeout(function () {
-            const context = new AudioContext()
-            const oscillator = context.createOscillator()
-            const gain = context.createGain()
-            oscillator.type = 'triangle'
-            oscillator.connect(gain)
-            gain.gain.value = 3
-            oscillator.frequency.value = frequency
-            gain.connect(context.destination)
-            oscillator.start(0)
-            gain.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 3)
-        }, 0)
-    }
 
     const handleClick = (event) => {
         event.preventDefault()
