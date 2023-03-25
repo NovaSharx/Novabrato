@@ -31,6 +31,7 @@ export default function VirtualGuitarNote({ note, frequency }) {
     })
 
     const handleClick = () => {
+        console.log(frequency)
         playNote(frequency)
     }
 
