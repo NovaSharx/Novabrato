@@ -41,6 +41,10 @@ export default function Navigation() {
                                 <Mui.Typography color='white' fontSize={20} mr={5}>Login</Mui.Typography>
                             </Mui.Link>
 
+                            <Mui.Link component='button' underline='none' onClick={() => navigate("/signup")}>
+                                <Mui.Typography color='white' fontSize={20} mr={5}>SignUp</Mui.Typography>
+                            </Mui.Link>
+
                         </Mui.Grid>
 
                     </Mui.Grid>

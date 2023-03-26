@@ -32,7 +32,7 @@ function VirtualGuitarProvider({ children }) {
 
         setTimeout(() => {
             audioContext.close()
-        }, 1000)
+        }, 3000)
     }
 
     return (

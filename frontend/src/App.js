@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Fretboard from './components/Fretboard';
 import Exercises from './components/exercises/Exercises';
 import Login from './components/user/Login';
+import SignUp from './components/user/SignUp';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
               <Route exact path='/fretboard' element={<Fretboard />} />
               <Route exact path='/exercises' element={<Exercises />} />
               <Route exact path='/login' element={<Login />} />
+              <Route exact path='/signup' element={<SignUp />} />
             </Routes>
           </Mui.Paper>
           <Footer />

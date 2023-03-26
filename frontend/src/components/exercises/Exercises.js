@@ -7,6 +7,7 @@ export default function Exercises() {
             p: 5
         }}>
             <Mui.Typography variant='h6'>Exercises</Mui.Typography>
+             
         </Mui.Box>
     )
 }
