@@ -12,6 +12,7 @@ import Fretboard from './components/Fretboard';
 import Exercises from './components/exercises/Exercises';
 import Login from './components/user/Login';
 import SignUp from './components/user/SignUp';
+import IntervalTrainingContainer from './components/exercises/interval-training/IntervalTrainingContainer';
 
 function App() {
 
@@ -43,10 +44,11 @@ function App() {
             <Navigation />
             <Routes>
               <Route exact path='/' element={<Home />} />
-              <Route exact path='/fretboard' element={<Fretboard />} />
-              <Route exact path='/exercises' element={<Exercises />} />
-              <Route exact path='/login' element={<Login />} />
-              <Route exact path='/signup' element={<SignUp />} />
+              <Route exact path='fretboard' element={<Fretboard />} />
+              <Route exact path='exercises' element={<Exercises />} />
+              <Route exact path='exercises/interval-training' element={<IntervalTrainingContainer />} />
+              <Route exact path='login' element={<Login />} />
+              <Route exact path='signup' element={<SignUp />} />
             </Routes>
           </Mui.Paper>
           <Footer />

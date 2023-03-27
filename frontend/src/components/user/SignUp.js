@@ -37,13 +37,14 @@ export default function SignUp() {
 
         setIsSigningUp(true)
 
-        // axios.post('http://localhost:5000/users', accountDetails)
-        //     .then(user => {
-        //         console.log(user)
-        //     })
-        //     .catch(error => {
-        //         console.log(error) // *** PLACEHOLDER ***
-        //     })
+        axios.post('http://localhost:5000/users', accountDetails)
+            .then(user => {
+                console.log(user)
+                navigate("/")
+            })
+            .catch(error => {
+                console.log(error) // *** PLACEHOLDER ***
+            })
     }
 
 
