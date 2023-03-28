@@ -4,19 +4,20 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import LoadingButton from '@mui/lab/LoadingButton';
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
 import { useTheme } from '@emotion/react';
+import { CurrentUser } from '../contexts/CurrentUser';
 
 export default function SignUp() {
 
     const navigate = useNavigate()
-
     const theme = useTheme()
+    const { setCurrentUser } = useContext(CurrentUser)
 
     const [accountDetails, setAccountDetails] = useState({
         firstName: '',
@@ -38,16 +39,23 @@ export default function SignUp() {
         setIsSigningUp(true)
 
         axios.post('http://localhost:5000/users', accountDetails)
-            .then(user => {
-                console.log(user)
+            .then(response => {
+                console.log(response)
+                localStorage.setItem('token', response.data.token)
+                setCurrentUser(response.data.user)
                 navigate("/")
             })
             .catch(error => {
-                console.log(error) // *** PLACEHOLDER ***
+                if (error.response) {
+                    setErrorMessage(error.response.data.message)
+                } else {
+                    setErrorMessage(error.message)
+                }
+            })
+            .finally(() => {
+                setIsSigningUp(false)
             })
     }
-
-
 
     const handlePasswordVisibility = () => {
         if (passwordVisibility) {
@@ -118,7 +126,7 @@ export default function SignUp() {
                                                 fullWidth
                                                 autoFocus
                                                 autoComplete='given-name'
-                                                onChange={e => setAccountDetails({ ...accountDetails, firstName: e.target.value })}
+                                                onChange={e => handleInputFieldChange({ ...accountDetails, firstName: e.target.value })}
                                             />
                                         </Mui.Grid>
 
@@ -130,7 +138,7 @@ export default function SignUp() {
                                                 required
                                                 fullWidth
                                                 autoComplete='family-name'
-                                                onChange={e => setAccountDetails({ ...accountDetails, lastName: e.target.value })}
+                                                onChange={e => handleInputFieldChange({ ...accountDetails, lastName: e.target.value })}
                                             />
                                         </Mui.Grid>
 
@@ -142,7 +150,7 @@ export default function SignUp() {
                                                 required
                                                 fullWidth
                                                 autoComplete='email'
-                                                onChange={e => setAccountDetails({ ...accountDetails, email: e.target.value })}
+                                                onChange={e => handleInputFieldChange({ ...accountDetails, email: e.target.value })}
                                             />
                                         </Mui.Grid>
 
@@ -154,7 +162,7 @@ export default function SignUp() {
                                                 required
                                                 fullWidth
                                                 autoComplete='username'
-                                                onChange={e => setAccountDetails({ ...accountDetails, userName: e.target.value })}
+                                                onChange={e => handleInputFieldChange({ ...accountDetails, userName: e.target.value })}
                                             />
                                         </Mui.Grid>
 
@@ -177,9 +185,10 @@ export default function SignUp() {
                                                         </Mui.InputAdornment>
                                                     )
                                                 }}
-                                                onChange={e => setAccountDetails({ ...accountDetails, password: e.target.value })}
+                                                onChange={e => handleInputFieldChange({ ...accountDetails, password: e.target.value })}
+                                                helperText={errorMessage}
                                             />
-                                            <Mui.TextField sx={{ mt: 1 }}
+                                            {/* <Mui.TextField sx={{ mt: 1 }}
                                                 name='confirm-password'
                                                 type={passwordVisibility ? 'text' : 'password'}
                                                 id='confirm-password'
@@ -187,7 +196,20 @@ export default function SignUp() {
                                                 required
                                                 fullWidth
                                                 autoComplete='new-password'
-                                            />
+                                            /> */}
+                                        </Mui.Grid>
+
+                                        <Mui.Grid item xs={12}>
+                                            <LoadingButton
+                                                variant='contained'
+                                                size='large'
+                                                fullWidth
+                                                type='submit'
+                                                loading={isSigningUp}
+                                                loadingIndicator="Creating Account…"
+                                            >
+                                                <span>Create An Account</span>
+                                            </LoadingButton>
                                         </Mui.Grid>
 
                                         <Mui.Grid item xs={12}>

@@ -1,6 +1,6 @@
 import * as Mui from '@mui/material';
 import { useContext } from 'react';
-import { VirtualGuitar } from '../../context/VirtualGuitar';
+import { VirtualGuitar } from '../../contexts/VirtualGuitar';
 
 import VirtualGuitarNote from './VirtualGuitarNote';
 

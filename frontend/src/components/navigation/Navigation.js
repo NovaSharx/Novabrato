@@ -2,6 +2,7 @@ import * as Mui from '@mui/material';
 
 import { useTheme } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
+import ProfileActions from './ProfileActions';
 
 export default function Navigation() {
 
@@ -37,13 +38,7 @@ export default function Navigation() {
                                 <Mui.Typography color='white' fontSize={20} mr={5}>Exercises</Mui.Typography>
                             </Mui.Link>
 
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/login")}>
-                                <Mui.Typography color='white' fontSize={20} mr={5}>Login</Mui.Typography>
-                            </Mui.Link>
-
-                            <Mui.Link component='button' underline='none' onClick={() => navigate("/signup")}>
-                                <Mui.Typography color='white' fontSize={20} mr={5}>SignUp</Mui.Typography>
-                            </Mui.Link>
+                            <ProfileActions />
 
                         </Mui.Grid>
 

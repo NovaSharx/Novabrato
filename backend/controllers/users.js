@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const db = require('../models')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const { User } = db
 
@@ -14,9 +16,12 @@ router.post('/', async (req, res) => {
     const { password, ...otherUserData } = req.body
     const user = await User.create({
         ...otherUserData,
+        role: 'learner',
         passwordDigest: await bcrypt.hash(password, 10)
     })
-    res.json(user)
+
+    const token = await jwt.sign({ id: user.dataValues.userId }, process.env.JWT_SECRET)
+    res.json({ user, token })
 })
 
 module.exports = router

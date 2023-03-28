@@ -2,7 +2,7 @@ import * as Mui from '@mui/material';
 
 import styled from '@emotion/styled';
 
-import { VirtualGuitar } from '../../context/VirtualGuitar';
+import { VirtualGuitar } from '../../contexts/VirtualGuitar';
 import { useContext } from 'react';
 
 export default function VirtualGuitarNote({ note, frequency }) {

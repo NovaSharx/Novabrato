@@ -4,19 +4,20 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import LoadingButton from '@mui/lab/LoadingButton';
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
 import { useTheme } from '@emotion/react';
+import { CurrentUser } from '../contexts/CurrentUser';
 
 export default function Login() {
 
     const navigate = useNavigate()
-
     const theme = useTheme()
+    const { setCurrentUser } = useContext(CurrentUser)
 
     // Stores the entered user credentials
     const [userCredentials, setUserCredentials] = useState({
@@ -31,24 +32,24 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // setIsLoggingIn(true)
+        setIsLoggingIn(true)
 
-        // axios.post('http://localhost:5000/authentication', userCredentials)
-        //     .then(response => {
-        //         localStorage.setItem('token', response.data.token)
-        //         setCurrentUser(response.data.user)
-        //         navigate("/")
-        //     })
-        //     .catch(error => {
-        //         if (error.response) {
-        //             setErrorMessage(error.response.data.message)
-        //         } else {
-        //             setErrorMessage(error.message)
-        //         }
-        //     })
-        //     .finally(() => {
-        //         setIsLoggingIn(false)
-        //     })
+        axios.post('http://localhost:5000/authentication', userCredentials)
+            .then(response => {
+                localStorage.setItem('token', response.data.token)
+                setCurrentUser(response.data.user)
+                navigate("/")
+            })
+            .catch(error => {
+                if (error.response) {
+                    setErrorMessage(error.response.data.message)
+                } else {
+                    setErrorMessage(error.message)
+                }
+            })
+            .finally(() => {
+                setIsLoggingIn(false)
+            })
     }
 
     const [passwordVisibility, setPasswordVisibility] = useState(false)

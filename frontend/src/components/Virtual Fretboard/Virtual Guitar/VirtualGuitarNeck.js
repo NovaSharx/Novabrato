@@ -1,5 +1,5 @@
-
 import * as Mui from '@mui/material';
+
 import VirtualGuitarString from './VirtualGuitarString';
 
 export default function VirtualGuitarNeck() {

@@ -1,6 +1,6 @@
 import * as Mui from '@mui/material';
 
-import VirtualGuitarProvider from '../context/VirtualGuitar';
+import VirtualGuitarProvider from '../contexts/VirtualGuitar';
 
 import VirtualGuitarSettings from './virtual guitar settings/VirtualGuitarSettings';
 
