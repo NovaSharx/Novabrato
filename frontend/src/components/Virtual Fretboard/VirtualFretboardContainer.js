@@ -25,8 +25,8 @@ export default function VirtualGuitarContainer() {
                     VIRTUAL FRETBOARD
                 </Mui.Typography>
 
-                <VirtualGuitarSettings />
-                
+                {/* <VirtualGuitarSettings /> */}
+
                 <VirtualGuitar />
 
             </Mui.Box>
