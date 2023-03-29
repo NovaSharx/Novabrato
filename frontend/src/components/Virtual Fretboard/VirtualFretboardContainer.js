@@ -1,7 +1,5 @@
 import * as Mui from '@mui/material';
 
-import VirtualGuitarProvider from '../contexts/VirtualGuitar';
-
 import VirtualGuitarSettings from './virtual guitar settings/VirtualGuitarSettings';
 
 import VirtualGuitar from './virtual guitar/VirtualGuitarNeck';
@@ -27,10 +25,9 @@ export default function VirtualGuitarContainer() {
                     VIRTUAL FRETBOARD
                 </Mui.Typography>
 
-                <VirtualGuitarProvider>
-                    <VirtualGuitarSettings />
-                    <VirtualGuitar />
-                </VirtualGuitarProvider>
+                <VirtualGuitarSettings />
+                
+                <VirtualGuitar />
 
             </Mui.Box>
         </Mui.Container>

@@ -10,7 +10,8 @@ function VirtualGuitarProvider({ children }) {
         'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab', 'A', 'A#/Bb', 'B'
     ]
 
-    const baseFrequencyLibrary = [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 29.14, 30.87
+    const baseFrequencyLibrary = [
+        16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 29.14, 30.87
     ]
 
 

@@ -13,6 +13,7 @@ import Exercises from './components/exercises/Exercises';
 import Login from './components/user/Login';
 import SignUp from './components/user/SignUp';
 import IntervalTrainingContainer from './components/exercises/interval-training/IntervalTrainingContainer';
+import VirtualGuitarProvider from './components/contexts/VirtualGuitar';
 import CurrentUserProvider from './components/contexts/CurrentUser';
 
 function App() {
@@ -39,21 +40,23 @@ function App() {
       <Router>
         <CurrentUserProvider>
           <ThemeProvider theme={theme}>
-            <Mui.Paper square sx={{
-              minHeight: '100vh',
-              background: 'linear-gradient(0deg, rgba(62,193,153,1) 0%, rgba(62,167,193,1) 91%)'
-            }}>
-              <Navigation />
-              <Routes>
-                <Route exact path='/' element={<Home />} />
-                <Route exact path='fretboard' element={<Fretboard />} />
-                <Route exact path='exercises' element={<Exercises />} />
-                <Route exact path='exercises/interval-training' element={<IntervalTrainingContainer />} />
-                <Route exact path='login' element={<Login />} />
-                <Route exact path='signup' element={<SignUp />} />
-              </Routes>
-            </Mui.Paper>
-            <Footer />
+            <VirtualGuitarProvider>
+              <Mui.Paper square sx={{
+                minHeight: '100vh',
+                background: 'linear-gradient(0deg, rgba(62,193,153,1) 0%, rgba(62,167,193,1) 91%)'
+              }}>
+                <Navigation />
+                <Routes>
+                  <Route exact path='/' element={<Home />} />
+                  <Route exact path='fretboard' element={<Fretboard />} />
+                  <Route exact path='exercises' element={<Exercises />} />
+                  <Route exact path='exercises/interval-training' element={<IntervalTrainingContainer />} />
+                  <Route exact path='login' element={<Login />} />
+                  <Route exact path='signup' element={<SignUp />} />
+                </Routes>
+              </Mui.Paper>
+              <Footer />
+            </VirtualGuitarProvider>
           </ThemeProvider>
         </CurrentUserProvider>
       </Router>
