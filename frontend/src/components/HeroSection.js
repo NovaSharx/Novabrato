@@ -22,9 +22,17 @@ export default function HeroSection() {
                 }}>
                     <img src="./guitar-overlay/Overlay_Guitar_Opening.svg" alt="guitar opening overlay" style={{ position: 'absolute', height: 'auto', width: '650px', objectFit: 'fill' }} />
                     <img src="./guitar-overlay/Overlay_Guitar_Strings.svg" alt="guitar strings overlay" style={{ position: 'fixed', height: 'inherit', width: '300px', objectFit: 'cover' }} />
+                    <Mui.Box sx={{
+                        display: 'flex',
+                        height: 'inherit',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <Mui.Typography variant='h1' color='white'>Practice Guitar</Mui.Typography>
+                        <Mui.Typography variant='h1' color='#3EC199'>Improvisation</Mui.Typography>
+                    </Mui.Box>
                 </Mui.Box>
-
-                <Mui.Button>Hello</Mui.Button>
 
             </Mui.Container>
         </Mui.Box>

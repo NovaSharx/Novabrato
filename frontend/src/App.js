@@ -4,7 +4,8 @@ import * as Mui from '@mui/material';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from './components/Home';
 import Navigation from './components/navigation/Navigation';
 import Footer from './components/Footer';
@@ -37,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <CurrentUserProvider>
           <ThemeProvider theme={theme}>
             <VirtualGuitarProvider>
@@ -59,7 +60,7 @@ function App() {
             </VirtualGuitarProvider>
           </ThemeProvider>
         </CurrentUserProvider>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

@@ -1,10 +1,15 @@
-import styled from '@emotion/styled';
 import * as Mui from '@mui/material';
-import { borderColor } from '@mui/system';
-import { Fragment, useContext, useEffect, useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { VirtualGuitar } from '../../contexts/VirtualGuitar';
+import { CurrentUser } from '../../contexts/CurrentUser';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function IntervalTrainingContainer() {
+
+    const { currentUser } = useContext(CurrentUser)
+
+    const navigate = useNavigate()
 
     const { noteLibrary, playNote } = useContext(VirtualGuitar)
 
@@ -46,6 +51,24 @@ export default function IntervalTrainingContainer() {
         }, 2000)
     }
 
+    function handleSubmitResult(highscore) {
+        axios.post(`${process.env.REACT_APP_SERVER_URL}highscores`, {
+            userID: currentUser.userId ? currentUser.userID : null,
+            userName: currentUser.userName ? currentUser.userName : currentUser.defaultName,
+            highscore: highscore,
+            exercise: 'Interval Training'
+        })
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error) // ***PlaceHolder***
+            })
+            .finally(() => {
+                navigate('/exercises')
+            })
+    }
+
     const renderIntervalPrompt = () => {
         if (currentIndex > 5) {
 
@@ -61,7 +84,7 @@ export default function IntervalTrainingContainer() {
                 <Fragment>
                     <Mui.Typography variant='h3'>Here are your results!</Mui.Typography>
 
-                    <Mui.Box onClick={playInterval} sx={{
+                    <Mui.Box sx={{
                         p: 2,
                         color: '#3EC199',
                         border: '2px solid #3EC199',
@@ -71,7 +94,7 @@ export default function IntervalTrainingContainer() {
                             {score} / 5
                         </Mui.Typography>
 
-                        <Mui.Button variant='contained' onClick={() => { }}>Submit Result</Mui.Button>
+                        <Mui.Button variant='contained' onClick={() => handleSubmitResult(score)}>Submit Result</Mui.Button>
                     </Mui.Box>
                 </Fragment>
             )

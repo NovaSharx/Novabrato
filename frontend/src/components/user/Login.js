@@ -34,7 +34,7 @@ export default function Login() {
 
         setIsLoggingIn(true)
 
-        axios.post('http://localhost:5000/authentication', userCredentials)
+        axios.post(`${process.env.REACT_APP_SERVER_URL}authentication`, userCredentials)
             .then(response => {
                 localStorage.setItem('token', response.data.token)
                 setCurrentUser(response.data.user)
@@ -167,11 +167,12 @@ export default function Login() {
                                         </Mui.Grid>
 
                                         <Mui.Grid item xs={12}>
-                                            <Mui.Typography>
-                                                <Mui.Link href='/signup'>Don't have an account? Sign Up.</Mui.Link>
-                                            </Mui.Typography>
+                                            <Mui.Link component='button' underline='none' onClick={() => navigate("/signup")}>
+                                                <Mui.Typography>
+                                                    Don't have an account? Sign Up.
+                                                </Mui.Typography>
+                                            </Mui.Link>
                                         </Mui.Grid>
-
                                     </Mui.Grid>
 
                                 </Mui.Box>

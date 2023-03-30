@@ -38,7 +38,7 @@ export default function SignUp() {
 
         setIsSigningUp(true)
 
-        axios.post('http://localhost:5000/users', accountDetails)
+        axios.post(`${process.env.REACT_APP_SERVER_URL}users`, accountDetails)
             .then(response => {
                 console.log(response)
                 localStorage.setItem('token', response.data.token)
@@ -213,9 +213,11 @@ export default function SignUp() {
                                         </Mui.Grid>
 
                                         <Mui.Grid item xs={12}>
-                                            <Mui.Typography>
-                                                <Mui.Link href='/login'>Already have an account? Log in.</Mui.Link>
-                                            </Mui.Typography>
+                                            <Mui.Link component='button' underline='none' onClick={() => navigate("/login")}>
+                                                <Mui.Typography>
+                                                    Already have an account? Log in.
+                                                </Mui.Typography>
+                                            </Mui.Link>
                                         </Mui.Grid>
 
                                     </Mui.Grid>
