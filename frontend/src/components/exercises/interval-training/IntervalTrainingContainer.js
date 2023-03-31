@@ -53,8 +53,8 @@ export default function IntervalTrainingContainer() {
 
     function handleSubmitResult(highscore) {
         axios.post(`${process.env.REACT_APP_SERVER_URL}highscores`, {
-            userID: currentUser.userId ? currentUser.userID : null,
-            userName: currentUser.userName ? currentUser.userName : currentUser.defaultName,
+            userId: currentUser.userId,
+            userName: currentUser.userName,
             highscore: highscore,
             exercise: 'Interval Training'
         })
@@ -94,7 +94,11 @@ export default function IntervalTrainingContainer() {
                             {score} / 5
                         </Mui.Typography>
 
-                        <Mui.Button variant='contained' onClick={() => handleSubmitResult(score)}>Submit Result</Mui.Button>
+                        {currentUser.userName ?
+                            <Mui.Button variant='contained' onClick={() => handleSubmitResult(score)}>Submit Result</Mui.Button>
+                            :
+                            <Mui.Typography variant='subtitle2'><i>*You must create an account in order to submit your score*</i></Mui.Typography>
+                        }
                     </Mui.Box>
                 </Fragment>
             )

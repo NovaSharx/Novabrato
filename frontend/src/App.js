@@ -9,7 +9,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from './components/Home';
 import Navigation from './components/navigation/Navigation';
 import Footer from './components/Footer';
-import Fretboard from './components/Fretboard';
+import Fretboard from './components/virtual fretboard/Fretboard';
 import Exercises from './components/exercises/Exercises';
 import Login from './components/user/Login';
 import SignUp from './components/user/SignUp';
@@ -21,7 +21,7 @@ function App() {
 
   let theme = createTheme({
     palette: {
-      mode: 'light',
+      mode: 'dark',
       primary: {
         main: '#3EC199',
         contrastText: '#ffffff',

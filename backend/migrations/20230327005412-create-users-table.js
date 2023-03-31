@@ -4,7 +4,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('users', {
       user_id: {
-        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
@@ -33,7 +32,7 @@ module.exports = {
       },
       role: {
         allowNull: false,
-        values: ['learner','admin'],
+        values: ['learner', 'admin'],
         defaultValue: 'learner',
         type: Sequelize.ENUM
       },
