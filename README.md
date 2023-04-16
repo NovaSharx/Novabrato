@@ -1,6 +1,6 @@
 # Novabrato
 
-Novabrato is guitar music theory learning application designed for beginner guitar players.
+Novabrato is a guitar music theory learning application designed for beginner guitar players.
 
 ## Fretboard
 Users can explore a virtual guitar fretboard tool with 24 frets of notes. 
