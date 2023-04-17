@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ User }) {
-      Highscore.belongsTo(User, { foreignKey: 'userId'})
+      Highscore.belongsTo(User, { foreignKey: 'user_id', as: 'highscores' })
     }
   }
   Highscore.init({

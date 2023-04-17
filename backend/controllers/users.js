@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
-const { User, Highscore } = db
+const { User } = db
 
 // Need to secure this route from the public
 router.get('/', async (req, res) => {
-    const users = await User.findAll({ include: Highscore }) // Eager loading highscores
+    const users = await User.findAll({ include: 'highscores' }) // Eager loading highscores
     res.json(users)
 })
 

@@ -10,13 +10,12 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
-import { useTheme } from '@emotion/react';
 import { CurrentUser } from '../contexts/CurrentUser';
 
 export default function SignUp() {
 
     const navigate = useNavigate()
-    const theme = useTheme()
+
     const { setCurrentUser } = useContext(CurrentUser)
 
     const [accountDetails, setAccountDetails] = useState({
@@ -31,7 +30,7 @@ export default function SignUp() {
 
     const [errorMessage, setErrorMessage] = useState(null) // Stores the error state of the form
 
-    const [isSigningUp, setIsSigningUp] = useState(false) // Stores the state of the login button
+    const [isSigningUp, setIsSigningUp] = useState(false) // Stores the state of the sign in button
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -206,7 +205,7 @@ export default function SignUp() {
                                                 fullWidth
                                                 type='submit'
                                                 loading={isSigningUp}
-                                                loadingIndicator="Creating Account…"
+                                                loadingIndicator="Creating an account…"
                                             >
                                                 <span>Create An Account</span>
                                             </LoadingButton>

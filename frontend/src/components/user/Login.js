@@ -10,13 +10,12 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
-import { useTheme } from '@emotion/react';
 import { CurrentUser } from '../contexts/CurrentUser';
 
 export default function Login() {
 
     const navigate = useNavigate()
-    const theme = useTheme()
+
     const { setCurrentUser } = useContext(CurrentUser)
 
     // Stores the entered user credentials
