@@ -9,7 +9,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from './components/Home';
 import Navigation from './components/navigation/Navigation';
 import Footer from './components/Footer';
-import Fretboard from './components/virtual fretboard/Fretboard';
+import Fretboard from './components/virtualfretboard/Fretboard';
 import Exercises from './components/exercises/Exercises';
 import Login from './components/user/Login';
 import SignUp from './components/user/SignUp';
