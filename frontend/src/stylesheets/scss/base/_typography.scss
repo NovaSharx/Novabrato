@@ -1,0 +1,33 @@
+* {
+    font-family: $font-stack;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: 'Inter';
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.75;
+
+    @media (max-width: $tv-width) {
+        font-size: 1.15rem;
+    }
+
+    @media (max-width: $desktop-width) {
+        font-size: 1.05rem;
+    }
+
+    @media (max-width: $laptop-width) {
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: $tablet-width) {
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: $mobile-width) {
+        font-size: 0.8rem;
+    }
+}
