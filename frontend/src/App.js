@@ -5,7 +5,7 @@ import * as Mui from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import Navigation from './components/navigation/Navigation';
 import Footer from './components/Footer';
