@@ -1,1 +1,39 @@
-#navigation {}
+#navigation {
+
+    #navigation-container {
+        display: flex;
+        padding: 0.5rem 0rem;
+
+        #nav-logo {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+
+            #nav-logo-button {
+                font-family: 'Inter';
+                font-size: 1.8rem;
+                font-weight: 800;
+
+                #nav-logo-nova {
+                    font-family: 'Inter';
+
+                }
+            }
+        }
+
+        #nav-options {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .nav-option-button {
+                padding: 0rem 1.5rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

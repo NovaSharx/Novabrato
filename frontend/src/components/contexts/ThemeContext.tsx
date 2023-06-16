@@ -13,6 +13,10 @@ interface ITheme {
             dark: string,
             light: string
         },
+        background: {
+            light: '',
+            dark: ''
+        },
         text: {
             dark: {
                 primary: string,
@@ -34,27 +38,33 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
         dark: false,
         palette: {
             primary: {
-                main: '',
+                main: '#3EC199',
                 dark: '',
                 light: ''
             },
             secondary: {
-                main: '',
+                main: '#3EA7C1',
                 dark: '',
                 light: ''
             },
+            background: {
+                light: '',
+                dark: ''
+            },
             text: {
                 dark: {
-                    primary: '',
+                    primary: '#fff',
                     secondary: ''
                 },
                 light: {
-                    primary: '',
+                    primary: '#000',
                     secondary: ''
                 }
             }
         }
     };
+
+
 
     return (
         <ThemeContext.Provider value={theme}>

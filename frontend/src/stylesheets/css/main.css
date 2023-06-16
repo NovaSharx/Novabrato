@@ -63,37 +63,25 @@ p {
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 8rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 8rem;
 }
 @media (max-width: 1536px) {
   .main-section-container .main-section {
     max-width: 1200px;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
   }
 }
 @media (max-width: 1200px) {
   .main-section-container .main-section {
     max-width: 1024px;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
   }
 }
 @media (max-width: 1024px) {
   .main-section-container .main-section {
     max-width: 768px;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
   }
 }
 @media (max-width: 768px) {
   .main-section-container .main-section {
     max-width: 480px;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
   }
 }
 @media (max-width: 480px) {
@@ -102,6 +90,50 @@ p {
   }
 }
 
+#navigation #navigation-container {
+  display: flex;
+  padding: 0.5rem 0rem;
+}
+#navigation #navigation-container #nav-logo {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+#navigation #navigation-container #nav-logo #nav-logo-button {
+  font-family: "Inter";
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+#navigation #navigation-container #nav-logo #nav-logo-button #nav-logo-nova {
+  font-family: "Inter";
+}
+#navigation #navigation-container #nav-options {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#navigation #navigation-container #nav-options .nav-option-button {
+  padding: 0rem 1.5rem;
+}
+#navigation #navigation-container #nav-options .nav-option-button:hover {
+  cursor: pointer;
+}
+
 #home {
   flex-grow: 1;
+}
+#home #hero-section-container {
+  position: relative;
+  height: 40rem;
+  background-image: url("/public/guitar-music-strings-bass-guitar-wallpaper-preview.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#home #hero-section-container::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  content: "";
 }/*# sourceMappingURL=main.css.map */
