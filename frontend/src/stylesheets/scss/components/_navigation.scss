@@ -15,17 +15,21 @@
             align-items: center;
 
             #nav-logo-button {
-                font-family: 'Inter';
-                font-size: 1.8rem;
-                font-weight: 800;
+                text-decoration: none;
 
-                &:hover {
-                    cursor: pointer;
-                }
-
-                #nav-logo-nova {
+                h1 {
                     font-family: 'Inter';
+                    font-size: 1.8rem;
+                    font-weight: 800;
 
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    #nav-logo-nova {
+                        font-family: 'Inter';
+
+                    }
                 }
             }
         }

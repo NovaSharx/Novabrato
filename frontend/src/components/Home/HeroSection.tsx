@@ -32,7 +32,8 @@ const HeroSection: FC = (): ReactElement => {
 
                 <span id='call-to-action'>
                     <span id='call-to-action-button' style={{
-                        color: theme.palette.primary.main
+                        color: theme.palette.primary.main,
+                        border: `2px solid ${theme.palette.primary.main}`
                     }}>
                         START PRACTICING
                     </span>

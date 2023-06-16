@@ -21,7 +21,6 @@
         #hero-section {
             position: relative;
             z-index: 1;
-            width: 50%;
 
             #hero-section-title {
                 text-align: center;
@@ -34,8 +33,8 @@
 
             #hero-section-info {
                 margin: 3rem auto;
-                width: 50%;
                 display: flex;
+                width: 30rem;
 
                 span {
 
@@ -50,7 +49,7 @@
 
                 #call-to-action-button {
                     padding: 1.5rem 4rem;
-                    background-color: black;
+                    background-color: #121212;
                     font-size: 1.5rem;
 
                     &:hover {

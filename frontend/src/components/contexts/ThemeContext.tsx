@@ -12,7 +12,11 @@ interface ITheme {
                 main: string,
                 themeMode: string,
             },
-            background: string,
+            background: {
+                primary: string,
+                secondary: string,
+                tertiary: string,
+            },
             text: {
                 primary: string;
                 secondary: string;
@@ -49,9 +53,19 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     '' // light
             },
             background: themeMode ?
-                '' // dark
+                // dark
+                {
+                    primary: '#1a1a1a',
+                    secondary: '#3a3a3a',
+                    tertiary: '#595959',
+                }
                 :
-                '', // light
+                // light
+                {
+                    primary: '#dedede',
+                    secondary: '#ededed',
+                    tertiary: '#f4f4f4',
+                },
             text: themeMode ?
                 // dark
                 {

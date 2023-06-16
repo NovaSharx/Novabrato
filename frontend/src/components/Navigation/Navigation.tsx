@@ -12,16 +12,18 @@ const Navigation: FC = (): ReactElement => {
             <div id='navigation-container'>
 
                 <div id='nav-logo'>
-                    <h1 id='nav-logo-button' style={{
-                        color: 'white'
-                    }}>
-                        <span id='nav-logo-nova' style={{
-                            color: theme.palette.primary.main,
+                    <a href='/' id='nav-logo-button'>
+                        <h1 style={{
+                            color: 'white'
                         }}>
-                            NOVA
-                        </span>
-                        BRATO
-                    </h1>
+                            <span id='nav-logo-nova' style={{
+                                color: theme.palette.primary.main,
+                            }}>
+                                NOVA
+                            </span>
+                            BRATO
+                        </h1>
+                    </a>
                 </div>
 
                 <div id='nav-options' style={{
@@ -36,7 +38,7 @@ const Navigation: FC = (): ReactElement => {
                         }}
                         onClick={toggleThemeMode}
                     >
-                        {theme.dark ? 'Light' : 'Dark'}
+                        {theme.dark ? 'Dark' : 'Light'}
                     </span>
                 </div>
 
