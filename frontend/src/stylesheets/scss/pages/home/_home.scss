@@ -3,6 +3,8 @@
 
     #hero-section-container {
         position: relative;
+        display: flex;
+        align-items: center;
         height: 40rem;
         background-image: url('/public/guitar-music-strings-bass-guitar-wallpaper-preview.jpg');
         background-size: cover;
@@ -12,10 +14,50 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: brightness(25%);
             content: '';
         }
 
-        #hero-section {}
+        #hero-section {
+            position: relative;
+            z-index: 1;
+            width: 50%;
+
+            #hero-section-title {
+                text-align: center;
+                font-size: 5.5rem;
+
+                span {
+                    display: block;
+                }
+            }
+
+            #hero-section-info {
+                margin: 3rem auto;
+                width: 50%;
+                display: flex;
+
+                span {
+
+                    font-size: 1.4rem;
+                    text-align: center;
+                }
+            }
+
+            #call-to-action {
+                display: flex;
+                justify-content: center;
+
+                #call-to-action-button {
+                    padding: 1.5rem 4rem;
+                    background-color: black;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 }

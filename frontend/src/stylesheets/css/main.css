@@ -90,7 +90,14 @@ p {
   }
 }
 
+#navigation {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
 #navigation #navigation-container {
+  margin: 0rem 1.5rem;
   display: flex;
   padding: 0.5rem 0rem;
 }
@@ -103,6 +110,9 @@ p {
   font-family: "Inter";
   font-size: 1.8rem;
   font-weight: 800;
+}
+#navigation #navigation-container #nav-logo #nav-logo-button:hover {
+  cursor: pointer;
 }
 #navigation #navigation-container #nav-logo #nav-logo-button #nav-logo-nova {
   font-family: "Inter";
@@ -125,6 +135,8 @@ p {
 }
 #home #hero-section-container {
   position: relative;
+  display: flex;
+  align-items: center;
   height: 40rem;
   background-image: url("/public/guitar-music-strings-bass-guitar-wallpaper-preview.jpg");
   background-size: cover;
@@ -134,6 +146,39 @@ p {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: brightness(25%);
   content: "";
+}
+#home #hero-section-container #hero-section {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+}
+#home #hero-section-container #hero-section #hero-section-title {
+  text-align: center;
+  font-size: 5.5rem;
+}
+#home #hero-section-container #hero-section #hero-section-title span {
+  display: block;
+}
+#home #hero-section-container #hero-section #hero-section-info {
+  margin: 3rem auto;
+  width: 50%;
+  display: flex;
+}
+#home #hero-section-container #hero-section #hero-section-info span {
+  font-size: 1.4rem;
+  text-align: center;
+}
+#home #hero-section-container #hero-section #call-to-action {
+  display: flex;
+  justify-content: center;
+}
+#home #hero-section-container #hero-section #call-to-action #call-to-action-button {
+  padding: 1.5rem 4rem;
+  background-color: black;
+  font-size: 1.5rem;
+}
+#home #hero-section-container #hero-section #call-to-action #call-to-action-button:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

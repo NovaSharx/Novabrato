@@ -1,73 +1,78 @@
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 interface ITheme {
-    dark: boolean,
-    palette: {
-        primary: {
-            main: string,
-            dark: string,
-            light: string
-        },
-        secondary: {
-            main: string,
-            dark: string,
-            light: string
-        },
-        background: {
-            light: '',
-            dark: ''
-        },
-        text: {
-            dark: {
-                primary: string,
-                secondary: string
+    theme: {
+        dark: boolean,
+        palette: {
+            primary: {
+                main: string,
+                themeMode: string,
             },
-            light: {
-                primary: string,
-                secondary: string
+            secondary: {
+                main: string,
+                themeMode: string,
+            },
+            background: string,
+            text: {
+                primary: string;
+                secondary: string;
+            } | {
+                primary: string;
+                secondary: string;
             }
         }
-    }
+    },
+    toggleThemeMode: () => void
 };
 
 export const ThemeContext = createContext<ITheme | null>(null);
 
 const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
 
-    const theme: ITheme = {
-        dark: false,
+    const [themeMode, setThemeMode] = useState<boolean>(false)
+
+    const theme = {
+        dark: themeMode,
         palette: {
             primary: {
                 main: '#3EC199',
-                dark: '',
-                light: ''
+                themeMode: themeMode ?
+                    '' // dark
+                    :
+                    '' // light
             },
             secondary: {
                 main: '#3EA7C1',
-                dark: '',
-                light: ''
+                themeMode: themeMode ?
+                    '' // dark
+                    :
+                    '' // light
             },
-            background: {
-                light: '',
-                dark: ''
-            },
-            text: {
-                dark: {
+            background: themeMode ?
+                '' // dark
+                :
+                '', // light
+            text: themeMode ?
+                // dark
+                {
                     primary: '#fff',
                     secondary: ''
-                },
-                light: {
+                }
+                :
+                // light
+                {
                     primary: '#000',
                     secondary: ''
                 }
-            }
         }
     };
 
-
+    function toggleThemeMode(): void {
+        setThemeMode(!themeMode)
+    }
 
     return (
-        <ThemeContext.Provider value={theme}>
+        <ThemeContext.Provider value={{ theme, toggleThemeMode }}>
             {children}
         </ThemeContext.Provider>
     );
