@@ -5,7 +5,7 @@ const Navigation: FC = (): ReactElement => {
         <div id='navigation'>
             Navigation
         </div>
-    )
-}
+    );
+};
 
 export default Navigation;

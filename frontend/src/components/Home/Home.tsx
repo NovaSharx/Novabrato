@@ -5,7 +5,7 @@ const Home: FC = (): ReactElement => {
         <div id='home'>
             Home
         </div>
-    )
+    );
 }
-
+;
 export default Home;
