@@ -34,7 +34,9 @@ const Navigation: FC = (): ReactElement => {
                     <span className='nav-option-button'>About</span>
                     <span className='nav-option-button'
                         style={{
-                            backgroundColor: 'grey', color: theme.palette.text.primary
+                            backgroundColor: theme.palette.background.tertiary,
+                            color: theme.palette.text.primary,
+                            borderRadius: '0.2rem'
                         }}
                         onClick={toggleThemeMode}
                     >

@@ -139,9 +139,10 @@ p {
 
 #footer {
   width: 100%;
+  text-align: center;
 }
 
-#virtual-guitar-container {
+.virtual-guitar-container {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 2rem;
@@ -149,18 +150,18 @@ p {
   flex-direction: column;
   border-radius: 1rem;
 }
-#virtual-guitar-container #virtual-guitar-title {
+.virtual-guitar-container .virtual-guitar-title {
   text-align: center;
   font-size: 3rem;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel {
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel {
   text-align: center;
   width: 100%;
   height: 10rem;
   border: 2px solid grey;
   border-radius: 1rem;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container {
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container {
   box-sizing: border-box;
   margin-top: 1rem;
   padding: 1rem;
@@ -169,23 +170,65 @@ p {
   border: 2px solid grey;
   border-radius: 1rem;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck {
-  background-color: rgb(16, 77, 16);
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck {
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
   overflow-x: scroll;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck #virtual-guitar-string {
-  background-color: green;
-  margin: 0.2rem;
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string {
+  display: flex;
   width: 2000px;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck #virtual-guitar-string #virtual-guitar-note {
-  background-color: rgb(156, 255, 156);
-  margin: 0.2rem;
-  width: 2rem;
-  height: 2rem;
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string:first-child .virtual-guitar-fret {
+  border-top: 3px solid #b8b8b8;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string:last-child .virtual-guitar-fret {
+  border-bottom: 3px solid #b8b8b8;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret {
+  box-sizing: content-box;
+  position: relative;
+  background-color: #1a1a1a;
+  border-left: 5px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 4rem;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret:nth-child(2) {
+  border-left: 10px solid #b8b8b8;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret::after {
+  position: absolute;
+  width: 120%;
+  height: 3px;
+  background-color: #9C7C2A;
   border-radius: 1rem;
+  content: "";
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret .virtual-guitar-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 2px solid #3EC199;
+  font-family: "Inter";
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #3EC199;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 2.8rem;
+  z-index: 1;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret .virtual-guitar-note:hover {
+  cursor: pointer;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret:first-child {
+  border-color: transparent;
+  background-color: transparent;
 }
 
 #home {

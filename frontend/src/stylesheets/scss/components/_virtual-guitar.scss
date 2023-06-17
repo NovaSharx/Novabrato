@@ -1,4 +1,4 @@
-#virtual-guitar-container {
+.virtual-guitar-container {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 2rem;
@@ -6,16 +6,16 @@
     flex-direction: column;
     border-radius: 1rem;
 
-    #virtual-guitar-title {
+    .virtual-guitar-title {
         text-align: center;
         font-size: 3rem;
 
         h2 {}
     }
 
-    #virtual-guitar-content {
+    .virtual-guitar-content {
 
-        #virtual-guitar-control-panel {
+        .virtual-guitar-control-panel {
             text-align: center;
             width: 100%;
             height: 10rem;
@@ -23,7 +23,7 @@
             border-radius: 1rem;
         }
 
-        #virtual-guitar-fretboard-container {
+        .virtual-guitar-fretboard-container {
             box-sizing: border-box;
             margin-top: 1rem;
             padding: 1rem;
@@ -32,23 +32,76 @@
             border: 2px solid grey;
             border-radius: 1rem;
 
-            #virtual-guitar-neck {
-                background-color: rgb(16, 77, 16);
+            .virtual-guitar-neck {
+                padding: 2rem 0rem;
                 display: flex;
                 flex-direction: column;
                 overflow-x: scroll;
 
-                #virtual-guitar-string {
-                    background-color: green;
-                    margin: 0.2rem;
+                .virtual-guitar-string {
+                    display: flex;
                     width: 2000px;
 
-                    #virtual-guitar-note {
-                        background-color: rgb(156, 255, 156);
-                        margin: 0.2rem;
-                        width: 2rem;
-                        height: 2rem;
-                        border-radius: 1rem;
+                    &:first-child {
+                        .virtual-guitar-fret {
+                            border-top: 3px solid #b8b8b8;
+                        }
+                    }
+
+                    &:last-child {
+                        .virtual-guitar-fret {
+                            border-bottom: 3px solid #b8b8b8;
+                        }
+                    }
+
+                    .virtual-guitar-fret {
+                        box-sizing: content-box;
+                        position: relative;
+                        background-color: #1a1a1a;
+                        border-left: 5px solid grey;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 10rem;
+                        height: 4rem;
+
+                        &:nth-child(2) {
+                            border-left: 10px solid #b8b8b8;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            width: 120%;
+                            height: 3px;
+                            background-color: #9C7C2A;
+                            border-radius: 1rem;
+                            content: '';
+                        }
+
+                        .virtual-guitar-note {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: black;
+                            border: 2px solid #3EC199;
+                            font-family: 'Inter';
+                            font-size: 1.3rem;
+                            font-weight: 800;
+                            color: #3EC199;
+                            width: 2.8rem;
+                            height: 2.8rem;
+                            border-radius: 2.8rem;
+                            z-index: 1;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        &:first-child {
+                            border-color: transparent;
+                            background-color: transparent;
+                        }
                     }
                 }
             }
