@@ -10,7 +10,6 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
         <div className='main-section-container'>
             <div className='virtual-guitar-container main-section' style={{
                 backgroundColor: theme.palette.background.primary,
-                boxShadow: `0rem 0rem 1rem 0rem rgba(0,0,0,0.75)`,
             }}>
                 <div className='virtual-guitar-title'>
                     <h2 style={{

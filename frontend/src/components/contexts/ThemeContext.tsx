@@ -69,13 +69,13 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
             text: themeMode ?
                 // dark
                 {
-                    primary: '#bbbbbb',
+                    primary: '#bfbfbf',
                     secondary: ''
                 }
                 :
                 // light
                 {
-                    primary: '#404040',
+                    primary: '#3d3d3d',
                     secondary: ''
                 }
         }
