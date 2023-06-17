@@ -26,14 +26,14 @@ interface ITheme {
             }
         }
     },
-    toggleThemeMode: () => void
+    toggleThemeMode: () => void;
 };
 
 export const ThemeContext = createContext<ITheme | null>(null);
 
 const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
 
-    const [themeMode, setThemeMode] = useState<boolean>(false)
+    const [themeMode, setThemeMode] = useState<boolean>(false);
 
     const theme = {
         dark: themeMode,
@@ -82,8 +82,8 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
     };
 
     function toggleThemeMode(): void {
-        setThemeMode(!themeMode)
-    }
+        setThemeMode(!themeMode);
+    };
 
     return (
         <ThemeContext.Provider value={{ theme, toggleThemeMode }}>
