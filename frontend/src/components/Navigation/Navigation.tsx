@@ -1,13 +1,16 @@
 import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
-import { applyStyling } from '../../utility/ApplyStyling';
+import styled from '@emotion/styled';
 
 const Navigation: FC = (): ReactElement => {
 
     const { theme, toggleThemeMode } = useContext(ThemeContext)!
 
-    const hoverInNavOption = (e: React.MouseEvent) => applyStyling(e, { color: theme.palette.secondary.main })
-    const hoverOutNavOption = (e: React.MouseEvent) => applyStyling(e, { color: 'white' })
+    const NavButtonOption = styled.span`
+        &:hover {
+            color: ${theme.palette.secondary.main};
+        }
+    `;
 
     return (
         <div id='navigation' style={{
@@ -32,17 +35,17 @@ const Navigation: FC = (): ReactElement => {
 
                 <div id='nav-options' style={{ color: 'white' }}>
 
-                    <span className='nav-option-button' onMouseEnter={hoverInNavOption} onMouseLeave={hoverOutNavOption}>
+                    <NavButtonOption className='nav-option-button'>
                         Fretboard
-                    </span>
+                    </NavButtonOption>
 
-                    <span className='nav-option-button' onMouseEnter={hoverInNavOption} onMouseLeave={hoverOutNavOption}>
+                    <NavButtonOption className='nav-option-button'>
                         Exercises
-                    </span>
+                    </NavButtonOption>
 
-                    <span className='nav-option-button' onMouseEnter={hoverInNavOption} onMouseLeave={hoverOutNavOption}>
+                    <NavButtonOption className='nav-option-button'>
                         About
-                    </span>
+                    </NavButtonOption>
 
                     <span className='nav-option-button'
                         style={{
