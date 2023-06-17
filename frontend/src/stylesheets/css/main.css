@@ -177,6 +177,26 @@ p {
   flex-direction: column;
   overflow-x: scroll;
 }
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container::-webkit-scrollbar {
+  height: 15px;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container::-webkit-scrollbar-button {
+  width: 100%;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container::-webkit-scrollbar-thumb {
+  background-color: #3EC199;
+  border: 3px solid #1F2928;
+  border-radius: 10px;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container::-webkit-scrollbar-thumb:hover {
+  background: #3EA7C1;
+  border: 3px solid rgba(31, 41, 40, 0.7529411765);
+  cursor: pointer;
+}
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck {
   padding: 2rem 0rem;
   display: flex;
@@ -226,7 +246,7 @@ p {
   color: #3EC199;
   width: 2.8rem;
   height: 2.8rem;
-  border-radius: 2.8rem;
+  border-radius: 50%;
   z-index: 1;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret .virtual-guitar-note:hover {

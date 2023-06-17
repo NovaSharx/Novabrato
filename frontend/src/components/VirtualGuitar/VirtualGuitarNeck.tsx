@@ -3,8 +3,7 @@ import VirtualGuitarString from './VirtualGuitarString';
 
 const VirtualGuitarNeck: FC = (): ReactElement => {
     return (
-        <div className='virtual-guitar-neck-container' style={{
-        }}>
+        <div className='virtual-guitar-neck-container'>
             <div className='virtual-guitar-neck'>
                 <VirtualGuitarString />
                 <VirtualGuitarString />

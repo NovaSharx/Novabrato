@@ -6,6 +6,9 @@ const Navigation: FC = (): ReactElement => {
 
     const { theme, toggleThemeMode } = useContext(ThemeContext)!
 
+    const hoverInNavOption = (e: React.MouseEvent) => applyStyling(e, { color: theme.palette.secondary.main })
+    const hoverOutNavOption = (e: React.MouseEvent) => applyStyling(e, { color: 'white' })
+
     return (
         <div id='navigation' style={{
             backgroundColor: 'black'
@@ -29,24 +32,15 @@ const Navigation: FC = (): ReactElement => {
 
                 <div id='nav-options' style={{ color: 'white' }}>
 
-                    <span className='nav-option-button'
-                        onMouseEnter={(e) => applyStyling(e, { color: theme.palette.secondary.main })}
-                        onMouseLeave={(e) => applyStyling(e, { color: 'white' })}
-                    >
+                    <span className='nav-option-button' onMouseEnter={hoverInNavOption} onMouseLeave={hoverOutNavOption}>
                         Fretboard
                     </span>
 
-                    <span className='nav-option-button'
-                        onMouseEnter={(e) => applyStyling(e, { color: theme.palette.secondary.main })}
-                        onMouseLeave={(e) => applyStyling(e, { color: 'white' })}
-                    >
+                    <span className='nav-option-button' onMouseEnter={hoverInNavOption} onMouseLeave={hoverOutNavOption}>
                         Exercises
                     </span>
 
-                    <span className='nav-option-button'
-                        onMouseEnter={(e) => applyStyling(e, { color: theme.palette.secondary.main })}
-                        onMouseLeave={(e) => applyStyling(e, { color: 'white' })}
-                    >
+                    <span className='nav-option-button' onMouseEnter={hoverInNavOption} onMouseLeave={hoverOutNavOption}>
                         About
                     </span>
 

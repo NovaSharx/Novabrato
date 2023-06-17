@@ -38,6 +38,32 @@
                 flex-direction: column;
                 overflow-x: scroll;
 
+                &::-webkit-scrollbar {
+                    height: 15px;
+                }
+
+                &::-webkit-scrollbar-button {
+                    width: 100%;
+                }
+
+                &::-webkit-scrollbar-track {
+                    border-radius: 10px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #3EC199;
+                    border: 3px solid #1F2928;
+                    border-radius: 10px;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #3EA7C1;
+                    border: 3px solid #1f2928c0;
+                    cursor: pointer;
+                }
+
+
                 .virtual-guitar-neck {
                     padding: 2rem 0rem;
                     display: flex;
@@ -101,7 +127,7 @@
                                 color: #3EC199;
                                 width: 2.8rem;
                                 height: 2.8rem;
-                                border-radius: 2.8rem;
+                                border-radius: 50%;
                                 z-index: 1;
 
                                 &:hover {
