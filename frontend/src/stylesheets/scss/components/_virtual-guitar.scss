@@ -1,0 +1,57 @@
+#virtual-guitar-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+
+    #virtual-guitar-title {
+        text-align: center;
+        font-size: 3rem;
+
+        h2 {}
+    }
+
+    #virtual-guitar-content {
+
+        #virtual-guitar-control-panel {
+            text-align: center;
+            width: 100%;
+            height: 10rem;
+            border: 2px solid grey;
+            border-radius: 1rem;
+        }
+
+        #virtual-guitar-fretboard-container {
+            box-sizing: border-box;
+            margin-top: 1rem;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+            border: 2px solid grey;
+            border-radius: 1rem;
+
+            #virtual-guitar-neck {
+                background-color: rgb(16, 77, 16);
+                display: flex;
+                flex-direction: column;
+                overflow-x: scroll;
+
+                #virtual-guitar-string {
+                    background-color: green;
+                    margin: 0.2rem;
+                    width: 2000px;
+
+                    #virtual-guitar-note {
+                        background-color: rgb(156, 255, 156);
+                        margin: 0.2rem;
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import HeroSection from './HeroSection';
+import VirtualGuitarContainer from '../VirtualGuitar/VirtualGuitarContainer';
 
 const Home: FC = (): ReactElement => {
 
@@ -11,6 +12,7 @@ const Home: FC = (): ReactElement => {
             backgroundColor: theme.palette.background.primary
         }}>
             <HeroSection />
+            <VirtualGuitarContainer />
         </div>
     );
 };
