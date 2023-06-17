@@ -165,7 +165,7 @@ p {
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container {
   box-sizing: border-box;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 0rem 1rem 1rem;
   text-align: center;
   width: 100%;
   border: 2px solid grey;

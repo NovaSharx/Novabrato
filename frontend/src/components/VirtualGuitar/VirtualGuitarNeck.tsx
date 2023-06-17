@@ -13,7 +13,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
         }
 
         &::-webkit-scrollbar-button {
-            width: 100%;
+            width: 1rem;
         }
 
         &::-webkit-scrollbar-track {
@@ -30,19 +30,18 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
         &::-webkit-scrollbar-thumb:hover {
             background: ${theme.palette.secondary.main};
             border: 3px solid #1f2928c0;
-            cursor: pointer;
         }
     `
 
     return (
         <StyledStringContainer className='virtual-guitar-neck-container'>
             <div className='virtual-guitar-neck'>
-                <VirtualGuitarString />
-                <VirtualGuitarString />
-                <VirtualGuitarString />
-                <VirtualGuitarString />
-                <VirtualGuitarString />
-                <VirtualGuitarString />
+                <VirtualGuitarString stringNote={'E'} stringOctave={4} />
+                <VirtualGuitarString stringNote={'B'} stringOctave={3} />
+                <VirtualGuitarString stringNote={'G'} stringOctave={3} />
+                <VirtualGuitarString stringNote={'D'} stringOctave={3} />
+                <VirtualGuitarString stringNote={'A'} stringOctave={2} />
+                <VirtualGuitarString stringNote={'E'} stringOctave={2} />
             </div>
 
             <div className='virtual-guitar-fret-labels'>
