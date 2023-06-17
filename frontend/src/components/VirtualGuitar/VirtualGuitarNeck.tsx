@@ -3,13 +3,20 @@ import VirtualGuitarString from './VirtualGuitarString';
 
 const VirtualGuitarNeck: FC = (): ReactElement => {
     return (
-        <div className='virtual-guitar-neck'>
-            <VirtualGuitarString />
-            <VirtualGuitarString />
-            <VirtualGuitarString />
-            <VirtualGuitarString />
-            <VirtualGuitarString />
-            <VirtualGuitarString />
+        <div className='virtual-guitar-neck-container' style={{
+        }}>
+            <div className='virtual-guitar-neck'>
+                <VirtualGuitarString />
+                <VirtualGuitarString />
+                <VirtualGuitarString />
+                <VirtualGuitarString />
+                <VirtualGuitarString />
+                <VirtualGuitarString />
+            </div>
+
+            <div className='virtual-guitar-fret-labels'>
+                Virtual Guitar Fret Labels
+            </div>
         </div>
     )
 }

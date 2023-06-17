@@ -1,5 +1,6 @@
 import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { applyStyling } from '../../utility/ApplyStyling';
 
 const Navigation: FC = (): ReactElement => {
 
@@ -26,12 +27,29 @@ const Navigation: FC = (): ReactElement => {
                     </a>
                 </div>
 
-                <div id='nav-options' style={{
-                    color: 'white'
-                }}>
-                    <span className='nav-option-button'>Fretboard</span>
-                    <span className='nav-option-button'>Exercises</span>
-                    <span className='nav-option-button'>About</span>
+                <div id='nav-options' style={{ color: 'white' }}>
+
+                    <span className='nav-option-button'
+                        onMouseEnter={(e) => applyStyling(e, { color: theme.palette.secondary.main })}
+                        onMouseLeave={(e) => applyStyling(e, { color: 'white' })}
+                    >
+                        Fretboard
+                    </span>
+
+                    <span className='nav-option-button'
+                        onMouseEnter={(e) => applyStyling(e, { color: theme.palette.secondary.main })}
+                        onMouseLeave={(e) => applyStyling(e, { color: 'white' })}
+                    >
+                        Exercises
+                    </span>
+
+                    <span className='nav-option-button'
+                        onMouseEnter={(e) => applyStyling(e, { color: theme.palette.secondary.main })}
+                        onMouseLeave={(e) => applyStyling(e, { color: 'white' })}
+                    >
+                        About
+                    </span>
+
                     <span className='nav-option-button'
                         style={{
                             backgroundColor: theme.palette.background.tertiary,

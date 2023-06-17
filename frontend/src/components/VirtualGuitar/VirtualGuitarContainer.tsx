@@ -8,25 +8,29 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
 
     return (
         <div className='main-section-container'>
-            <div className='virtual-guitar-container main-section' style={{
-                backgroundColor: theme.palette.background.primary,
-            }}>
-                <div className='virtual-guitar-title'>
-                    <h2 style={{
-                        color: theme.palette.text.primary
-                    }}>
-                        VIRTUAL GUITAR
-                    </h2>
+            <div className='main-section'>
+
+                <div className='virtual-guitar-container' style={{
+                    backgroundColor: theme.palette.background.primary,
+                }}>
+                    <div className='virtual-guitar-title'>
+                        <h2 style={{
+                            color: theme.palette.text.primary
+                        }}>
+                            VIRTUAL GUITAR
+                        </h2>
+                    </div>
+
+                    <div className='virtual-guitar-content'>
+                        <div className='virtual-guitar-control-panel'>
+                            Virtual Guitar Control Panel
+                        </div>
+                        <div className='virtual-guitar-fretboard-container'>
+                            <VirtualGuitarNeck />
+                        </div>
+                    </div>
                 </div>
 
-                <div className='virtual-guitar-content'>
-                    <div className='virtual-guitar-control-panel'>
-                        Virtual Guitar Control Panel
-                    </div>
-                    <div className='virtual-guitar-fretboard-container'>
-                        <VirtualGuitarNeck />
-                    </div>
-                </div>
             </div>
         </div>
     );
