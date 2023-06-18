@@ -1,9 +1,19 @@
 import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import styled from '@emotion/styled';
 
 const HeroSection: FC = (): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
+
+    const CallToActionButton = styled.span`
+        color: ${theme.palette.primary.main};
+        border: 2px solid ${theme.palette.primary.main};
+        &:hover: {
+            color: white;
+            border: 2px solid ${theme.palette.secondary.main};
+        }
+    `;
 
     return (
         <div id='hero-section-container' className='main-section-container'>
@@ -31,12 +41,9 @@ const HeroSection: FC = (): ReactElement => {
                 </span>
 
                 <span id='call-to-action'>
-                    <span id='call-to-action-button' style={{
-                        color: theme.palette.primary.main,
-                        border: `2px solid ${theme.palette.primary.main}`
-                    }}>
+                    <CallToActionButton id='call-to-action-button'>
                         START PRACTICING
-                    </span>
+                    </CallToActionButton>
                 </span>
             </div>
         </div>
