@@ -8,7 +8,7 @@ const Navigation: FC = (): ReactElement => {
 
     const NavButtonOption = styled.span`
         &:hover {
-            color: ${theme.palette.secondary.main};
+            color: ${theme.palette.primary.main};
         }
     `;
 

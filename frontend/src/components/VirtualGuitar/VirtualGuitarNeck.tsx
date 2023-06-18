@@ -8,6 +8,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
     const { theme } = useContext(ThemeContext)!
 
     const StyledStringContainer = styled.div`
+    
         &::-webkit-scrollbar {
             height: 15px;
         }
@@ -18,7 +19,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
 
         &::-webkit-scrollbar-track {
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: ${theme.dark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
         }
 
         &::-webkit-scrollbar-thumb {
@@ -29,9 +30,30 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
 
         &::-webkit-scrollbar-thumb:hover {
             background: ${theme.palette.secondary.main};
-            border: 3px solid #1f2928c0;
+            border: 4px solid #1f2928c0;
         }
+    `;
+
+    const FretMarker = styled.span`
+        color: ${theme.palette.text.secondary}
     `
+
+    const renderFretMarkers: JSX.Element[] = Array.from(Array(25).keys()).map((marker: number): JSX.Element => {
+
+        const boldMarker: number[] = [3, 5, 7, 9, 12, 15, 17, 19, 21, 24]
+
+        if (marker === 0) {
+            return <FretMarker key={marker} className='virtual-guitar-fret-marker'></FretMarker>
+        } else if (boldMarker.includes(marker)) {
+            return (
+                <FretMarker key={marker} className='virtual-guitar-fret-marker' style={{ color: theme.palette.text.primary, fontSize: '1.3em' }}>{marker}</FretMarker>
+            )
+        } else {
+            return (
+                <FretMarker key={marker} className='virtual-guitar-fret-marker'>{marker}</FretMarker>
+            )
+        }
+    })
 
     return (
         <StyledStringContainer className='virtual-guitar-neck-container'>
@@ -45,7 +67,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
             </div>
 
             <div className='virtual-guitar-fret-labels'>
-                Virtual Guitar Fret Labels
+                {renderFretMarkers}
             </div>
         </StyledStringContainer>
     )

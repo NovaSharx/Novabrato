@@ -26,7 +26,7 @@
         .virtual-guitar-fretboard-container {
             box-sizing: border-box;
             margin-top: 1rem;
-            padding: 1rem 0rem 1rem 1rem;
+            padding: 1rem;
             text-align: center;
             width: 100%;
             border: 2px solid grey;
@@ -74,6 +74,7 @@
 
                         .virtual-guitar-fret {
                             position: relative;
+                            box-sizing: border-box;
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -112,7 +113,6 @@
 
                         span {
                             display: flex;
-                            box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.75);
                             background-color: #1a1a1a;
 
                             .virtual-guitar-fret {
@@ -121,12 +121,28 @@
                                 &:first-child {
                                     border-left: 10px solid #b8b8b8;
                                 }
+
+                                &:last-child {
+                                    // overflow-x: hidden;
+                                }
                             }
                         }
                     }
                 }
 
-                .virtual-guitar-fret-labels {}
+                .virtual-guitar-fret-labels {
+                    display: flex;
+                    width: max-content;
+
+                    .virtual-guitar-fret-marker {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 10rem;
+                        height: 2rem;
+                        font-family: 'Inter';
+                    }
+                }
             }
         }
     }

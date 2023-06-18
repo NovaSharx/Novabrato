@@ -132,7 +132,7 @@ p {
 }
 #navigation #navigation-container #nav-options .nav-option-button {
   padding: 0rem 1.5rem;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 #navigation #navigation-container #nav-options .nav-option-button:hover {
   cursor: pointer;
@@ -165,7 +165,7 @@ p {
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container {
   box-sizing: border-box;
   margin-top: 1rem;
-  padding: 1rem 0rem 1rem 1rem;
+  padding: 1rem;
   text-align: center;
   width: 100%;
   border: 2px solid grey;
@@ -200,6 +200,7 @@ p {
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret {
   position: relative;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,7 +235,6 @@ p {
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string span {
   display: flex;
-  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.75);
   background-color: #1a1a1a;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string span .virtual-guitar-fret {
@@ -243,6 +243,19 @@ p {
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string span .virtual-guitar-fret:first-child {
   border-left: 10px solid #b8b8b8;
 }
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-fret-labels {
+  display: flex;
+  width: max-content;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-fret-labels .virtual-guitar-fret-marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2rem;
+  font-family: "Inter";
+}
+
 #home {
   flex-grow: 1;
 }

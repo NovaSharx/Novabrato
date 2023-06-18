@@ -41,7 +41,7 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
 
         setTimeout((): void => {
             audioContext.close();
-        }, 2000);
+        }, 5000);
     };
 
     return (
