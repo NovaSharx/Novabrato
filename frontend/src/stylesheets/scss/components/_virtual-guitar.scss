@@ -5,6 +5,7 @@
     flex-direction: column;
     border-radius: 1rem;
     box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.75);
+    -webkit-user-select: none;
 
     .virtual-guitar-title {
         text-align: center;
@@ -17,15 +18,43 @@
 
         .virtual-guitar-control-panel {
             width: 100%;
-            border: 2px solid #80808050;
+            border: 2px solid #80808020;
             border-radius: 1rem;
 
             .virtual-guitar-main-panel {
                 padding: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 width: 15rem;
                 height: 15rem;
-                border: 2px solid grey;
+                border: 3px solid grey;
                 border-radius: 1rem;
+
+                .virtual-guitar-main-panel-item {
+                    display: flex;
+                    flex-direction: column;
+
+                    .main-panel-label {
+                        font-size: 0.9rem;
+                        font-weight: 800;
+                    }
+
+                    .main-panel-selection {
+                        height: 45px;
+                        border-width: 2px;
+                        border-style: solid;
+                        border-radius: 10px;
+                        text-align: center;
+                        font-size: 1rem;
+                        appearance: none;
+
+                        &:hover {
+                            cursor: pointer;
+                            border-width: 3px;
+                        }
+                    }
+                }
             }
         }
 
@@ -84,13 +113,13 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            width: 10rem;
-                            height: 4rem;
+                            width: 6.6rem;
+                            height: 3rem;
 
                             &::after {
                                 position: absolute;
                                 width: 120%;
-                                height: 3px;
+                                height: 2px;
                                 background-color: #9C7C2A;
                                 border-radius: 1rem;
                                 content: '';
@@ -102,10 +131,12 @@
                                 align-items: center;
                                 background-color: black;
                                 font-family: 'Inter';
-                                font-size: 1.3rem;
+                                font-size: 1rem;
                                 font-weight: 800;
-                                width: 2.8rem;
-                                height: 2.8rem;
+                                width: 2.2rem;
+                                height: 2.2rem;
+                                border-width: 1px;
+                                border-style: solid;
                                 border-radius: 50%;
                                 z-index: 1;
                                 transition: 0.1s;
@@ -113,6 +144,7 @@
                                 &:hover {
                                     cursor: pointer;
                                     font-size: 1.5rem;
+                                    border-width: 5px;
                                 }
                             }
                         }
@@ -144,7 +176,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        width: 10rem;
+                        width: 6.6rem;
                         height: 2rem;
                         font-family: 'Inter';
                     }

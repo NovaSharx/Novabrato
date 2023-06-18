@@ -151,6 +151,7 @@ p {
   flex-direction: column;
   border-radius: 1rem;
   box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.75);
+  -webkit-user-select: none;
 }
 .virtual-guitar-container .virtual-guitar-title {
   text-align: center;
@@ -158,15 +159,39 @@ p {
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel {
   width: 100%;
-  border: 2px solid rgba(128, 128, 128, 0.3137254902);
+  border: 2px solid rgba(128, 128, 128, 0.1254901961);
   border-radius: 1rem;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-main-panel {
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 15rem;
   height: 15rem;
-  border: 2px solid grey;
+  border: 3px solid grey;
   border-radius: 1rem;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-main-panel .virtual-guitar-main-panel-item {
+  display: flex;
+  flex-direction: column;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-main-panel .virtual-guitar-main-panel-item .main-panel-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-main-panel .virtual-guitar-main-panel-item .main-panel-selection {
+  height: 45px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  appearance: none;
+}
+.virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-main-panel .virtual-guitar-main-panel-item .main-panel-selection:hover {
+  cursor: pointer;
+  border-width: 3px;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container {
   box-sizing: border-box;
@@ -210,13 +235,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 4rem;
+  width: 6.6rem;
+  height: 3rem;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret::after {
   position: absolute;
   width: 120%;
-  height: 3px;
+  height: 2px;
   background-color: #9C7C2A;
   border-radius: 1rem;
   content: "";
@@ -227,10 +252,12 @@ p {
   align-items: center;
   background-color: black;
   font-family: "Inter";
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 800;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 50%;
   z-index: 1;
   transition: 0.1s;
@@ -238,6 +265,7 @@ p {
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret .virtual-guitar-note:hover {
   cursor: pointer;
   font-size: 1.5rem;
+  border-width: 5px;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string span {
   display: flex;
@@ -257,7 +285,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
+  width: 6.6rem;
   height: 2rem;
   font-family: "Inter";
 }

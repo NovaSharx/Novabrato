@@ -1,6 +1,7 @@
 import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import VirtualGuitarNeck from './VirtualGuitarNeck';
+import VirtualGuitarControlPanel from './VirtualGuitarControlPanel';
 
 const VirtualGuitarContainer: FC = (): ReactElement => {
 
@@ -22,19 +23,9 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
                     </div>
 
                     <div className='virtual-guitar-content'>
-                        <div className='virtual-guitar-control-panel'>
-                            <div className='virtual-guitar-main-panel'>
-                                <div className='virtual-guitar-root-panel'>
 
-                                </div>
-                                <div className='virtual-guitar-mode-panel'>
+                        <VirtualGuitarControlPanel />
 
-                                </div>
-                                <div className='virtual-guitar-note-label-panel'>
-
-                                </div>
-                            </div>
-                        </div>
                         <div className='virtual-guitar-fretboard-container'>
                             <VirtualGuitarNeck />
                         </div>

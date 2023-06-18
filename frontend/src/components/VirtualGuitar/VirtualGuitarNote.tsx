@@ -16,11 +16,10 @@ const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, frequency }): Rea
 
     const StyledNote = styled.div`
         color: ${selectedNotes.includes(note) ? 'white' : theme.palette.primary.main};
-        border: 2px solid ${selectedNotes.includes(note) ? theme.palette.secondary.main : theme.palette.primary.main};
-        -webkit-user-select: none;
+        border-color: ${selectedNotes.includes(note) ? theme.palette.secondary.main : theme.palette.primary.main};
         &:hover {
             color: white;
-            border: 5px solid ${theme.palette.secondary.main};
+            border-color: ${theme.palette.secondary.main};
         }
     `;
 
