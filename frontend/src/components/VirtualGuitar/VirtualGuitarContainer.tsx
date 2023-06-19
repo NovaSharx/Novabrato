@@ -26,7 +26,7 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
 
                         <VirtualGuitarControlPanel />
 
-                        <div className='virtual-guitar-fretboard-container'>
+                        <div className='virtual-guitar-fretboard-container' style={{borderColor: theme.palette.divider.secondary}}>
                             <VirtualGuitarNeck />
                         </div>
                     </div>

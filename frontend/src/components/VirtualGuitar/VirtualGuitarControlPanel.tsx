@@ -26,7 +26,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     return (
         <div className='virtual-guitar-control-panel'>
-            <div className='virtual-guitar-main-panel'>
+            <div className='virtual-guitar-main-panel' style={{borderColor: theme.palette.divider.secondary}}>
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-root' className='main-panel-label' style={{ color: theme.palette.text.primary }}>ROOT</label>

@@ -6,24 +6,27 @@ interface ITheme {
         palette: {
             primary: {
                 main: string,
-                themeMode: string,
+                themeMode: string
             },
             secondary: {
                 main: string,
-                themeMode: string,
+                themeMode: string
             },
             background: {
                 full: string,
                 primary: string,
                 secondary: string,
-                tertiary: string,
+                tertiary: string
             },
             text: {
-                primary: string;
-                secondary: string;
-            } | {
-                primary: string;
-                secondary: string;
+                primary: string,
+                secondary: string,
+                tertiary: string
+            },
+            divider: {
+                primary: string,
+                secondary: string,
+                tertiary: string
             }
         }
     },
@@ -59,7 +62,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     full: '#000',
                     primary: '#1a1a1a',
                     secondary: '#3a3a3a',
-                    tertiary: '#595959',
+                    tertiary: '#595959'
                 }
                 :
                 // light
@@ -67,20 +70,36 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     full: '#fff',
                     primary: '#dedede',
                     secondary: '#ededed',
-                    tertiary: '#f4f4f4',
+                    tertiary: '#f4f4f4'
                 },
             text: themeMode ?
                 // dark
                 {
                     primary: '#bfbfbf',
-                    secondary: '#777777'
+                    secondary: '#777777',
+                    tertiary: '#444444'
                 }
                 :
                 // light
                 {
                     primary: '#3d3d3d',
-                    secondary: '#6f6f6f'
+                    secondary: '#6f6f6f',
+                    tertiary: '#b7b7b7'
+                },
+            divider: themeMode ?
+                // dark
+                {
+                    primary: '#ffffff75',
+                    secondary: '#ffffff50',
+                    tertiary: '#ffffff25'
                 }
+                :
+                // light
+                {
+                    primary: '#00000075',
+                    secondary: '#00000050',
+                    tertiary: '#00000025'
+                },
         }
     };
 
