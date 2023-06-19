@@ -20,7 +20,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     const renderRootoptions: JSX.Element[] = noteLibrary.map((root: string, index: number): JSX.Element => {
         return (
-            <option value={root}>{root}</option>
+            <option key={index} value={root}>{root}</option>
         )
     })
 
