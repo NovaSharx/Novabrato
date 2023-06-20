@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext } from 'react';
+import { FC, ReactElement, useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
@@ -7,7 +7,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
 
-    const { noteLibrary } = useContext(VirtualGuitarContext)!
+    const { noteLibrary, root, mode, noteLabel, calculateScaleNotes } = useContext(VirtualGuitarContext)!
 
     const VirtualGuitarSelect = styled.select`
         color: ${theme.palette.text.primary};
@@ -26,11 +26,11 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     return (
         <div className='virtual-guitar-control-panel'>
-            <div className='virtual-guitar-main-panel' style={{borderColor: theme.palette.divider.secondary}}>
+            <div className='virtual-guitar-main-panel' style={{ borderColor: theme.palette.divider.secondary }}>
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-root' className='main-panel-label' style={{ color: theme.palette.text.primary }}>ROOT</label>
-                    <VirtualGuitarSelect id='virtual-guitar-root' className='main-panel-selection'>
+                    <VirtualGuitarSelect id='virtual-guitar-root' className='main-panel-selection' value={root} onChange={(e) => calculateScaleNotes(e.target.value, mode)}>
                         <option value=''>--Please choose an option--</option>
                         {renderRootoptions}
                     </VirtualGuitarSelect>
@@ -38,7 +38,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-mode' className='main-panel-label' style={{ color: theme.palette.text.primary }}>MODE</label>
-                    <VirtualGuitarSelect id='virtual-guitar-mode' className='main-panel-selection'>
+                    <VirtualGuitarSelect id='virtual-guitar-mode' className='main-panel-selection' value={mode} onChange={(e) => calculateScaleNotes(root, e.target.value)}>
                         <option value=''>--Please choose an option--</option>
                         <option value='ionian'>Ionian (Major Scale)</option>
                         <option value='aeolian'>Aeolian (Minor Scale)</option>
@@ -49,7 +49,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-note-label' className='main-panel-label' style={{ color: theme.palette.text.primary }}>NOTE LABEL</label>
-                    <VirtualGuitarSelect id='virtual-guitar-note-label' className='main-panel-selection'>
+                    <VirtualGuitarSelect id='virtual-guitar-note-label' className='main-panel-selection' value={noteLabel} onChange={(e) => console.log(e.target.value)}>
                         <option value='notes'>Notes</option>
                         <option value='degrees'>Degrees</option>
                         <option value='intervals'>Intervals</option>

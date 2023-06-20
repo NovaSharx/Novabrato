@@ -330,7 +330,8 @@ p {
   width: 30rem;
 }
 #home #hero-section-container #hero-section #hero-section-info span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 300;
   text-align: center;
 }
 #home #hero-section-container #hero-section #call-to-action {
