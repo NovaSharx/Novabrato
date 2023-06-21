@@ -8,10 +8,12 @@ const HeroSection: FC = (): ReactElement => {
 
     const CallToActionButton = styled.span`
         color: ${theme.palette.primary.main};
-        border: 2px solid ${theme.palette.primary.main};
+        background-color: #121212;
+        border-color: ${theme.palette.primary.main};
         &:hover {
             color: white;
-            border: 2px solid ${theme.palette.secondary.main};
+            background-color: ${theme.palette.secondary.main};
+            border-color: white;
         }
     `;
 

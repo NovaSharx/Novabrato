@@ -340,9 +340,10 @@ p {
 }
 #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
   padding: 1.5rem 4rem;
-  background-color: #121212;
+  border-width: 5px;
+  border-style: solid;
   font-size: 1.5rem;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 #home #hero-section-container #hero-section #call-to-action #call-to-action-button:hover {
   cursor: pointer;
