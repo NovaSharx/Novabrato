@@ -169,9 +169,32 @@
                     }
                 }
 
-                .virtual-guitar-fret-labels {
+                .virtual-guitar-aside {
                     display: flex;
                     width: max-content;
+
+                    .virtual-guitar-settings {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 6.6rem;
+                        height: 2rem;
+
+                        .virtual-guitar-settings-button {
+                            border-width: 2px;
+                            border-style: solid;
+                            border-radius: 2rem;
+                            background-color: black;
+                            width: 2.2rem;
+                            height: 2.2rem;
+                            transition: 1s;
+
+                            &:hover {
+                                cursor: pointer;
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
 
                     .virtual-guitar-fret-marker {
                         display: flex;

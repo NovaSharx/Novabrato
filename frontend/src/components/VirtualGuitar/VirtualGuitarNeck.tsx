@@ -2,6 +2,7 @@ import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
 import VirtualGuitarString from './VirtualGuitarString';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const VirtualGuitarNeck: FC = (): ReactElement => {
 
@@ -38,12 +39,20 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
         color: ${theme.palette.text.disabled}
     `
 
-    const renderFretMarkers: JSX.Element[] = Array.from(Array(25).keys()).map((marker: number): JSX.Element => {
+    const GuitarConfigButton = styled.span`
+        color: ${theme.palette.primary.main}
+    `
+
+    const renderGuitarAside: JSX.Element[] = Array.from(Array(25).keys()).map((marker: number): JSX.Element => {
 
         const boldMarker: number[] = [3, 5, 7, 9, 12, 15, 17, 19, 21, 24]
 
         if (marker === 0) {
-            return <FretMarker key={marker} className='virtual-guitar-fret-marker'></FretMarker>
+            return (
+                <GuitarConfigButton className='virtual-guitar-settings'>
+                    <SettingsIcon className='virtual-guitar-settings-button' style={{ borderColor: theme.palette.primary.main }} />
+                </GuitarConfigButton>
+            )
         } else if (boldMarker.includes(marker)) {
             return (
                 <FretMarker key={marker} className='virtual-guitar-fret-marker' style={{ color: theme.palette.text.primary, fontSize: '1.3em' }}>{marker}</FretMarker>
@@ -66,8 +75,8 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
                 <VirtualGuitarString stringNote={'E'} stringOctave={2} />
             </div>
 
-            <div className='virtual-guitar-fret-labels'>
-                {renderFretMarkers}
+            <div className='virtual-guitar-aside'>
+                {renderGuitarAside}
             </div>
         </StyledStringContainer>
     )
