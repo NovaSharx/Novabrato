@@ -243,7 +243,7 @@ p {
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret::after {
   position: absolute;
-  width: 120%;
+  width: 130%;
   height: 2px;
   background-color: #9C7C2A;
   border-radius: 1rem;

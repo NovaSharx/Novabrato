@@ -12,7 +12,7 @@ const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, frequency }): Rea
 
     const { theme } = useContext(ThemeContext)!
 
-    const { highlightedNotes, setHighlightedNotes, playNote, scaleNotes } = useContext(VirtualGuitarContext)!
+    const { highlightedNotes, setHighlightedNotes, playNote, scaleNotes, noteLabel, noteLabelLibrary } = useContext(VirtualGuitarContext)!
 
     const StyledNote = styled.div`
         color: ${highlightedNotes.includes(note) ? 'white'
@@ -49,10 +49,19 @@ const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, frequency }): Rea
         }
     }
 
+    function renderNote(): string {
+        let displayNote: string = note
+        if (scaleNotes.length && scaleNotes.includes(note)) {
+            displayNote = noteLabelLibrary[noteLabel][noteLabelLibrary['notes'].indexOf(note)]
+        }
+
+        return displayNote
+    }
+
     return (
         <div className='virtual-guitar-fret'>
             <StyledNote className='virtual-guitar-note' onClick={handleClick} onContextMenu={event => handleRightClick(event)}>
-                {note}
+                {renderNote()}
             </StyledNote>
         </div>
     )

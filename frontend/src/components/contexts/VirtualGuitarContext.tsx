@@ -8,13 +8,15 @@ interface IVirtualGuitar {
     root: string,
     mode: string,
     noteLabel: string,
+    setNoteLabel: React.Dispatch<React.SetStateAction<string>>,
 
     playNote: (frequency: number) => Promise<void>,
 
     calculateScaleNotes: (newRoot: string, newMode: string) => void,
 
     noteLibrary: string[],
-    baseFrequencyLibrary: number[]
+    baseFrequencyLibrary: number[],
+    noteLabelLibrary: { [key: string]: string[] }
 };
 
 export const VirtualGuitarContext = createContext<IVirtualGuitar | null>(null);
@@ -32,14 +34,20 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
 
     const baseFrequencyLibrary: number[] = [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 29.14, 30.87];
 
-    const modeIntervalPatterns: { [key: string]: number[] | undefined } = {
+    const modeIntervalPatterns: { [key: string]: number[] } = {
         'ionian': [1, 1, 0, 1, 1, 1, 0],
         'aeolian': [1, 0, 1, 1, 0, 1, 1],
         'major-pentatonic': [1, 1, 2, 1, 2],
         'minor-pentatonic': [2, 1, 1, 2, 1]
     }
 
-    const chordCycle = ['major', 'minor', 'minor', 'major', 'major', 'minor', 'minor dim']
+    const chordCycle: string[] = ['major', 'minor', 'minor', 'major', 'major', 'minor', 'minor dim']
+
+    const noteLabelLibrary: { [key: string]: string[] } = {
+        notes: scaleNotes,
+        degrees: ['R', '2', '3', '4', '5', '6', '7'],
+        intervals: ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7']
+    }
 
     function calculateScaleNotes(newRoot: string, newMode: string): void {
         let newScale: string[] = [];
@@ -93,10 +101,12 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
             root,
             mode,
             noteLabel,
+            setNoteLabel,
             playNote,
             calculateScaleNotes,
             noteLibrary,
-            baseFrequencyLibrary
+            baseFrequencyLibrary,
+            noteLabelLibrary
         }}>
             {children}
         </VirtualGuitarContext.Provider>

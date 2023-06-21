@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext, useState } from 'react';
+import { FC, ReactElement, useContext } from 'react';
 import styled from '@emotion/styled';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
@@ -7,7 +7,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
 
-    const { noteLibrary, root, mode, noteLabel, calculateScaleNotes } = useContext(VirtualGuitarContext)!
+    const { noteLibrary, root, mode, noteLabel, setNoteLabel, calculateScaleNotes } = useContext(VirtualGuitarContext)!
 
     const VirtualGuitarSelect = styled.select`
         color: ${theme.palette.text.primary};
@@ -49,7 +49,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-note-label' className='main-panel-label' style={{ color: theme.palette.text.primary }}>NOTE LABEL</label>
-                    <VirtualGuitarSelect id='virtual-guitar-note-label' className='main-panel-selection' value={noteLabel} onChange={(e) => console.log(e.target.value)}>
+                    <VirtualGuitarSelect id='virtual-guitar-note-label' className='main-panel-selection' value={noteLabel} onChange={(e) => setNoteLabel(e.target.value)}>
                         <option value='notes'>Notes</option>
                         <option value='degrees'>Degrees</option>
                         <option value='intervals'>Intervals</option>
