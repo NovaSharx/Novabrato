@@ -21,7 +21,8 @@ interface ITheme {
             text: {
                 primary: string,
                 secondary: string,
-                tertiary: string
+                tertiary: string,
+                disabled: string
             },
             divider: {
                 primary: string,
@@ -77,14 +78,16 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                 {
                     primary: '#bfbfbf',
                     secondary: '#777777',
-                    tertiary: '#444444'
+                    tertiary: '#444444',
+                    disabled: '#bfbfbf50'
                 }
                 :
                 // light
                 {
                     primary: '#3d3d3d',
                     secondary: '#6f6f6f',
-                    tertiary: '#b7b7b7'
+                    tertiary: '#b7b7b7',
+                    disabled: '#3d3d3d50'
                 },
             divider: themeMode ?
                 // dark

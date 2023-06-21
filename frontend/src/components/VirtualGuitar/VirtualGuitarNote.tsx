@@ -18,6 +18,7 @@ const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, frequency }): Rea
         color: ${highlightedNotes.includes(note) ? 'white'
             : scaleNotes.length ? scaleNotes.includes(note) ? theme.palette.primary.main : 'white'
                 : theme.palette.primary.main};
+        border-width: ${highlightedNotes.includes(note) ? '3px' : '1px'};
         border-color: ${highlightedNotes.includes(note) ? theme.palette.secondary.main
             : scaleNotes.length ? scaleNotes.includes(note) ? theme.palette.primary.main : 'white'
                 : theme.palette.primary.main};

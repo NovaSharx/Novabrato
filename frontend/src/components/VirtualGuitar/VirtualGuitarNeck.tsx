@@ -35,7 +35,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
     `;
 
     const FretMarker = styled.span`
-        color: ${theme.palette.text.secondary}
+        color: ${theme.palette.text.disabled}
     `
 
     const renderFretMarkers: JSX.Element[] = Array.from(Array(25).keys()).map((marker: number): JSX.Element => {
