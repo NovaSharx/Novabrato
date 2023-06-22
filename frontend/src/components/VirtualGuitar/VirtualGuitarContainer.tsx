@@ -12,7 +12,7 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
             <div className='main-section'>
 
                 <div className='virtual-guitar-container' style={{
-                    backgroundColor: theme.palette.background.primary,
+                    backgroundColor: theme.palette.background.primary
                 }}>
                     <div className='virtual-guitar-title'>
                         <h2 style={{
@@ -26,7 +26,7 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
 
                         <VirtualGuitarControlPanel />
 
-                        <div className='virtual-guitar-fretboard-container' style={{borderColor: theme.palette.divider.secondary}}>
+                        <div className='virtual-guitar-fretboard-container' style={{ borderColor: theme.palette.divider.tertiary }}>
                             <VirtualGuitarNeck />
                         </div>
                     </div>

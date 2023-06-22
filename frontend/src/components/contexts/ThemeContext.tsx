@@ -18,6 +18,11 @@ interface ITheme {
                 secondary: string,
                 tertiary: string
             },
+            shadow: {
+                primary: string,
+                secondary: string,
+                tertiary: string
+            },
             text: {
                 primary: string,
                 secondary: string,
@@ -72,6 +77,20 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     primary: '#dedede',
                     secondary: '#ededed',
                     tertiary: '#f4f4f4'
+                },
+            shadow: themeMode ?
+                // dark
+                {
+                    primary: '#ffffff50',
+                    secondary: '#ffffff25',
+                    tertiary: '#ffffff15'
+                }
+                :
+                // light
+                {
+                    primary: '#00000050',
+                    secondary: '#00000025',
+                    tertiary: '#00000015'
                 },
             text: themeMode ?
                 // dark
