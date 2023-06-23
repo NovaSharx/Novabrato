@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext } from 'react';
+import { FC, ReactElement, useContext, Fragment } from 'react';
 import styled from '@emotion/styled';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
@@ -7,7 +7,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
 
-    const { noteLibrary, root, mode, noteLabel, setNoteLabel, calculateScaleNotes } = useContext(VirtualGuitarContext)!
+    const { noteLibrary, root, mode, noteLabel, setNoteLabel, calculateScaleNotes, scaleNotes, getTriadNotes } = useContext(VirtualGuitarContext)!
 
     const VirtualGuitarSelect = styled.select`
         color: ${theme.palette.text.primary};
@@ -18,6 +18,31 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
         }
     `;
 
+    const TriadButton = styled.span`
+        color: ${theme.palette.text.primary};
+        border-color: ${theme.palette.primary.main};
+        &:hover {
+            border-color: ${theme.palette.secondary.main};
+        }
+    `;
+
+    const renderTriadButtons: JSX.Element[] = scaleNotes.map((root: string, index: number): JSX.Element => {
+
+        return (
+            <TriadButton key={index} className='triad-button'>
+                <div className='triad-button-notes'>
+                    {getTriadNotes(root).map((triadNote: string, idx: number): JSX.Element => {
+                        return (
+                            <span key={idx}>
+                                {idx !== 0 && ' - '}{triadNote}
+                            </span>
+                        )
+                    })}
+                </div>
+            </TriadButton>
+        )
+    })
+
     const renderRootoptions: JSX.Element[] = noteLibrary.map((root: string, index: number): JSX.Element => {
         return (
             <option key={index} value={root}>{root}</option>
@@ -26,6 +51,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     return (
         <div className='virtual-guitar-control-panel'>
+
             <div className='virtual-guitar-main-panel' style={{ boxShadow: `0rem 0rem 1rem 0rem ${theme.palette.shadow.primary}` }}>
 
                 <div className='virtual-guitar-main-panel-item'>
@@ -54,6 +80,17 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
                         <option value='degrees'>Degrees</option>
                         <option value='intervals'>Intervals</option>
                     </VirtualGuitarSelect>
+                </div>
+
+            </div>
+
+            <div className='virtual-guitar-secondary-panel' style={{ boxShadow: `0rem 0rem 1rem 0rem ${theme.palette.shadow.primary}` }}>
+
+                <div className='virtual-guitar-secondary-panel-item'>
+                    <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>
+                    <div id='virtual-guitar-triads'>
+                        {scaleNotes.length ? renderTriadButtons : '...Select a scale...'}
+                    </div>
                 </div>
 
             </div>

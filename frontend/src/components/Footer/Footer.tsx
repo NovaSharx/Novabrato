@@ -10,7 +10,11 @@ const Footer: FC = (): ReactElement => {
             backgroundColor: theme.palette.background.tertiary
         }}>
             <div className='main-section'>
-                Footer
+
+                <div id='footer-bottom'>
+                    <span style={{color: theme.palette.text.primary}}>© Copyright 2023 | Davin Jones</span>
+                </div>
+
             </div>
         </div>
     );

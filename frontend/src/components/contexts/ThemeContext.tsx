@@ -66,9 +66,9 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                 // dark
                 {
                     full: '#000',
-                    primary: '#1a1a1a',
+                    primary: '#595959',
                     secondary: '#3a3a3a',
-                    tertiary: '#595959'
+                    tertiary: '#1a1a1a'
                 }
                 :
                 // light

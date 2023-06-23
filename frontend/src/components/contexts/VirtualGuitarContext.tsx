@@ -13,6 +13,7 @@ interface IVirtualGuitar {
     playNote: (frequency: number) => Promise<void>,
 
     calculateScaleNotes: (newRoot: string, newMode: string) => void,
+    getTriadNotes: (rootNote: string) => string[],
 
     noteLibrary: string[],
     baseFrequencyLibrary: number[],
@@ -61,6 +62,8 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
 
                 newScale.push(noteLibrary[index])
 
+
+
                 iteration += modeIntervalPatterns[newMode]![modeIndex]
             }
 
@@ -70,6 +73,22 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
         setScaleNotes(newScale)
         setRoot(newRoot)
         setMode(newMode)
+    }
+
+    function getTriadNotes(rootNote: string) {
+        let triadArray: string[] = []
+        let rootNoteIndex: number = scaleNotes.indexOf(rootNote)
+
+        for (let iteration: number = 0; iteration < scaleNotes.length; iteration++) {
+            let index: number = (iteration + rootNoteIndex) % scaleNotes.length
+
+            triadArray.push(scaleNotes[index])
+            iteration++
+        }
+
+        triadArray.splice(-1) // Omitting seventh on purpose *TBA*
+
+        return triadArray
     }
 
     async function playNote(frequency: number): Promise<void> {
@@ -104,6 +123,7 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
             setNoteLabel,
             playNote,
             calculateScaleNotes,
+            getTriadNotes,
             noteLibrary,
             baseFrequencyLibrary,
             noteLabelLibrary

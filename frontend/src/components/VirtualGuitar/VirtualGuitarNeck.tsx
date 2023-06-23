@@ -49,7 +49,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
 
         if (marker === 0) {
             return (
-                <GuitarConfigButton className='virtual-guitar-settings'>
+                <GuitarConfigButton key={marker} className='virtual-guitar-settings'>
                     <SettingsIcon className='virtual-guitar-settings-button' style={{ borderColor: theme.palette.primary.main }} />
                 </GuitarConfigButton>
             )
