@@ -40,15 +40,24 @@
             justify-content: flex-end;
             align-items: center;
 
-            .nav-option-button {
-                margin: 0rem 1rem;
-                padding: 0rem 1.5rem;
-                transition: 0.2s;
+            ul {
+                display: flex;
+                list-style: none;
 
-                &:hover {
-                    cursor: pointer;
+                li {
+                    .nav-option-button {
+                        margin: 0rem 1rem;
+                        padding: 0.5rem 1.5rem;
+                        text-decoration: none;
+                        transition: 0.2s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
+
         }
     }
 }

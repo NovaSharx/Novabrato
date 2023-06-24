@@ -6,7 +6,9 @@ const Navigation: FC = (): ReactElement => {
 
     const { theme, toggleThemeMode } = useContext(ThemeContext)!
 
-    const NavButtonOption = styled.span`
+    const NavButtonOption = styled.a`
+        color: white;
+
         &:hover {
             color: ${theme.palette.primary.main};
         }
@@ -35,28 +37,40 @@ const Navigation: FC = (): ReactElement => {
 
                 <div id='nav-options' style={{ color: 'white' }}>
 
-                    <NavButtonOption className='nav-option-button'>
-                        Fretboard
-                    </NavButtonOption>
+                    <ul>
+                        <li>
+                            <NavButtonOption className='nav-option-button' href='#virtual-guitar-container'>
+                                Fretboard
+                            </NavButtonOption>
+                        </li>
 
-                    <NavButtonOption className='nav-option-button'>
-                        Exercises
-                    </NavButtonOption>
+                        <li>
+                            <NavButtonOption className='nav-option-button' href='/exercises'>
+                                Exercises
+                            </NavButtonOption>
+                        </li>
 
-                    <NavButtonOption className='nav-option-button'>
-                        About
-                    </NavButtonOption>
+                        <li>
+                            <NavButtonOption className='nav-option-button' href='/about'>
+                                About
+                            </NavButtonOption>
 
-                    <span className='nav-option-button'
-                        style={{
-                            backgroundColor: theme.palette.background.tertiary,
-                            color: theme.palette.text.primary,
-                            borderRadius: '0.2rem'
-                        }}
-                        onClick={toggleThemeMode}
-                    >
-                        {theme.dark ? 'Dark' : 'Light'}
-                    </span>
+                        </li>
+
+                        <li>
+                            <span className='nav-option-button'
+                                style={{
+                                    backgroundColor: theme.palette.background.tertiary,
+                                    color: theme.palette.text.primary,
+                                    borderRadius: '0.2rem'
+                                }}
+                                onClick={toggleThemeMode}
+                            >
+                                {theme.dark ? 'Dark' : 'Light'}
+                            </span>
+                        </li>
+                    </ul>
+
                 </div>
 
             </div>

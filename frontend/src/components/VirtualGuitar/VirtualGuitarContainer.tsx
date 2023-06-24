@@ -11,7 +11,7 @@ const VirtualGuitarContainer: FC = (): ReactElement => {
         <div className='main-section-container'>
             <div className='main-section'>
 
-                <div className='virtual-guitar-container' style={{
+                <div id='virtual-guitar-container' style={{
                     backgroundColor: theme.palette.background.primary,
                     boxShadow: `0rem 0rem 2rem 0rem ${theme.palette.shadow.tertiary}`
                 }}>
