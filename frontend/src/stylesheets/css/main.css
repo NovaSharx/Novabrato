@@ -170,6 +170,8 @@ p {
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-main-panel {
   padding: 1rem;
   display: flex;
+  border-width: 2px;
+  border-style: solid;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 1rem;
@@ -200,6 +202,8 @@ p {
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-secondary-panel {
   padding: 1rem;
   flex-grow: 1;
+  border-width: 2px;
+  border-style: solid;
   border-radius: 1rem;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel .virtual-guitar-secondary-panel #virtual-guitar-triads {
@@ -225,8 +229,6 @@ p {
   padding: 1rem;
   text-align: center;
   width: 100%;
-  border-width: 2px;
-  border-style: solid;
   border-radius: 1rem;
 }
 .virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container {

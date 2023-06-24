@@ -7,7 +7,7 @@ const Footer: FC = (): ReactElement => {
 
     return (
         <div id='footer' className='main-section-container' style={{
-            backgroundColor: theme.palette.background.tertiary
+            backgroundColor: theme.palette.background.full
         }}>
             <div className='main-section'>
 

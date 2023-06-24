@@ -12,7 +12,6 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
     const VirtualGuitarSelect = styled.select`
         color: ${theme.palette.text.primary};
         border-color: ${theme.palette.primary.main};
-        background-color: ${theme.palette.background.primary};
         &:hover {
             border-color: ${theme.palette.secondary.main};
         }
@@ -52,7 +51,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
     return (
         <div className='virtual-guitar-control-panel'>
 
-            <div className='virtual-guitar-main-panel' style={{ boxShadow: `0rem 0rem 1rem 0rem ${theme.palette.shadow.primary}` }}>
+            <div className='virtual-guitar-main-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-root' className='main-panel-label' style={{ color: theme.palette.text.primary }}>ROOT</label>
@@ -84,7 +83,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
             </div>
 
-            <div className='virtual-guitar-secondary-panel' style={{ boxShadow: `0rem 0rem 1rem 0rem ${theme.palette.shadow.primary}` }}>
+            <div className='virtual-guitar-secondary-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
 
                 <div className='virtual-guitar-secondary-panel-item'>
                     <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>

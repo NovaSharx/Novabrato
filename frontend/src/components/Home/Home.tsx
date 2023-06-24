@@ -9,7 +9,7 @@ const Home: FC = (): ReactElement => {
 
     return (
         <div id='home' style={{
-            backgroundColor: theme.palette.background.primary
+            backgroundColor: theme.palette.background.secondary
         }}>
             <HeroSection />
             <VirtualGuitarContainer />
