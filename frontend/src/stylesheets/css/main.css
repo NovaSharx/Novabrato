@@ -107,6 +107,7 @@ p {
 }
 #navigation #navigation-container #nav-logo {
   flex-grow: 1;
+  width: 0rem;
   display: flex;
   align-items: center;
 }
@@ -126,6 +127,7 @@ p {
 }
 #navigation #navigation-container #nav-options {
   flex-grow: 1;
+  width: 0rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -143,7 +145,57 @@ p {
 #navigation #navigation-container #nav-options ul li .nav-option-button:hover {
   cursor: pointer;
 }
-
+#navigation #navigation-container #mobile-nav-options {
+  flex-grow: 0;
+  width: 0rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (max-width: 1536px) {
+  #navigation #navigation-container {
+    margin: 0rem 1.5rem;
+    padding: 0.5rem 0rem;
+  }
+  #navigation #navigation-container #nav-logo {
+    flex-grow: 1;
+  }
+  #navigation #navigation-container #nav-logo #nav-logo-button h1 {
+    font-size: 1.8rem;
+  }
+  #navigation #navigation-container #nav-options {
+    flex-grow: 1;
+  }
+  #navigation #navigation-container #nav-options ul li .nav-option-button {
+    margin: 0rem 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #navigation #navigation-container {
+    margin: 0rem 1.5rem;
+    padding: 0.5rem 0rem;
+  }
+  #navigation #navigation-container #nav-logo {
+    flex-grow: 1;
+  }
+  #navigation #navigation-container #nav-logo #nav-logo-button h1 {
+    font-size: 1.8rem;
+  }
+  #navigation #navigation-container #nav-options {
+    flex-grow: 0;
+    overflow: hidden;
+  }
+  #navigation #navigation-container #nav-options ul li .nav-option-button {
+    margin: 0rem 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  #navigation #navigation-container #mobile-nav-options {
+    flex-grow: 1;
+    overflow: auto;
+  }
+}
 #footer {
   width: 100%;
 }
@@ -321,7 +373,7 @@ p {
   border-left: 10px solid #b8b8b8;
 }
 #virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-neck .virtual-guitar-string span .virtual-guitar-fret:last-child {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #virtual-guitar-container .virtual-guitar-content .virtual-guitar-fretboard-container .virtual-guitar-neck-container .virtual-guitar-aside {
   display: flex;

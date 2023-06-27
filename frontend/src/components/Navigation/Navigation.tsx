@@ -74,6 +74,10 @@ const Navigation: FC = (): ReactElement => {
 
                 </div>
 
+                <div id='mobile-nav-options' style={{ color: 'white' }}>
+                    Hamburger
+                </div>
+
             </div>
         </div>
     );

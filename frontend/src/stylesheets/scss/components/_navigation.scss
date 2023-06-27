@@ -11,6 +11,7 @@
 
         #nav-logo {
             flex-grow: 1;
+            width: 0rem;
             display: flex;
             align-items: center;
 
@@ -36,6 +37,7 @@
 
         #nav-options {
             flex-grow: 1;
+            width: 0rem;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -59,5 +61,98 @@
             }
 
         }
+
+        #mobile-nav-options {
+            flex-grow: 0;
+            width: 0rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
     }
+
+    @media (max-width: $tv-width) {
+
+        #navigation-container {
+            margin: 0rem 1.5rem;
+            padding: 0.5rem 0rem;
+
+            #nav-logo {
+                flex-grow: 1;
+
+                #nav-logo-button {
+
+                    h1 {
+                        font-size: 1.8rem;
+
+                        #nav-logo-nova {}
+                    }
+                }
+            }
+
+            #nav-options {
+                flex-grow: 1;
+
+                ul {
+
+                    li {
+                        .nav-option-button {
+                            margin: 0rem 1rem;
+                            padding: 0.5rem 1.5rem;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: $desktop-width) {}
+
+    @media (max-width: $laptop-width) {}
+
+    @media (max-width: $tablet-width) {
+
+        #navigation-container {
+            margin: 0rem 1.5rem;
+            padding: 0.5rem 0rem;
+
+            #nav-logo {
+                flex-grow: 1;
+
+                #nav-logo-button {
+
+                    h1 {
+                        font-size: 1.8rem;
+
+                        #nav-logo-nova {}
+                    }
+                }
+            }
+
+            #nav-options {
+                flex-grow: 0;
+                overflow: hidden;
+
+                ul {
+
+                    li {
+                        .nav-option-button {
+                            margin: 0rem 1rem;
+                            padding: 0.5rem 1.5rem;
+                        }
+                    }
+                }
+
+            }
+
+            #mobile-nav-options {
+                flex-grow: 1;
+                overflow: auto;
+            }
+        }
+    }
+
+    @media (max-width: $mobile-width) {}
 }
