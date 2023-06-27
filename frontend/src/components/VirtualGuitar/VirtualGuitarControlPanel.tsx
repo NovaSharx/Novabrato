@@ -88,7 +88,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
                 <div className='virtual-guitar-secondary-panel-item'>
                     <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>
                     <div id='virtual-guitar-triads'>
-                        {scaleNotes.length ? renderTriadButtons : '...Select a scale...'}
+                        {scaleNotes.length ? renderTriadButtons : <p style={{color: theme.palette.text.disabled}}>Please selecta scale</p>}
                     </div>
                 </div>
 
