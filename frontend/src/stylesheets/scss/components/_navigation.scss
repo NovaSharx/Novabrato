@@ -75,58 +75,108 @@
     @media (max-width: $tv-width) {
 
         #navigation-container {
-            margin: 0rem 1.5rem;
-            padding: 0.5rem 0rem;
 
             #nav-logo {
-                flex-grow: 1;
 
                 #nav-logo-button {
 
                     h1 {
                         font-size: 1.8rem;
-
-                        #nav-logo-nova {}
                     }
                 }
             }
 
             #nav-options {
-                flex-grow: 1;
 
                 ul {
 
                     li {
+                        .nav-option-button {}
+                    }
+                }
+
+            }
+
+            #mobile-nav-options {}
+        }
+    }
+
+    @media (max-width: $desktop-width) {
+        #navigation-container {
+
+            #nav-logo {
+
+                #nav-logo-button {
+
+                    h1 {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+
+            #nav-options {
+
+                ul {
+
+                    li {
+
                         .nav-option-button {
-                            margin: 0rem 1rem;
+                            margin: 0rem 0.8rem;
                             padding: 0.5rem 1.5rem;
+                            font-size: 0.9rem;
                         }
                     }
                 }
 
             }
+
+            #mobile-nav-options {}
         }
     }
 
-    @media (max-width: $desktop-width) {}
-
-    @media (max-width: $laptop-width) {}
-
-    @media (max-width: $tablet-width) {
-
+    @media (max-width: $laptop-width) {
         #navigation-container {
-            margin: 0rem 1.5rem;
-            padding: 0.5rem 0rem;
 
             #nav-logo {
-                flex-grow: 1;
 
                 #nav-logo-button {
 
                     h1 {
-                        font-size: 1.8rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
 
-                        #nav-logo-nova {}
+            #nav-options {
+
+                ul {
+
+                    li {
+
+                        .nav-option-button {
+                            margin: 0rem 0.5rem;
+                            padding: 0.5rem 1.3rem;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+
+            }
+
+            #mobile-nav-options {}
+        }
+    }
+
+    @media (max-width: $tablet-width) {
+
+        #navigation-container {
+
+            #nav-logo {
+
+                #nav-logo-button {
+
+                    h1 {
+                        font-size: 1.3rem;
                     }
                 }
             }
@@ -138,10 +188,7 @@
                 ul {
 
                     li {
-                        .nav-option-button {
-                            margin: 0rem 1rem;
-                            padding: 0.5rem 1.5rem;
-                        }
+                        .nav-option-button {}
                     }
                 }
 
@@ -154,5 +201,31 @@
         }
     }
 
-    @media (max-width: $mobile-width) {}
+    @media (max-width: $mobile-width) {
+        #navigation-container {
+
+            #nav-logo {
+
+                #nav-logo-button {
+
+                    h1 {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            #nav-options {
+
+                ul {
+
+                    li {
+                        .nav-option-button {}
+                    }
+                }
+
+            }
+
+            #mobile-nav-options {}
+        }
+    }
 }
