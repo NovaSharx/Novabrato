@@ -16,7 +16,8 @@ const Navigation: FC = (): ReactElement => {
 
     return (
         <div id='navigation' style={{
-            backgroundColor: 'black'
+            backgroundColor: 'black',
+            boxShadow: `0rem 0rem 2rem 0rem ${theme.palette.shadow.primary}`
         }}>
             <div id='navigation-container'>
 
