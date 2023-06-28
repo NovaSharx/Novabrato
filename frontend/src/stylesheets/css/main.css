@@ -207,7 +207,7 @@ p {
 
 #virtual-guitar-container {
   margin: 5rem 2rem;
-  padding: 2rem;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
@@ -410,10 +410,18 @@ p {
 }
 @media (max-width: 1536px) {
   #virtual-guitar-container #virtual-guitar-title h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  #virtual-guitar-container #virtual-guitar-title h2 {
+    font-size: 2.6rem;
+  }
+}
+@media (max-width: 1024px) {
+  #virtual-guitar-container #virtual-guitar-title h2 {
+    font-size: 2.3rem;
+  }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-main-panel {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
@@ -424,9 +432,15 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(0rem, 1fr));
     column-gap: 1rem;
   }
+}
+@media (max-width: 768px) {
+  #virtual-guitar-container #virtual-guitar-title h2 {
+    font-size: 2rem;
+  }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container {
     flex-direction: row;
-    overflow-x: scroll;
+    height: 100vh;
+    overflow-x: auto;
     overflow-y: scroll;
   }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck {
@@ -435,6 +449,7 @@ p {
   }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string {
     flex-direction: column;
+    height: max-content;
   }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string:first-child .virtual-guitar-fret {
     border: none;
@@ -494,8 +509,8 @@ p {
 }
 @media (max-width: 480px) {
   #virtual-guitar-container {
-    margin: 5rem 1rem;
-    padding: 1rem;
+    margin: 3rem 1rem;
+    padding: 3rem 1rem;
   }
   #virtual-guitar-container #virtual-guitar-title h2 {
     font-size: 1.8rem;
@@ -533,11 +548,31 @@ p {
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string:last-child span .virtual-guitar-fret:first-child {
     border-left: 3px solid #b8b8b8;
   }
+  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret {
+    width: 2.6rem;
+    height: 4.6rem;
+  }
+  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string .virtual-guitar-fret .virtual-guitar-note {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.7rem;
+  }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string span .virtual-guitar-fret {
     border-top: 5px solid grey;
   }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string span .virtual-guitar-fret:first-child {
     border-top: 10px solid #b8b8b8;
+  }
+  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-aside {
+    font-size: 0.8rem;
+  }
+  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-aside #virtual-guitar-settings-button {
+    width: 2.6rem;
+    height: 4.6rem;
+  }
+  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-aside .virtual-guitar-fret-marker {
+    width: 2.6rem;
+    height: 4.6rem;
   }
 }
 
