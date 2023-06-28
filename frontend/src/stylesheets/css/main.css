@@ -552,7 +552,7 @@ p {
     border-radius: 1rem;
   }
   #virtual-guitar-container .virtual-guitar-title h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
   #virtual-guitar-container .virtual-guitar-content .virtual-guitar-control-panel {
     margin: 2rem 0rem;
@@ -691,7 +691,7 @@ p {
 #home #hero-section-container #hero-section #hero-section-info {
   margin: 3rem auto;
   display: flex;
-  width: 30rem;
+  width: 33rem;
 }
 #home #hero-section-container #hero-section #hero-section-info span {
   font-size: 1.5rem;
@@ -711,4 +711,104 @@ p {
 }
 #home #hero-section-container #hero-section #call-to-action #call-to-action-button:hover {
   cursor: pointer;
+}
+@media (max-width: 1536px) {
+  #home #hero-section-container {
+    height: 33rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-title {
+    font-size: 4.5rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info {
+    margin: 2.5rem auto;
+    width: 27rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info span {
+    font-size: 1.2rem;
+  }
+  #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
+    padding: 1.2rem 3.3rem;
+    border-width: 4.1px;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1200px) {
+  #home #hero-section-container {
+    height: 26rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-title {
+    font-size: 3.5rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info {
+    margin: 1.9rem auto;
+    width: 21rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info span {
+    font-size: 1rem;
+  }
+  #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
+    padding: 1rem 2.6rem;
+    border-width: 3.2px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  #home #hero-section-container {
+    height: 22rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-title {
+    font-size: 3rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info {
+    margin: 1.6rem auto;
+    width: 18rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info span {
+    font-size: 0.8rem;
+  }
+  #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
+    padding: 0.8rem 2.2rem;
+    border-width: 2.7px;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  #home #hero-section-container {
+    height: 16rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-title {
+    font-size: 2.5rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info {
+    margin: 1.2rem auto;
+    width: 14rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info span {
+    font-size: 0.6rem;
+  }
+  #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
+    padding: 0.6rem 1.6rem;
+    border-width: 2px;
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 480px) {
+  #home #hero-section-container {
+    height: 10rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-title {
+    font-size: 1.4rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info {
+    margin: 0.8rem auto;
+    width: 8.4rem;
+  }
+  #home #hero-section-container #hero-section #hero-section-info span {
+    font-size: 0.4rem;
+  }
+  #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
+    padding: 0.4rem 1rem;
+    border-width: 1px;
+    font-size: 0.4rem;
+  }
 }/*# sourceMappingURL=main.css.map */

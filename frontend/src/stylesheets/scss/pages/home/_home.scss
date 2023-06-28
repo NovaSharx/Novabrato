@@ -35,7 +35,7 @@
             #hero-section-info {
                 margin: 3rem auto;
                 display: flex;
-                width: 30rem;
+                width: 33rem;
 
                 span {
                     font-size: 1.5rem;
@@ -58,6 +58,162 @@
 
                     &:hover {
                         cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $tv-width) {
+
+        #hero-section-container {
+            height: 33rem;
+
+            #hero-section {
+
+                #hero-section-title {
+                    font-size: 4.5rem;
+                }
+
+                #hero-section-info {
+                    margin: 2.5rem auto;
+                    width: 27rem;
+
+                    span {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                #call-to-action {
+
+                    #call-to-action-button {
+                        padding: 1.2rem 3.3rem;
+                        border-width: 4.1px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $desktop-width) {
+        #hero-section-container {
+            height: 26rem;
+
+            #hero-section {
+
+                #hero-section-title {
+                    font-size: 3.5rem;
+                }
+
+                #hero-section-info {
+                    margin: 1.9rem auto;
+                    width: 21rem;
+
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+
+                #call-to-action {
+
+                    #call-to-action-button {
+                        padding: 1rem 2.6rem;
+                        border-width: 3.2px;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $laptop-width) {
+        #hero-section-container {
+            height: 22rem;
+
+            #hero-section {
+
+                #hero-section-title {
+                    font-size: 3rem;
+                }
+
+                #hero-section-info {
+                    margin: 1.6rem auto;
+                    width: 18rem;
+
+                    span {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                #call-to-action {
+
+                    #call-to-action-button {
+                        padding: 0.8rem 2.2rem;
+                        border-width: 2.7px;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $tablet-width) {
+        #hero-section-container {
+            height: 16rem;
+
+            #hero-section {
+
+                #hero-section-title {
+                    font-size: 2.5rem;
+                }
+
+                #hero-section-info {
+                    margin: 1.2rem auto;
+                    width: 14rem;
+
+                    span {
+                        font-size: 0.6rem;
+                    }
+                }
+
+                #call-to-action {
+
+                    #call-to-action-button {
+                        padding: 0.6rem 1.6rem;
+                        border-width: 2px;
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+        #hero-section-container {
+            height: 10rem;
+
+            #hero-section {
+
+                #hero-section-title {
+                    font-size: 1.4rem;
+                }
+
+                #hero-section-info {
+                    margin: 0.8rem auto;
+                    width: 8.4rem;
+
+                    span {
+                        font-size: 0.4rem;
+                    }
+                }
+
+                #call-to-action {
+
+                    #call-to-action-button {
+                        padding: 0.4rem 1rem;
+                        border-width: 1px;
+                        font-size: 0.4rem;
                     }
                 }
             }
