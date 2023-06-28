@@ -39,7 +39,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
         color: ${theme.palette.text.disabled}
     `
 
-    const GuitarConfigButton = styled.span`
+    const GuitarSettingsButton = styled.span`
         color: ${theme.palette.primary.main}
     `
 
@@ -49,9 +49,9 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
 
         if (marker === 0) {
             return (
-                <GuitarConfigButton key={marker} className='virtual-guitar-settings'>
-                    <SettingsIcon className='virtual-guitar-settings-button' style={{ borderColor: theme.palette.primary.main }} />
-                </GuitarConfigButton>
+                <GuitarSettingsButton key={marker} id='virtual-guitar-settings-button'>
+                    <SettingsIcon id='virtual-guitar-settings-icon' style={{ borderColor: theme.palette.primary.main }} />
+                </GuitarSettingsButton>
             )
         } else if (boldMarker.includes(marker)) {
             return (
@@ -65,8 +65,8 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
     })
 
     return (
-        <StyledStringContainer className='virtual-guitar-neck-container'>
-            <div className='virtual-guitar-neck'>
+        <StyledStringContainer id='virtual-guitar-neck-container'>
+            <div id='virtual-guitar-neck'>
                 <VirtualGuitarString stringNote={'E'} stringOctave={4} />
                 <VirtualGuitarString stringNote={'B'} stringOctave={3} />
                 <VirtualGuitarString stringNote={'G'} stringOctave={3} />
@@ -75,7 +75,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
                 <VirtualGuitarString stringNote={'E'} stringOctave={2} />
             </div>
 
-            <div className='virtual-guitar-aside'>
+            <div id='virtual-guitar-aside'>
                 {renderGuitarAside}
             </div>
         </StyledStringContainer>

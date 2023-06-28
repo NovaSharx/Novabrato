@@ -49,9 +49,9 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
     })
 
     return (
-        <div className='virtual-guitar-control-panel'>
+        <div id='virtual-guitar-control-panel'>
 
-            <div className='virtual-guitar-main-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
+            <div id='virtual-guitar-main-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
 
                 <div className='virtual-guitar-main-panel-item'>
                     <label htmlFor='virtual-guitar-root' className='main-panel-label' style={{ color: theme.palette.text.primary }}>ROOT</label>
@@ -83,7 +83,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
             </div>
 
-            <div className='virtual-guitar-secondary-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
+            <div id='virtual-guitar-secondary-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
 
                 <div className='virtual-guitar-secondary-panel-item'>
                     <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>
