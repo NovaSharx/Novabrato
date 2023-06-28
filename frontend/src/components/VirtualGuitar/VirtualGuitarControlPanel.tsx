@@ -33,7 +33,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
                     {getTriadNotes(root).map((triadNote: string, idx: number): JSX.Element => {
                         return (
                             <span key={idx}>
-                                {idx !== 0 && ' - '}{triadNote}
+                                {triadNote}
                             </span>
                         )
                     })}
