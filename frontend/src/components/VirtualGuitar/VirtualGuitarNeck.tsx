@@ -25,13 +25,13 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
 
         &::-webkit-scrollbar-thumb {
             background-color: ${theme.palette.primary.main};
-            border: 3px solid #1F2928;
+            border: 1px solid #1F2928;
             border-radius: 10px;
         }
 
         &::-webkit-scrollbar-thumb:hover {
             background: ${theme.palette.secondary.main};
-            border: 3.5px solid #1f2928c0;
+            border: 1.5px solid #1f2928c0;
         }
     `;
 
