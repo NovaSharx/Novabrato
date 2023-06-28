@@ -11,7 +11,7 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
     const StyledStringContainer = styled.div`
     
         &::-webkit-scrollbar {
-            height: 15px;
+            height: 10px;
         }
 
         &::-webkit-scrollbar-button {
@@ -25,13 +25,11 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
 
         &::-webkit-scrollbar-thumb {
             background-color: ${theme.palette.primary.main};
-            border: 1px solid #1F2928;
             border-radius: 10px;
         }
 
         &::-webkit-scrollbar-thumb:hover {
             background: ${theme.palette.secondary.main};
-            border: 1.5px solid #1f2928c0;
         }
     `;
 
