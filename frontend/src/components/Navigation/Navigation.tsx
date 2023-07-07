@@ -76,7 +76,11 @@ const Navigation: FC = (): ReactElement => {
                 </div>
 
                 <div id='mobile-nav-options' style={{ color: 'white' }}>
-                    Hamburger
+                    <span id='mobile-menu-button'>
+                        <span className='mobile-menu-bar'/>
+                        <span className='mobile-menu-bar'/>
+                        <span className='mobile-menu-bar'/>
+                    </span>
                 </div>
 
             </div>
