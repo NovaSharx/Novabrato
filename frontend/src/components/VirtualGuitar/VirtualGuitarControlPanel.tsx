@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext, Fragment } from 'react';
+import { FC, ReactElement, useContext } from 'react';
 import styled from '@emotion/styled';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';

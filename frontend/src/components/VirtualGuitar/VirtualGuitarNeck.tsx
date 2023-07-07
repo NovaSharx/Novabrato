@@ -9,23 +9,12 @@ const VirtualGuitarNeck: FC = (): ReactElement => {
     const { theme } = useContext(ThemeContext)!
 
     const StyledStringContainer = styled.div`
-    
-        &::-webkit-scrollbar {
-            height: 10px;
-        }
-
-        &::-webkit-scrollbar-button {
-            width: 1rem;
-        }
-
         &::-webkit-scrollbar-track {
-            border-radius: 10px;
             background-color: ${theme.dark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
         }
 
         &::-webkit-scrollbar-thumb {
             background-color: ${theme.palette.primary.main};
-            border-radius: 10px;
         }
 
         &::-webkit-scrollbar-thumb:hover {
