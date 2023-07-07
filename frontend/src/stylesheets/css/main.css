@@ -138,6 +138,8 @@ p {
 }
 #navigation #navigation-container #nav-options ul li {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #navigation #navigation-container #nav-options ul li .nav-option-button {
   margin: 0rem 1rem;
@@ -151,11 +153,16 @@ p {
 #navigation #navigation-container #nav-options ul li #nav-theme-button {
   padding: 0.5rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   transition: 0.5s;
 }
 #navigation #navigation-container #nav-options ul li #nav-theme-button:hover {
   cursor: pointer;
+}
+#navigation #navigation-container #nav-options ul li #nav-theme-button .theme-icon {
+  font-size: 1.2rem;
 }
 #navigation #navigation-container #mobile-nav-options {
   flex-grow: 0;
@@ -179,6 +186,12 @@ p {
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
   }
+  #navigation #navigation-container #nav-options ul li #nav-theme-button {
+    padding: 0.4rem;
+  }
+  #navigation #navigation-container #nav-options ul li #nav-theme-button .theme-icon {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 1024px) {
   #navigation #navigation-container #nav-logo #nav-logo-button h1 {
@@ -187,6 +200,12 @@ p {
   #navigation #navigation-container #nav-options ul li .nav-option-button {
     margin: 0rem 0.5rem;
     padding: 0.5rem 1.3rem;
+    font-size: 0.8rem;
+  }
+  #navigation #navigation-container #nav-options ul li #nav-theme-button {
+    padding: 0.3rem;
+  }
+  #navigation #navigation-container #nav-options ul li #nav-theme-button .theme-icon {
     font-size: 0.8rem;
   }
 }

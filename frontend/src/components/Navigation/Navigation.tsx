@@ -68,7 +68,7 @@ const Navigation: FC = (): ReactElement => {
                                 }}
                                 onClick={toggleThemeMode}
                             >
-                                {theme.dark ? <LightModeIcon /> : <DarkModeIcon />}
+                                {theme.dark ? <LightModeIcon className='theme-icon' /> : <DarkModeIcon className='theme-icon' />}
                             </span>
                         </li>
                     </ul>
