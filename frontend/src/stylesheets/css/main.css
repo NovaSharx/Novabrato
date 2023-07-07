@@ -254,7 +254,33 @@ p {
 }
 #footer #footer-bottom {
   padding: 1rem 0rem;
+  font-size: 1rem;
   text-align: center;
+}
+@media (max-width: 1536px) {
+  #footer #footer-bottom {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 1200px) {
+  #footer #footer-bottom {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 1024px) {
+  #footer #footer-bottom {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 768px) {
+  #footer #footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  #footer #footer-bottom {
+    font-size: 0.75rem;
+  }
 }
 
 #virtual-guitar-container {
