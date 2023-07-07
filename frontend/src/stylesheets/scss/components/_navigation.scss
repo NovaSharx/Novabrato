@@ -47,11 +47,24 @@
                 list-style: none;
 
                 li {
+                    display: flex;
+
                     .nav-option-button {
                         margin: 0rem 1rem;
                         padding: 0.5rem 1.5rem;
                         text-decoration: none;
                         transition: 0.2s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    #nav-theme-button {
+                        padding: 0.5rem;
+                        display: flex;
+                        border-radius: 50%;
+                        transition: 0.5s;
 
                         &:hover {
                             cursor: pointer;

@@ -66,9 +66,9 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                 // dark
                 {
                     full: '#000',
-                    primary: '#0d0d0d',
+                    primary: '#0e0e0e',
                     secondary: '#1a1a1a',
-                    tertiary: '#262626'
+                    tertiary: '#2e2e2e'
                 }
                 :
                 // light
@@ -81,9 +81,9 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
             shadow: themeMode ?
                 // dark
                 {
-                    primary: '#ffffff50',
-                    secondary: '#ffffff25',
-                    tertiary: '#ffffff15'
+                    primary: '#ffffff25',
+                    secondary: '#ffffff15',
+                    tertiary: '#ffffff05'
                 }
                 :
                 // light

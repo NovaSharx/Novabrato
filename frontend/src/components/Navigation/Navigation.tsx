@@ -1,6 +1,8 @@
 import { FC, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 const Navigation: FC = (): ReactElement => {
 
@@ -59,15 +61,14 @@ const Navigation: FC = (): ReactElement => {
                         </li>
 
                         <li>
-                            <span className='nav-option-button'
+                            <span id='nav-theme-button'
                                 style={{
                                     backgroundColor: theme.palette.background.tertiary,
                                     color: theme.palette.text.primary,
-                                    borderRadius: '0.2rem'
                                 }}
                                 onClick={toggleThemeMode}
                             >
-                                {theme.dark ? 'Dark' : 'Light'}
+                                {theme.dark ? <LightModeIcon /> : <DarkModeIcon />}
                             </span>
                         </li>
                     </ul>
