@@ -193,6 +193,26 @@ p {
   background-color: white;
   border-radius: 1px;
 }
+#navigation #navigation-container #mobile-nav-options #mobile-menu-container {
+  position: absolute;
+  border-radius: 1rem;
+}
+#navigation #navigation-container #mobile-nav-options #mobile-menu-container #mobile-menu {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+#navigation #navigation-container #mobile-nav-options .mobile-menu-active {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 3rem);
+  transition: 0.5s;
+}
+#navigation #navigation-container #mobile-nav-options .mobile-menu-inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 2rem);
+  transition: 0.5s;
+}
 @media (max-width: 1536px) {
   #navigation #navigation-container #nav-logo #nav-logo-button h1 {
     font-size: 1.8rem;
@@ -241,6 +261,14 @@ p {
   #navigation #navigation-container #mobile-nav-options {
     flex-grow: 1;
     overflow: auto;
+  }
+  #navigation #navigation-container #mobile-nav-options .mobile-menu-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  #navigation #navigation-container #mobile-nav-options .mobile-menu-inactive {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 @media (max-width: 480px) {

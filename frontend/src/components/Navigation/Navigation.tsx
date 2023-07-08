@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext } from 'react';
+import { FC, ReactElement, useContext, useState } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -8,12 +8,19 @@ const Navigation: FC = (): ReactElement => {
 
     const { theme, toggleThemeMode } = useContext(ThemeContext)!
 
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     const NavButtonOption = styled.a`
         color: white;
 
         &:hover {
             color: ${theme.palette.primary.main};
         }
+    `;
+
+    const MobileNavMenu = styled.div`
+        color: ${theme.palette.text.primary};
+        background-color: ${theme.palette.background.tertiary};
     `;
 
     return (
@@ -76,12 +83,21 @@ const Navigation: FC = (): ReactElement => {
                 </div>
 
                 <div id='mobile-nav-options' style={{ color: 'white' }}>
-                    <span id='mobile-menu-button'>
-                        <span className='mobile-menu-bar'/>
-                        <span className='mobile-menu-bar'/>
-                        <span className='mobile-menu-bar'/>
+
+                    <span id='mobile-menu-button' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                        <span className='mobile-menu-bar' />
+                        <span className='mobile-menu-bar' />
+                        <span className='mobile-menu-bar' />
                     </span>
+
+                    <div id='mobile-menu-container' className={isMobileMenuOpen ? 'mobile-menu-active' : 'mobile-menu-inactive'}>
+                        <MobileNavMenu id='mobile-menu'>
+                            Menu Item
+                        </MobileNavMenu>
+                    </div>
+
                 </div>
+
 
             </div>
         </div>
