@@ -10,6 +10,18 @@ const Navigation: FC = (): ReactElement => {
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const navThemeButton = (
+        <span className='nav-theme-button'
+            style={{
+                backgroundColor: theme.palette.background.tertiary,
+                color: theme.palette.text.primary,
+            }}
+            onClick={toggleThemeMode}
+        >
+            {theme.dark ? <LightModeIcon className='theme-icon' /> : <DarkModeIcon className='theme-icon' />}
+        </span>
+    )
+
     const NavButtonOption = styled.a`
         color: white;
 
@@ -19,8 +31,15 @@ const Navigation: FC = (): ReactElement => {
     `;
 
     const MobileNavMenu = styled.div`
+        background-color: ${theme.palette.background.primary};
+    `;
+
+    const MobileMenuItem = styled.a`
         color: ${theme.palette.text.primary};
-        background-color: ${theme.palette.background.tertiary};
+
+        &:hover {
+            background-color: ${theme.palette.background.secondary};
+        }
     `;
 
     return (
@@ -68,15 +87,7 @@ const Navigation: FC = (): ReactElement => {
                         </li>
 
                         <li>
-                            <span id='nav-theme-button'
-                                style={{
-                                    backgroundColor: theme.palette.background.tertiary,
-                                    color: theme.palette.text.primary,
-                                }}
-                                onClick={toggleThemeMode}
-                            >
-                                {theme.dark ? <LightModeIcon className='theme-icon' /> : <DarkModeIcon className='theme-icon' />}
-                            </span>
+                            {navThemeButton}
                         </li>
                     </ul>
 
@@ -92,7 +103,31 @@ const Navigation: FC = (): ReactElement => {
 
                     <div id='mobile-menu-container' className={isMobileMenuOpen ? 'mobile-menu-active' : 'mobile-menu-inactive'}>
                         <MobileNavMenu id='mobile-menu'>
-                            Menu Item
+                            <ul>
+
+                                <li>
+                                    <MobileMenuItem href='#virtual-guitar-container'>
+                                        Fretboard
+                                    </MobileMenuItem>
+                                </li>
+
+                                <li>
+                                    <MobileMenuItem href='/exercises'>
+                                        Exercises
+                                    </MobileMenuItem>
+                                </li>
+
+                                <li>
+                                    <MobileMenuItem href='/about'>
+                                        About
+                                    </MobileMenuItem>
+                                </li>
+
+                                <li>
+                                    {navThemeButton}
+                                </li>
+
+                            </ul>
                         </MobileNavMenu>
                     </div>
 

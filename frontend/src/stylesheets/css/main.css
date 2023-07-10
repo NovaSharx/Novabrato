@@ -150,20 +150,6 @@ p {
 #navigation #navigation-container #nav-options ul li .nav-option-button:hover {
   cursor: pointer;
 }
-#navigation #navigation-container #nav-options ul li #nav-theme-button {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-#navigation #navigation-container #nav-options ul li #nav-theme-button:hover {
-  cursor: pointer;
-}
-#navigation #navigation-container #nav-options ul li #nav-theme-button .theme-icon {
-  font-size: 1.2rem;
-}
 #navigation #navigation-container #mobile-nav-options {
   flex-grow: 0;
   width: 0rem;
@@ -201,17 +187,39 @@ p {
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
+#navigation #navigation-container #mobile-nav-options #mobile-menu-container #mobile-menu ul li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+#navigation #navigation-container #mobile-nav-options #mobile-menu-container #mobile-menu ul li a {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-decoration: none;
+}
 #navigation #navigation-container #mobile-nav-options .mobile-menu-active {
   opacity: 0;
   visibility: hidden;
-  transform: translate(0, 3rem);
+  transform: translate(0, 6.5rem);
   transition: 0.5s;
 }
 #navigation #navigation-container #mobile-nav-options .mobile-menu-inactive {
   opacity: 0;
   visibility: hidden;
-  transform: translate(0, 2rem);
+  transform: translate(0, 5.5rem);
   transition: 0.5s;
+}
+#navigation #navigation-container .nav-theme-button {
+  padding: 0.5rem;
+  display: flex;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+#navigation #navigation-container .nav-theme-button:hover {
+  cursor: pointer;
+}
+#navigation #navigation-container .nav-theme-button .theme-icon {
+  font-size: 1.2rem;
 }
 @media (max-width: 1536px) {
   #navigation #navigation-container #nav-logo #nav-logo-button h1 {
@@ -227,10 +235,10 @@ p {
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
   }
-  #navigation #navigation-container #nav-options ul li #nav-theme-button {
+  #navigation #navigation-container .nav-theme-button {
     padding: 0.4rem;
   }
-  #navigation #navigation-container #nav-options ul li #nav-theme-button .theme-icon {
+  #navigation #navigation-container .nav-theme-button .theme-icon {
     font-size: 1rem;
   }
 }
@@ -243,10 +251,10 @@ p {
     padding: 0.5rem 1.3rem;
     font-size: 0.8rem;
   }
-  #navigation #navigation-container #nav-options ul li #nav-theme-button {
+  #navigation #navigation-container .nav-theme-button {
     padding: 0.3rem;
   }
-  #navigation #navigation-container #nav-options ul li #nav-theme-button .theme-icon {
+  #navigation #navigation-container .nav-theme-button .theme-icon {
     font-size: 0.8rem;
   }
 }
@@ -269,6 +277,15 @@ p {
   #navigation #navigation-container #mobile-nav-options .mobile-menu-inactive {
     opacity: 0;
     visibility: hidden;
+  }
+  #navigation #navigation-container .nav-theme-button {
+    padding: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    border-radius: 0.3rem;
+  }
+  #navigation #navigation-container .nav-theme-button .theme-icon {
+    font-size: 1rem;
   }
 }
 @media (max-width: 480px) {
