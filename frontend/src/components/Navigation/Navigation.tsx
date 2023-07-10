@@ -102,8 +102,8 @@ const Navigation: FC = (): ReactElement => {
                     </span>
 
                     <div id='mobile-menu-container' className={isMobileMenuOpen ? 'mobile-menu-active' : 'mobile-menu-inactive'}>
-                        <MobileNavMenu id='mobile-menu'>
-                            <ul>
+                        <MobileNavMenu id='mobile-menu' >
+                            <ul onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
 
                                 <li>
                                     <MobileMenuItem href='#virtual-guitar-container'>
