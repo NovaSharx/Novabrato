@@ -1,4 +1,4 @@
-import { FC, ReactElement, useContext } from 'react';
+import { FC, ReactElement, useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
@@ -9,6 +9,10 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
     const { noteLibrary, root, mode, noteLabel, setNoteLabel, calculateScaleNotes, scaleNotes, getTriadNotes } = useContext(VirtualGuitarContext)!
 
+    const [showSecondaryPanelDialog, setShowSecondaryPanelDialog] = useState<boolean>(false)
+    const [showTriadsPanel, setShowTriadsPanel] = useState<boolean>(false)
+    const [showChordConstructorPanel, setShowChordConstructorPanel] = useState<boolean>(false)
+
     const VirtualGuitarSelect = styled.select`
         color: ${theme.palette.text.primary};
         border-color: ${theme.palette.primary.main};
@@ -17,9 +21,30 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
         }
     `;
 
+    const SecondaryPanelButton = styled.div`
+        color: ${theme.palette.primary.main};
+        border-color: ${theme.palette.primary.main};
+        transition: 0.5s;
+
+        &:hover {
+            color: white;
+            border-color: ${theme.palette.secondary.main};
+            background-color: ${theme.palette.secondary.main};
+        }
+    `;
+
+    const SecondaryPanelItem = styled.div`
+        border-color: ${theme.palette.divider.tertiary};
+    `;
+
+    const SecondaryPanelDialogLabel = styled.label`
+        color: ${theme.palette.text.primary};
+    `;
+
     const TriadButton = styled.span`
         color: ${theme.palette.text.primary};
         border-color: ${theme.palette.primary.main};
+
         &:hover {
             border-color: ${theme.palette.secondary.main};
         }
@@ -42,7 +67,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
         )
     })
 
-    const renderRootoptions: JSX.Element[] = noteLibrary.map((root: string, index: number): JSX.Element => {
+    const renderRootOptions: JSX.Element[] = noteLibrary.map((root: string, index: number): JSX.Element => {
         return (
             <option key={index} value={root}>{root}</option>
         )
@@ -57,7 +82,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
                     <label htmlFor='virtual-guitar-root' className='main-panel-label' style={{ color: theme.palette.text.primary }}>ROOT</label>
                     <VirtualGuitarSelect id='virtual-guitar-root' className='main-panel-selection' value={root} onChange={(e) => calculateScaleNotes(e.target.value, mode)}>
                         <option value=''>--Please choose an option--</option>
-                        {renderRootoptions}
+                        {renderRootOptions}
                     </VirtualGuitarSelect>
                 </div>
 
@@ -83,14 +108,55 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
             </div>
 
-            <div id='virtual-guitar-secondary-panel' style={{ borderColor: theme.palette.divider.tertiary }}>
+            <div id='virtual-guitar-secondary-panel'>
 
-                <div className='virtual-guitar-secondary-panel-item'>
-                    <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>
-                    <div id='virtual-guitar-triads'>
-                        {scaleNotes.length ? renderTriadButtons : <p style={{color: theme.palette.text.disabled}}>Please selecta scale</p>}
+                {showTriadsPanel &&
+                    <SecondaryPanelItem className='virtual-guitar-secondary-panel-item'>
+                        <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>
+                        <div id='virtual-guitar-triads'>
+                            {scaleNotes.length ? renderTriadButtons : <p style={{ color: theme.palette.text.disabled }}>Please select a scale</p>}
+                        </div>
+                    </SecondaryPanelItem>
+                }
+
+                {showChordConstructorPanel &&
+                    <SecondaryPanelItem className='virtual-guitar-secondary-panel-item'>
+                        <label htmlFor='virtual-guitar-chord-constructor' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Chord Constructor</label>
+                        <div id='virtual-guitar-triads'>
+                            <p style={{ color: theme.palette.text.disabled }}>Coming soon...</p>
+                        </div>
+                    </SecondaryPanelItem>
+                }
+
+                <SecondaryPanelButton id='secondary-panel-button' onClick={() => setShowSecondaryPanelDialog(true)}>
+                    + / -
+                </SecondaryPanelButton>
+
+                {showSecondaryPanelDialog &&
+                    <div id='add-secondary-panel-dialog-backdrop'>
+                        <div id='add-secondary-panel-dialog'
+                            style={{
+                                backgroundColor: theme.palette.background.primary,
+                                border: `2px solid ${theme.palette.divider.primary}`
+                            }}>
+
+                            <div>
+                                <input type='checkbox' id='secondary-panel-dialog-triads' checked={showTriadsPanel} onChange={() => setShowTriadsPanel(!showTriadsPanel)} />
+                                <SecondaryPanelDialogLabel htmlFor='secondary-panel-dialog-triads'>Triads</SecondaryPanelDialogLabel>
+                            </div>
+
+                            <div>
+                                <input type='checkbox' id='secondary-panel-dialog-chord-constructor' checked={showChordConstructorPanel} onChange={() => setShowChordConstructorPanel(!showChordConstructorPanel)} />
+                                <SecondaryPanelDialogLabel htmlFor='secondary-panel-dialog-chord-constructor'>Chord Constructor</SecondaryPanelDialogLabel>
+                            </div>
+
+                            <div id='add-secondary-panel-dialog-actions'>
+                                <button onClick={() => setShowSecondaryPanelDialog(false)}>Exit</button>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
+                }
 
             </div>
         </div>

@@ -383,6 +383,10 @@ p {
   border-width: 3px;
 }
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel {
+  display: grid;
+  row-gap: 1rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel .virtual-guitar-secondary-panel-item {
   padding: 1rem;
   border-width: 2px;
   border-style: solid;
@@ -423,6 +427,63 @@ p {
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel .virtual-guitar-secondary-panel-item #virtual-guitar-triads .triad-button .triad-button-notes span:nth-child(1) {
   font-weight: 900;
   font-family: "Inter";
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #secondary-panel-button {
+  display: flex;
+  justify-content: center;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 1rem;
+  font-size: 2rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #secondary-panel-button:hover {
+  cursor: pointer;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+  z-index: 3;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div {
+  display: flex;
+  align-items: center;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div input {
+  width: 1rem;
+  height: 1rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div input:hover {
+  cursor: pointer;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div label {
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div label:hover {
+  cursor: pointer;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog #add-secondary-panel-dialog-actions {
+  display: flex;
+  justify-content: center;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog #add-secondary-panel-dialog-actions button {
+  padding: 0.5rem 1rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog #add-secondary-panel-dialog-actions button:hover {
+  cursor: pointer;
 }
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container {
   box-sizing: border-box;
@@ -682,7 +743,7 @@ p {
     height: 2.5rem;
     font-size: 0.9rem;
   }
-  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel {
+  #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel .virtual-guitar-secondary-panel-item {
     padding: 1rem;
   }
   #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #virtual-guitar-neck .virtual-guitar-string:first-child .virtual-guitar-fret {

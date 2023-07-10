@@ -42,7 +42,7 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
         'minor-pentatonic': [2, 1, 1, 2, 1]
     }
 
-    const chordCycle: string[] = ['major', 'minor', 'minor', 'major', 'major', 'minor', 'minor dim']
+    // const chordCycle: string[] = ['major', 'minor', 'minor', 'major', 'major', 'minor', 'minor dim']
 
     const noteLabelLibrary: { [key: string]: string[] } = {
         notes: scaleNotes,
