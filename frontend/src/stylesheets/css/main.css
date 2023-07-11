@@ -428,6 +428,10 @@ p {
   font-weight: 900;
   font-family: "Inter";
 }
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel .virtual-guitar-secondary-panel-item #virtual-guitar-chord-constructor p {
+  font-size: 0.9rem;
+  font-style: italic;
+}
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #secondary-panel-button {
   display: flex;
   justify-content: center;

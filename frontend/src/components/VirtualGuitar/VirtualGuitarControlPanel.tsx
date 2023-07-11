@@ -112,7 +112,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
                 {showTriadsPanel &&
                     <SecondaryPanelItem className='virtual-guitar-secondary-panel-item'>
-                        <label htmlFor='virtual-guitar-triads' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</label>
+                        <span className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Triads</span>
                         <div id='virtual-guitar-triads'>
                             {scaleNotes.length ? renderTriadButtons : <p style={{ color: theme.palette.text.disabled }}>Please select a scale</p>}
                         </div>
@@ -121,8 +121,8 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
 
                 {showChordConstructorPanel &&
                     <SecondaryPanelItem className='virtual-guitar-secondary-panel-item'>
-                        <label htmlFor='virtual-guitar-chord-constructor' className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Chord Constructor</label>
-                        <div id='virtual-guitar-triads'>
+                        <span className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Chord Constructor</span>
+                        <div id='virtual-guitar-chord-constructor'>
                             <p style={{ color: theme.palette.text.disabled }}>Coming soon...</p>
                         </div>
                     </SecondaryPanelItem>
