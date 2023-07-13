@@ -813,7 +813,7 @@ p {
   position: relative;
   display: flex;
   align-items: center;
-  height: 40rem;
+  height: 100vh;
   background-image: url("/public/hero_section_image.jpg");
   background-size: cover;
   background-position: center 80%;
@@ -862,9 +862,6 @@ p {
   cursor: pointer;
 }
 @media (max-width: 1536px) {
-  #home #hero-section-container {
-    height: 33rem;
-  }
   #home #hero-section-container #hero-section #hero-section-title {
     font-size: 4.5rem;
   }
@@ -882,9 +879,6 @@ p {
   }
 }
 @media (max-width: 1200px) {
-  #home #hero-section-container {
-    height: 26rem;
-  }
   #home #hero-section-container #hero-section #hero-section-title {
     font-size: 3.5rem;
   }
@@ -902,9 +896,6 @@ p {
   }
 }
 @media (max-width: 1024px) {
-  #home #hero-section-container {
-    height: 22rem;
-  }
   #home #hero-section-container #hero-section #hero-section-title {
     font-size: 3rem;
   }
@@ -922,9 +913,6 @@ p {
   }
 }
 @media (max-width: 768px) {
-  #home #hero-section-container {
-    height: 16rem;
-  }
   #home #hero-section-container #hero-section #hero-section-title {
     font-size: 2.5rem;
   }
@@ -942,22 +930,19 @@ p {
   }
 }
 @media (max-width: 480px) {
-  #home #hero-section-container {
-    height: 10rem;
-  }
   #home #hero-section-container #hero-section #hero-section-title {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
   #home #hero-section-container #hero-section #hero-section-info {
-    margin: 0.8rem auto;
-    width: 8.4rem;
+    margin: 0.96rem auto;
+    width: 11.2rem;
   }
   #home #hero-section-container #hero-section #hero-section-info span {
-    font-size: 0.4rem;
+    font-size: 0.48rem;
   }
   #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
-    padding: 0.4rem 1rem;
-    border-width: 1px;
-    font-size: 0.4rem;
+    padding: 0.48rem 1.28rem;
+    border-width: 1.6px;
+    font-size: 0.48rem;
   }
 }/*# sourceMappingURL=main.css.map */

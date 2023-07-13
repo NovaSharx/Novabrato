@@ -5,7 +5,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        height: 40rem;
+        height: 100vh;
         background-image: url('/public/hero_section_image.jpg');
         background-size: cover;
         background-position: center 80%;
@@ -67,7 +67,6 @@
     @media (max-width: $tv-width) {
 
         #hero-section-container {
-            height: 33rem;
 
             #hero-section {
 
@@ -98,7 +97,6 @@
 
     @media (max-width: $desktop-width) {
         #hero-section-container {
-            height: 26rem;
 
             #hero-section {
 
@@ -129,7 +127,6 @@
 
     @media (max-width: $laptop-width) {
         #hero-section-container {
-            height: 22rem;
 
             #hero-section {
 
@@ -160,7 +157,6 @@
 
     @media (max-width: $tablet-width) {
         #hero-section-container {
-            height: 16rem;
 
             #hero-section {
 
@@ -191,29 +187,28 @@
 
     @media (max-width: $mobile-width) {
         #hero-section-container {
-            height: 10rem;
 
             #hero-section {
 
                 #hero-section-title {
-                    font-size: 1.4rem;
+                    font-size: 2rem;
                 }
 
                 #hero-section-info {
-                    margin: 0.8rem auto;
-                    width: 8.4rem;
+                    margin: 0.96rem auto;
+                    width: 11.2rem;
 
                     span {
-                        font-size: 0.4rem;
+                        font-size: 0.48rem;
                     }
                 }
 
                 #call-to-action {
 
                     #call-to-action-button {
-                        padding: 0.4rem 1rem;
-                        border-width: 1px;
-                        font-size: 0.4rem;
+                        padding: 0.48rem 1.28rem;
+                        border-width: 1.6px;
+                        font-size: 0.48rem;
                     }
                 }
             }
