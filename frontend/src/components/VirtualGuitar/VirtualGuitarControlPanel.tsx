@@ -19,6 +19,11 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
         &:hover {
             border-color: ${theme.palette.secondary.main};
         }
+
+        option {
+            color: ${theme.palette.text.primary};
+            background-color: ${theme.palette.background.secondary}
+        }
     `;
 
     const SecondaryPanelButton = styled.div`
