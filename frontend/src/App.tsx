@@ -3,10 +3,11 @@ import './stylesheets/css/main.css';
 import ThemeProvider from './components/contexts/ThemeContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VirtualGuitarProvider from './components/contexts/VirtualGuitarContext';
-import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
-import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
 import Exercises from './components/Exercises/Exercises';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 const App: FC = (): ReactElement => {
 
@@ -19,6 +20,7 @@ const App: FC = (): ReactElement => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="exercises" element={<Exercises />} />
+              <Route path="about" element={<About />} />
             </Routes>
             <Footer />
           </VirtualGuitarProvider>

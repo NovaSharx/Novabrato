@@ -68,7 +68,7 @@ const Navigation: FC = (): ReactElement => {
 
                     <ul>
                         <li>
-                            <NavButtonOption className='nav-option-button' href='#virtual-guitar-container'>
+                            <NavButtonOption className='nav-option-button' href='/#virtual-guitar-container'>
                                 Fretboard
                             </NavButtonOption>
                         </li>
