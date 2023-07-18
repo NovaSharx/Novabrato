@@ -6,7 +6,7 @@ const HeroSection: FC = (): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
 
-    const CallToActionButton = styled.span`
+    const CallToActionButton = styled.a`
         color: ${theme.palette.primary.main};
         background-color: #121212;
         border-color: ${theme.palette.primary.main};
@@ -43,7 +43,7 @@ const HeroSection: FC = (): ReactElement => {
                 </span>
 
                 <span id='call-to-action'>
-                    <CallToActionButton id='call-to-action-button'>
+                    <CallToActionButton href='/exercises' id='call-to-action-button'>
                         START PRACTICING
                     </CallToActionButton>
                 </span>
