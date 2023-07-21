@@ -1004,4 +1004,11 @@ p {
 
 #about {
   flex-grow: 1;
+}
+#about h2 {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-family: "Inter";
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
