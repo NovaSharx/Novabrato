@@ -3,6 +3,8 @@
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
   caret-color: transparent;
 }
 
@@ -944,4 +946,12 @@ p {
     border-width: 1.6px;
     font-size: 0.48rem;
   }
+}
+
+#exercises {
+  flex-grow: 1;
+}
+
+#about {
+  flex-grow: 1;
 }/*# sourceMappingURL=main.css.map */

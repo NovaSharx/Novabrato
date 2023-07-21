@@ -6,10 +6,18 @@ const About: FC = (): ReactElement => {
     const { theme } = useContext(ThemeContext)!
 
     return (
-        <div id='about' className='main-section-container' style={{
+        <div id='about' style={{
             backgroundColor: theme.palette.background.secondary
         }}>
-            About
+
+            <div className='main-section-container'>
+                <div className='main-section'>
+
+                    About
+
+                </div>
+            </div>
+
         </div>
     );
 };
