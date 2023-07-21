@@ -6,11 +6,11 @@ interface ITheme {
         palette: {
             primary: {
                 main: string,
-                themeMode: string
+                isDarkMode: string
             },
             secondary: {
                 main: string,
-                themeMode: string
+                isDarkMode: string
             },
             background: {
                 full: string,
@@ -36,33 +36,45 @@ interface ITheme {
             }
         }
     },
-    toggleThemeMode: () => void;
+    toggleIsDarkMode: () => void;
 };
 
 export const ThemeContext = createContext<ITheme | null>(null);
 
 const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
 
-    const [themeMode, setThemeMode] = useState<boolean>(false);
+    // Grabs user's current theme mode stored in local storage
+    function getThemeMode() {
+        const themeMode = localStorage.getItem('novabrato-theme')
+
+        if (!themeMode) {
+            localStorage.setItem('novabrato-theme', 'light')
+            return false
+        } else {
+            return themeMode === 'dark'
+        }
+    }
+
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(getThemeMode);
 
     const theme = {
-        dark: themeMode,
+        dark: isDarkMode,
         palette: {
             primary: {
                 main: '#3EC199',
-                themeMode: themeMode ?
+                isDarkMode: isDarkMode ?
                     '' // dark
                     :
                     '' // light
             },
             secondary: {
                 main: '#3EA7C1',
-                themeMode: themeMode ?
+                isDarkMode: isDarkMode ?
                     '' // dark
                     :
                     '' // light
             },
-            background: themeMode ?
+            background: isDarkMode ?
                 // dark
                 {
                     full: '#000',
@@ -78,7 +90,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     secondary: '#ededed',
                     tertiary: '#dedede'
                 },
-            shadow: themeMode ?
+            shadow: isDarkMode ?
                 // dark
                 {
                     primary: '#ffffff25',
@@ -92,7 +104,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     secondary: '#00000025',
                     tertiary: '#00000015'
                 },
-            text: themeMode ?
+            text: isDarkMode ?
                 // dark
                 {
                     primary: '#bfbfbf',
@@ -108,7 +120,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     tertiary: '#b7b7b7',
                     disabled: '#3d3d3d50'
                 },
-            divider: themeMode ?
+            divider: isDarkMode ?
                 // dark
                 {
                     primary: '#ffffff75',
@@ -125,12 +137,14 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
         }
     };
 
-    function toggleThemeMode(): void {
-        setThemeMode(!themeMode);
+    // Overwrites user's current theme mode and stores it in local storage 
+    function toggleIsDarkMode(): void {
+        localStorage.setItem('novabrato-theme', isDarkMode ? 'light' : 'dark')
+        setIsDarkMode(!isDarkMode);
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleThemeMode }}>
+        <ThemeContext.Provider value={{ theme, toggleIsDarkMode }}>
             {children}
         </ThemeContext.Provider>
     );

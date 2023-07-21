@@ -6,7 +6,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 
 const Navigation: FC = (): ReactElement => {
 
-    const { theme, toggleThemeMode } = useContext(ThemeContext)!
+    const { theme, toggleIsDarkMode } = useContext(ThemeContext)!
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -16,7 +16,7 @@ const Navigation: FC = (): ReactElement => {
                 backgroundColor: theme.palette.background.tertiary,
                 color: theme.palette.text.primary,
             }}
-            onClick={toggleThemeMode}
+            onClick={toggleIsDarkMode}
         >
             {theme.dark ? <LightModeIcon className='theme-icon' /> : <DarkModeIcon className='theme-icon' />}
         </span>
