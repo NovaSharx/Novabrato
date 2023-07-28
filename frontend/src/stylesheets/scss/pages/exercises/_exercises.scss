@@ -9,7 +9,7 @@
         text-align: center;
     }
 
-    #exercise-selection {
+    #exercise-content {
         width: 100%;
         height: 100%;
         display: flex;
@@ -56,6 +56,25 @@
                     }
                 }
 
+            }
+        }
+
+        #category-exercises {
+            display: flex;
+
+            .category-exercise {
+                margin: 0.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10rem;
+                height: 10rem;
+                background-color: white;
+                border-radius: 0.5rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

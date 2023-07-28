@@ -958,7 +958,7 @@ p {
   font-family: "Inter";
   text-align: center;
 }
-#exercises #exercise-selection {
+#exercises #exercise-content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -966,15 +966,15 @@ p {
   justify-content: center;
   align-items: center;
 }
-#exercises #exercise-selection #exercise-selection-prompt {
+#exercises #exercise-content #exercise-selection-prompt {
   text-align: center;
 }
-#exercises #exercise-selection #exercise-categories {
+#exercises #exercise-content #exercise-categories {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
-#exercises #exercise-selection #exercise-categories .exercise-category {
+#exercises #exercise-content #exercise-categories .exercise-category {
   box-sizing: border-box;
   margin: 2rem;
   display: flex;
@@ -986,20 +986,36 @@ p {
   border-radius: 1rem;
   transition: 0.5s;
 }
-#exercises #exercise-selection #exercise-categories .exercise-category span {
+#exercises #exercise-content #exercise-categories .exercise-category span {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-#exercises #exercise-selection #exercise-categories .exercise-category:hover {
+#exercises #exercise-content #exercise-categories .exercise-category:hover {
   cursor: pointer;
   padding: 1rem;
   font-size: 2.5rem;
 }
-#exercises #exercise-selection #exercise-categories .exercise-category:hover span {
+#exercises #exercise-content #exercise-categories .exercise-category:hover span {
   border: 2px solid white;
+}
+#exercises #exercise-content #category-exercises {
+  display: flex;
+}
+#exercises #exercise-content #category-exercises .category-exercise {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+#exercises #exercise-content #category-exercises .category-exercise:hover {
+  cursor: pointer;
 }
 
 #about {
