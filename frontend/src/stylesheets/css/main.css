@@ -933,24 +933,6 @@ p {
     font-size: 0.6rem;
   }
 }
-@media (max-width: 480px) {
-  #home #hero-section-container #hero-section #hero-section-title {
-    font-size: 2rem;
-  }
-  #home #hero-section-container #hero-section #hero-section-info {
-    margin: 0.96rem auto;
-    width: 11.2rem;
-  }
-  #home #hero-section-container #hero-section #hero-section-info span {
-    font-size: 0.48rem;
-  }
-  #home #hero-section-container #hero-section #call-to-action #call-to-action-button {
-    padding: 0.48rem 1.28rem;
-    border-width: 1.6px;
-    font-size: 0.48rem;
-  }
-}
-
 #exercises {
   flex-grow: 1;
 }
