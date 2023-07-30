@@ -1,14 +1,11 @@
-import { FC, Fragment, ReactElement, ReactNode, useContext, useState } from 'react';
+import { FC, Fragment, ReactElement, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
-import { Outlet, useNavigate } from 'react-router-dom';
-import ExerciseSelection from './ExerciseSelection';
+import { useNavigate } from 'react-router-dom';
 
 const CategorySelection: FC = (): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
-
-    const [category, setCategory] = useState('')
 
     const navigate = useNavigate();
 
@@ -25,7 +22,7 @@ const CategorySelection: FC = (): ReactElement => {
     return (
         <Fragment>
             
-            <p id='exercise-selection-prompt' style={{ color: theme.palette.text.secondary }}>Please choose an exercise category.</p>
+            <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose an exercise category.</p>
 
             <div id='exercise-categories'>
 

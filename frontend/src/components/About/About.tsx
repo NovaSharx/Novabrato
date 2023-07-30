@@ -13,7 +13,7 @@ const About: FC = (): ReactElement => {
             <div className='main-section-container'>
                 <div className='main-section' style={{ color: theme.palette.text.primary }}>
 
-                    <h2 style={{ borderBottom: `2px solid ${theme.palette.divider.tertiary}` }}>
+                    <h2 className='page-title' style={{ borderBottom: `2px solid ${theme.palette.divider.tertiary}` }}>
                         ABOUT
                     </h2>
 

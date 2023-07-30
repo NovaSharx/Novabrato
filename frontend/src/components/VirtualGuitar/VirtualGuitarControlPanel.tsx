@@ -42,10 +42,6 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
         border-color: ${theme.palette.divider.tertiary};
     `;
 
-    const SecondaryPanelDialogLabel = styled.label`
-        color: ${theme.palette.text.primary};
-    `;
-
     const TriadButton = styled.span`
         color: ${theme.palette.text.primary};
         border-color: ${theme.palette.primary.main};
@@ -141,18 +137,23 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
                     <div id='add-secondary-panel-dialog-backdrop'>
                         <div id='add-secondary-panel-dialog'
                             style={{
+                                color: theme.palette.text.primary,
                                 backgroundColor: theme.palette.background.primary,
                                 border: `2px solid ${theme.palette.divider.primary}`
                             }}>
 
-                            <div>
+                            <span id='add-secondary-panel-title'>
+                                Add Secondary Panel
+                            </span>
+
+                            <div className='add-secondary-panel-option'>
                                 <input type='checkbox' id='secondary-panel-dialog-triads' checked={showTriadsPanel} onChange={() => setShowTriadsPanel(!showTriadsPanel)} />
-                                <SecondaryPanelDialogLabel htmlFor='secondary-panel-dialog-triads'>Triads</SecondaryPanelDialogLabel>
+                                <label htmlFor='secondary-panel-dialog-triads'>Triads</label>
                             </div>
 
-                            <div>
+                            <div className='add-secondary-panel-option'>
                                 <input type='checkbox' id='secondary-panel-dialog-chord-constructor' checked={showChordConstructorPanel} onChange={() => setShowChordConstructorPanel(!showChordConstructorPanel)} />
-                                <SecondaryPanelDialogLabel htmlFor='secondary-panel-dialog-chord-constructor'>Chord Constructor</SecondaryPanelDialogLabel>
+                                <label htmlFor='secondary-panel-dialog-chord-constructor'>Chord Constructor</label>
                             </div>
 
                             <div id='add-secondary-panel-dialog-actions'>

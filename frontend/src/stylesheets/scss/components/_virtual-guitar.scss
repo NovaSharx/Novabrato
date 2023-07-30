@@ -155,7 +155,11 @@
                         gap: 1rem;
                         border-radius: 1rem;
 
-                        div {
+                        #add-secondary-panel-title {
+                            font-family: 'Inter';
+                        }
+
+                        .add-secondary-panel-option {
                             display: flex;
                             align-items: center;
 

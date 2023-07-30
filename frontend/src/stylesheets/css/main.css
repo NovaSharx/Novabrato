@@ -461,22 +461,25 @@ p {
   gap: 1rem;
   border-radius: 1rem;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div {
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog #add-secondary-panel-title {
+  font-family: "Inter";
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog .add-secondary-panel-option {
   display: flex;
   align-items: center;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div input {
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog .add-secondary-panel-option input {
   width: 1rem;
   height: 1rem;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div input:hover {
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog .add-secondary-panel-option input:hover {
   cursor: pointer;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div label {
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog .add-secondary-panel-option label {
   width: 100%;
   padding: 0.2rem 0.5rem;
 }
-#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog div label:hover {
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog .add-secondary-panel-option label:hover {
   cursor: pointer;
 }
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-control-panel #virtual-guitar-secondary-panel #add-secondary-panel-dialog-backdrop #add-secondary-panel-dialog #add-secondary-panel-dialog-actions {
@@ -951,7 +954,7 @@ p {
 #exercises {
   flex-grow: 1;
 }
-#exercises h2 {
+#exercises .page-title {
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-size: 3rem;
@@ -966,7 +969,18 @@ p {
   justify-content: center;
   align-items: center;
 }
-#exercises #exercise-content #exercise-selection-prompt {
+#exercises #exercise-content #back-button {
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  transition: 0.3s;
+}
+#exercises #exercise-content #back-button:hover {
+  cursor: pointer;
+}
+#exercises #exercise-content #exercise-category-title {
+  font-size: 2rem;
+}
+#exercises #exercise-content #exercise-content-prompt {
   text-align: center;
 }
 #exercises #exercise-content #exercise-categories {
@@ -1002,26 +1016,42 @@ p {
   border: 2px solid white;
 }
 #exercises #exercise-content #category-exercises {
-  display: flex;
-}
-#exercises #exercise-content #category-exercises .category-exercise {
-  margin: 0.5rem;
+  width: 100%;
+  height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 10rem;
-  background-color: white;
-  border-radius: 0.5rem;
 }
-#exercises #exercise-content #category-exercises .category-exercise:hover {
+#exercises #exercise-content #category-exercises .category-exercise-button {
+  margin: 0rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+}
+#exercises #exercise-content #category-exercises .category-exercise-button:hover {
   cursor: pointer;
+  margin: 0rem;
+  width: 18rem;
+  height: 18rem;
+}
+#exercises #exercise-content #category-exercises .category-exercise-button .exercise-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
 }
 
 #about {
   flex-grow: 1;
 }
-#about h2 {
+#about .page-title {
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-size: 3rem;
