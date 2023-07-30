@@ -24,16 +24,6 @@ const ExerciseSelection: FC<CategoryProp> = ({ category }): ReactElement => {
 
     const navigate = useNavigate();
 
-    const BackButton = styled.span`
-        border: 2px solid transparent;
-        background-color: ${theme.palette.background.full};
-
-        &:hover {
-            border: 2px solid ${theme.palette.divider.secondary};
-            background-color: transparent;
-        }
-    `
-
     const ExerciseButton = styled.span`
         color: ${theme.palette.text.secondary};
         background-color: ${theme.palette.background.full};
@@ -86,25 +76,26 @@ const ExerciseSelection: FC<CategoryProp> = ({ category }): ReactElement => {
 
     return (
         <Fragment>
-            <BackButton id='back-button' onClick={() => navigate('..')}>
-                Go back
-            </BackButton>
 
-            <h3 id='exercise-category-title'>
-                {categories[category].title}
-            </h3>
+            <h2 className='page-title' style={{ borderBottom: `2px solid ${theme.palette.divider.tertiary}` }}>
+                <a href="/exercises">EXERCISE</a><a href={category} style={{ fontSize: '0.8em' }}> / {categories[category].title}</a>
+            </h2>
 
-            <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose a skill to practice.</p>
+            <div id='exercise-content'>
 
-            <div id='category-exercises'>
-                {categories[category].exercises.map((exercise, index): ReactNode => {
-                    return (
-                        <ExerciseButton key={index} className='category-exercise-button' onClick={() => navigate(exercise.path)}>
-                            <span className='exercise-name'>{exercise.name}</span>
-                        </ExerciseButton>
-                    )
-                })}
+                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose a skill to practice.</p>
+
+                <div id='category-exercises'>
+                    {categories[category].exercises.map((exercise, index): ReactNode => {
+                        return (
+                            <ExerciseButton key={index} className='category-exercise-button' onClick={() => navigate(exercise.path)}>
+                                <span className='exercise-name'>{exercise.name}</span>
+                            </ExerciseButton>
+                        )
+                    })}
+                </div>
             </div>
+
         </Fragment>
 
     );

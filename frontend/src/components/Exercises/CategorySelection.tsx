@@ -21,19 +21,25 @@ const CategorySelection: FC = (): ReactElement => {
 
     return (
         <Fragment>
-            
-            <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose an exercise category.</p>
 
-            <div id='exercise-categories'>
+            <h2 className='page-title' style={{ borderBottom: `2px solid ${theme.palette.divider.tertiary}` }}>
+                <a href="/exercises">EXERCISE</a>
+            </h2>
 
-                <CategoryButton className='exercise-category' onClick={() => navigate('ear-training')}>
-                    <span>Ear Training</span>
-                </CategoryButton>
+            <div id='exercise-content'>
+                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose an exercise category.</p>
 
-                <CategoryButton className='exercise-category' onClick={() => navigate('theory-&-knowledge')}>
-                    <span>Theory & Knowledge</span>
-                </CategoryButton>
+                <div id='exercise-categories'>
 
+                    <CategoryButton className='exercise-category' onClick={() => navigate('ear-training')}>
+                        <span>Ear Training</span>
+                    </CategoryButton>
+
+                    <CategoryButton className='exercise-category' onClick={() => navigate('theory-&-knowledge')}>
+                        <span>Theory & Knowledge</span>
+                    </CategoryButton>
+
+                </div>
             </div>
 
         </Fragment>

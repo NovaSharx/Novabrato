@@ -4,9 +4,16 @@
     .page-title {
         margin-top: 2rem;
         margin-bottom: 3rem;
+        text-align: center;
         font-size: 3rem;
         font-family: 'Inter';
-        text-align: center;
+
+
+        a {
+            font-family: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     #exercise-content {
@@ -25,10 +32,6 @@
             &:hover {
                 cursor: pointer;
             }
-        }
-
-        #exercise-category-title {
-            font-size: 2rem;
         }
 
         #exercise-content-prompt {

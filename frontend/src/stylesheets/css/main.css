@@ -957,9 +957,14 @@ p {
 #exercises .page-title {
   margin-top: 2rem;
   margin-bottom: 3rem;
+  text-align: center;
   font-size: 3rem;
   font-family: "Inter";
-  text-align: center;
+}
+#exercises .page-title a {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 #exercises #exercise-content {
   width: 100%;
@@ -976,9 +981,6 @@ p {
 }
 #exercises #exercise-content #back-button:hover {
   cursor: pointer;
-}
-#exercises #exercise-content #exercise-category-title {
-  font-size: 2rem;
 }
 #exercises #exercise-content #exercise-content-prompt {
   text-align: center;
