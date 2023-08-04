@@ -956,14 +956,6 @@ p {
   justify-content: center;
   align-items: center;
 }
-#exercises #exercise-content #back-button {
-  border-radius: 0.3rem;
-  padding: 0.5rem;
-  transition: 0.3s;
-}
-#exercises #exercise-content #back-button:hover {
-  cursor: pointer;
-}
 #exercises #exercise-content #exercise-content-prompt {
   text-align: center;
 }
@@ -1030,6 +1022,38 @@ p {
   align-items: center;
   width: 15rem;
   height: 15rem;
+}
+#exercises #exercise-content #interval-range-selection-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#exercises #exercise-content #interval-range-selection-window #interval-range-controls {
+  display: flex;
+  align-items: center;
+}
+#exercises #exercise-content #interval-range-selection-window #interval-range-controls #interval-range-display {
+  margin: 0rem 1rem;
+  font-size: 3rem;
+}
+#exercises #exercise-content #interval-range-selection-window #interval-range-controls .interval-range-control-button {
+  padding: 0rem 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  -webkit-user-select: none;
+}
+#exercises #exercise-content #interval-range-selection-window #interval-range-controls .interval-range-control-button:hover {
+  cursor: pointer;
+}
+#exercises #exercise-content #interval-range-selection-window #interval-range-start-button {
+  font-family: "Inter";
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+#exercises #exercise-content #interval-range-selection-window #interval-range-start-button:hover {
+  cursor: pointer;
 }
 
 #about {

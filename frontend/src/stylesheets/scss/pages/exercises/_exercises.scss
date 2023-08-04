@@ -24,16 +24,6 @@
         justify-content: center;
         align-items: center;
 
-        #back-button {
-            border-radius: 0.3rem;
-            padding: 0.5rem;
-            transition: 0.3s;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
         #exercise-content-prompt {
             text-align: center;
         }
@@ -108,6 +98,47 @@
                     align-items: center;
                     width: 15rem;
                     height: 15rem;
+                }
+            }
+        }
+
+        #interval-range-selection-window {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #interval-range-controls {
+                display: flex;
+                align-items: center;
+
+                #interval-range-display {
+                    margin: 0rem 1rem;
+                    font-size: 3rem;
+                }
+
+                .interval-range-control-button {
+                    padding: 0rem 1rem;
+                    font-size: 2rem;
+                    border-radius: 0.5rem;
+                    -webkit-user-select: none;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #interval-range-unit {}
+
+            #interval-range-start-button {
+                font-family: 'Inter';
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 0.5rem;
+                padding: 1rem;
+
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
