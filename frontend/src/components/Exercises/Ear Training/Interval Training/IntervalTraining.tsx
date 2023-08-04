@@ -19,6 +19,7 @@ const IntervalTraining: FC = (): ReactElement => {
     }
 
     const IntervalRangeControlButton = styled.span`
+        color: inherit;
         background-color: transparent;
 
         &:hover {
@@ -52,14 +53,14 @@ const IntervalTraining: FC = (): ReactElement => {
                 <div id='interval-range-selection-window'>
 
                     <div id='interval-range-controls'>
-                        <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange <= 1 ? theme.palette.text.disabled : 'inherit' }} onClick={() => changeIntervalRange(-1)}>-</IntervalRangeControlButton>
-                        <span id='interval-range-display'>{intervalRange}</span>
-                        <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange >= 12 ? theme.palette.text.disabled : 'inherit' }} onClick={() => changeIntervalRange(1)}>+</IntervalRangeControlButton>
+                        <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange <= 1 ? theme.palette.text.disabled : '' }} onClick={() => changeIntervalRange(-1)}>-</IntervalRangeControlButton>
+                        <span id='interval-range-display' key={intervalRange}>{intervalRange}</span>
+                        <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange >= 12 ? theme.palette.text.disabled : '' }} onClick={() => changeIntervalRange(1)}>+</IntervalRangeControlButton>
                     </div>
 
                     <span id='interval-range-unit'>Half Step(s)</span>
 
-                    <StartButton id='interval-range-start-button'>START</StartButton>
+                    <StartButton id='interval-range-start-button' onClick={() => {}}>START</StartButton>
                 </div>
             </div>
 
