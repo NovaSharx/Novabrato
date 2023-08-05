@@ -1,11 +1,13 @@
 import { FC, Fragment, ReactElement, useContext, useState } from 'react';
 import { ThemeContext } from '../../../contexts/ThemeContext';
 import styled from '@emotion/styled';
+import IntervalTrainingExercise from './IntervalTrainingExercise';
 
-const IntervalTraining: FC = (): ReactElement => {
+const IntervalTrainingPage: FC = (): ReactElement => {
 
-    const { theme } = useContext(ThemeContext)!
+    const { theme } = useContext(ThemeContext)!;
 
+    const [isPlayingExercise, setIsPlayingExercise] = useState<boolean>(false);
     const [intervalRange, setIntervalRange] = useState<number>(3);
 
     function changeIntervalRange(amount: number): void {
@@ -26,7 +28,6 @@ const IntervalTraining: FC = (): ReactElement => {
             color: ${theme.palette.primary.main};
             background-color: ${theme.palette.background.primary};
         }
-
     `
 
     const StartButton = styled.span`
@@ -39,6 +40,27 @@ const IntervalTraining: FC = (): ReactElement => {
         }
     `
 
+    const renderPreExercise: ReactElement = (
+        <Fragment>
+
+            <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please select an interval range.</p>
+
+            <div id='interval-range-selection-window'>
+
+                <div id='interval-range-controls'>
+                    <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange <= 1 ? theme.palette.text.disabled : '' }} onClick={() => changeIntervalRange(-1)}>-</IntervalRangeControlButton>
+                    <span id='interval-range-display' key={intervalRange}>{intervalRange}</span>
+                    <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange >= 12 ? theme.palette.text.disabled : '' }} onClick={() => changeIntervalRange(1)}>+</IntervalRangeControlButton>
+                </div>
+
+                <span id='interval-range-unit'>Half Step(s)</span>
+
+                <StartButton id='interval-range-start-button' onClick={() => { setIsPlayingExercise(true) }}>START</StartButton>
+            </div>
+
+        </Fragment >
+    )
+
     return (
         <Fragment>
 
@@ -48,25 +70,12 @@ const IntervalTraining: FC = (): ReactElement => {
 
             <div id='exercise-content'>
 
-                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please select an interval range.</p>
+                {isPlayingExercise ? <IntervalTrainingExercise intervalRange={intervalRange} /> : renderPreExercise}
 
-                <div id='interval-range-selection-window'>
-
-                    <div id='interval-range-controls'>
-                        <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange <= 1 ? theme.palette.text.disabled : '' }} onClick={() => changeIntervalRange(-1)}>-</IntervalRangeControlButton>
-                        <span id='interval-range-display' key={intervalRange}>{intervalRange}</span>
-                        <IntervalRangeControlButton className='interval-range-control-button' style={{ color: intervalRange >= 12 ? theme.palette.text.disabled : '' }} onClick={() => changeIntervalRange(1)}>+</IntervalRangeControlButton>
-                    </div>
-
-                    <span id='interval-range-unit'>Half Step(s)</span>
-
-                    <StartButton id='interval-range-start-button' onClick={() => {}}>START</StartButton>
-                </div>
             </div>
 
         </Fragment>
-
     );
 };
 
-export default IntervalTraining;
+export default IntervalTrainingPage;
