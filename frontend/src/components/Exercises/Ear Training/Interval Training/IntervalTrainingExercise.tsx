@@ -38,8 +38,19 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
 
     const fullFrequencyArray: number[] = generateFullFrequencyArray()
 
+    function getFirstNoteIndex(): number {
+        let min: number = intervalRange;
+        let max: number = (fullFrequencyArray.length - 1) - intervalRange;
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
+    const firstNoteIndex = getFirstNoteIndex()
 
+    function getSecondNoteIndex(firstNote: number): number {
+        let min: number = firstNote - intervalRange;
+        let max: number = firstNote + intervalRange;
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
     return (
         <Fragment>
@@ -50,7 +61,7 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
 
             <div id='interval-training-window'>
 
-                {intervalRange}
+                {firstNoteIndex} - {getSecondNoteIndex(firstNoteIndex)}
 
             </div>
 
