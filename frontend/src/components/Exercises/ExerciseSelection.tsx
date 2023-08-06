@@ -1,5 +1,5 @@
 import { FC, Fragment, ReactElement, ReactNode, useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 

@@ -1,5 +1,5 @@
 import { FC, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
 import { Outlet } from 'react-router-dom';
 
 const Exercises: FC = (): ReactElement => {

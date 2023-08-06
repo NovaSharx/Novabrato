@@ -110,7 +110,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     primary: '#bfbfbf',
                     secondary: '#777777',
                     tertiary: '#444444',
-                    disabled: '#bfbfbf50'
+                    disabled: '#bfbfbf25'
                 }
                 :
                 // light
@@ -118,7 +118,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }): JSX.Element => {
                     primary: '#3d3d3d',
                     secondary: '#6f6f6f',
                     tertiary: '#b7b7b7',
-                    disabled: '#3d3d3d50'
+                    disabled: '#3d3d3d25'
                 },
             divider: isDarkMode ?
                 // dark

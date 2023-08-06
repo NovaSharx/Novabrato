@@ -1,5 +1,5 @@
 import { FC, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
 
 const Footer: FC = (): ReactElement => {
 
@@ -12,7 +12,7 @@ const Footer: FC = (): ReactElement => {
             <div className='main-section'>
 
                 <div id='footer-bottom'>
-                    <span style={{color: theme.palette.text.primary}}>© Copyright 2023 | Davin Jones</span>
+                    <span style={{ color: theme.palette.text.primary }}>© Copyright 2023 | Davin Jones</span>
                 </div>
 
             </div>

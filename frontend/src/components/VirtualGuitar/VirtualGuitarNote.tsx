@@ -1,7 +1,7 @@
 import { FC, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
 import styled from '@emotion/styled';
-import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
+import { VirtualGuitarContext } from '../Contexts/VirtualGuitarContext';
 
 interface VirtualGuitarNoteProps {
     note: string,

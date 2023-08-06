@@ -1,7 +1,7 @@
 import { FC, ReactElement, useContext, useState } from 'react';
 import styled from '@emotion/styled';
-import { ThemeContext } from '../contexts/ThemeContext';
-import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
+import { VirtualGuitarContext } from '../Contexts/VirtualGuitarContext';
 
 const VirtualGuitarControlPanel: FC = (): ReactElement => {
 

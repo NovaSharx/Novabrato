@@ -1,6 +1,8 @@
-import { FC, Fragment, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../../../contexts/ThemeContext';
-import { VirtualGuitarContext } from '../../../contexts/VirtualGuitarContext';
+import { FC, Fragment, ReactElement, useContext, useState } from 'react';
+import { ThemeContext } from '../../../Contexts/ThemeContext';
+import { VirtualGuitarContext } from '../../../Contexts/VirtualGuitarContext';
+import styled from '@emotion/styled';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 type IntervalRangeProp = {
     intervalRange: number
@@ -10,13 +12,13 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
 
     const { theme } = useContext(ThemeContext)!;
 
-    const { noteLibrary, baseFrequencyLibrary } = useContext(VirtualGuitarContext)!;
+    const { noteLibrary, baseFrequencyLibrary, playNote } = useContext(VirtualGuitarContext)!;
 
     // Generates all possible note frequencies for interval practice
     function generateFullFrequencyArray(): number[] {
         let frequencyArray: number[] = []
 
-        for (let iteration: number = 0; iteration < 84; iteration++) {
+        for (let iteration: number = 24; iteration < 84; iteration++) {
             let index: number = iteration % noteLibrary.length
             let currentOctave: number = Math.floor(iteration / noteLibrary.length) // Find current Octave
 
@@ -36,32 +38,115 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
         return frequencyArray
     }
 
+    // An array of all possible notes for this exercise
     const fullFrequencyArray: number[] = generateFullFrequencyArray()
 
+    // Outputs the first interval note by calculating a random number between "more than the interval range" and "less than the difference of the maximum range and the interval range".
     function getFirstNoteIndex(): number {
-        let min: number = intervalRange;
-        let max: number = (fullFrequencyArray.length - 1) - intervalRange;
-        return Math.floor(Math.random() * (max - min + 1) + min);
+        let minRange: number = intervalRange;
+        let maxRange: number = (fullFrequencyArray.length - 1) - intervalRange;
+        return Math.floor(Math.random() * (maxRange - minRange + 1) + minRange);
     }
 
-    const firstNoteIndex = getFirstNoteIndex()
+    // Outputs the second interval note by calculating a random number less than, equal to or more than the first note index within the interval range.
+    function getSecondNoteIndex(noteIndex: number): number {
+        let minRange: number = noteIndex - intervalRange;
+        let maxRange: number = noteIndex + intervalRange;
+        return Math.floor(Math.random() * (maxRange - minRange + 1) + minRange);
+    }
 
-    function getSecondNoteIndex(firstNote: number): number {
-        let min: number = firstNote - intervalRange;
-        let max: number = firstNote + intervalRange;
-        return Math.floor(Math.random() * (max - min + 1) + min);
+    const [firstNoteIndex, setFirstNoteIndex] = useState<number>(getFirstNoteIndex());
+    const [secondNoteIndex, setSecondNoteIndex] = useState<number>(getSecondNoteIndex(firstNoteIndex));
+    const [selectedNoteIndex, setSelectedNoteIndex] = useState<number>(firstNoteIndex);
+
+    const NoteSelectionButton = styled.span`
+        color: inherit;
+        border-color: transparent;
+        background-color: ${theme.palette.background.full};
+
+        &:hover {
+            color: ${theme.palette.primary.main};
+            border-color: ${theme.palette.primary.main};
+        }
+    `
+
+    const PlayNoteButton = styled.span`
+        border-color: transparent;
+        background-color: transparent;
+        box-shadow: 0rem 0rem 0.8rem 0.1rem ${theme.palette.shadow.primary};
+
+        &:hover {
+            border-color: ${theme.palette.primary.main};
+            background-color: ${theme.palette.background.primary};
+            box-shadow: 0rem 0rem 0rem 0rem ${theme.palette.shadow.primary};
+        }
+    `
+
+    function updateSelectedNoteIndex(amount: number): void {
+        let updatedSelectedNoteIndex: number = intervalRange + amount;
+
+        if (updatedSelectedNoteIndex < 1 || updatedSelectedNoteIndex > 12) {
+            return;
+        } else {
+            setSelectedNoteIndex(updatedSelectedNoteIndex);
+        }
     }
 
     return (
         <Fragment>
 
             <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>
-                Select the correct note played in the interval.
+                Select the correct note played at the second note of the interval.
             </p>
 
             <div id='interval-training-window'>
 
-                {firstNoteIndex} - {getSecondNoteIndex(firstNoteIndex)}
+                {/* {fullFrequencyArray[firstNoteIndex]} - {fullFrequencyArray[secondNoteIndex]}
+
+                <div onClick={() => { playNote(fullFrequencyArray[secondNoteIndex]) }}>
+                    {noteLibrary[secondNoteIndex % 12]}
+                </div> */}
+
+                <div id='interval-training-selection-window'>
+
+                    <div id='note-interval-window'>
+
+                        <PlayNoteButton className='play-note-button' onClick={() => { playNote(fullFrequencyArray[firstNoteIndex]) }}>
+                            <span className='play-note-button-title'>Play First Note</span>
+                            <span className='play-note-button-value'>Note: <span>{noteLibrary[firstNoteIndex % 12]}</span></span>
+                            <span className='play-note-button-value'>Octave: <span>{Math.floor(firstNoteIndex / 12) + 2}</span></span>
+                            <VolumeUpIcon className='play-note-button-overlay' style={{ color: theme.palette.text.disabled }} />
+                        </PlayNoteButton>
+
+                        <PlayNoteButton className='play-note-button' onClick={() => { playNote(fullFrequencyArray[secondNoteIndex]) }}>
+                            <span className='play-note-button-title'>Play Second Note</span>
+                            <span className='play-note-button-value'>Note: <span>?</span></span>
+                            <span className='play-note-button-value'>Octave: <span>?</span></span>
+                            <VolumeUpIcon className='play-note-button-overlay' style={{ color: theme.palette.text.disabled }} />
+                        </PlayNoteButton>
+
+                    </div>
+
+                    <div id='note-selection-window'>
+
+                        <NoteSelectionButton className='note-selection-button' onClick={() => setSelectedNoteIndex(selectedNoteIndex + 1)}>
+                            +
+                        </NoteSelectionButton>
+
+                        <span id='note-selection-display' key={selectedNoteIndex}>
+                            {noteLibrary[selectedNoteIndex % 12]}
+                        </span>
+
+                        <NoteSelectionButton className='note-selection-button' onClick={() => setSelectedNoteIndex(selectedNoteIndex - 1)}>
+                            -
+                        </NoteSelectionButton>
+                    </div>
+
+                    <div id='octave-window'>
+                        Octave: <span>{Math.floor(selectedNoteIndex / 12) + 2}</span>
+                    </div>
+
+                </div>
 
             </div>
 
