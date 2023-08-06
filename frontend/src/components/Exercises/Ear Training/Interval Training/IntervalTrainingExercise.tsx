@@ -60,12 +60,10 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
     const [selectedNoteIndex, setSelectedNoteIndex] = useState<number>(firstNoteIndex);
 
     const NoteSelectionButton = styled.span`
-        color: inherit;
         border-color: transparent;
         background-color: ${theme.palette.background.full};
 
         &:hover {
-            color: ${theme.palette.primary.main};
             border-color: ${theme.palette.primary.main};
         }
     `
@@ -82,10 +80,11 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
         }
     `
 
+    // Limits note selection within the interval range.
     function updateSelectedNoteIndex(amount: number): void {
-        let updatedSelectedNoteIndex: number = intervalRange + amount;
+        let updatedSelectedNoteIndex: number = selectedNoteIndex + amount;
 
-        if (updatedSelectedNoteIndex < 1 || updatedSelectedNoteIndex > 12) {
+        if (updatedSelectedNoteIndex < (firstNoteIndex - intervalRange) || updatedSelectedNoteIndex > (firstNoteIndex + intervalRange)) {
             return;
         } else {
             setSelectedNoteIndex(updatedSelectedNoteIndex);
@@ -129,7 +128,7 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
 
                     <div id='note-selection-window'>
 
-                        <NoteSelectionButton className='note-selection-button' onClick={() => setSelectedNoteIndex(selectedNoteIndex + 1)}>
+                        <NoteSelectionButton className='note-selection-button' style={{ color: selectedNoteIndex < (firstNoteIndex + intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(1)}>
                             +
                         </NoteSelectionButton>
 
@@ -137,7 +136,7 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
                             {noteLibrary[selectedNoteIndex % 12]}
                         </span>
 
-                        <NoteSelectionButton className='note-selection-button' onClick={() => setSelectedNoteIndex(selectedNoteIndex - 1)}>
+                        <NoteSelectionButton className='note-selection-button' style={{ color: selectedNoteIndex > (firstNoteIndex - intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(-1)}>
                             -
                         </NoteSelectionButton>
                     </div>
