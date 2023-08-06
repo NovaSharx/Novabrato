@@ -1,5 +1,5 @@
 import { FC, Fragment, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../Contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const CategorySelection: FC = (): ReactElement => {
             </h2>
 
             <div id='exercise-content'>
-                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose an exercise category.</p>
+                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose an exercise category</p>
 
                 <div id='exercise-categories'>
 

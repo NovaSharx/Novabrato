@@ -1,5 +1,5 @@
 import { FC, Fragment, ReactElement, ReactNode, useContext } from 'react';
-import { ThemeContext } from '../Contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 
@@ -83,7 +83,7 @@ const ExerciseSelection: FC<CategoryProp> = ({ category }): ReactElement => {
 
             <div id='exercise-content'>
 
-                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose a skill to practice.</p>
+                <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please choose a skill to practice</p>
 
                 <div id='category-exercises'>
                     {categories[category].exercises.map((exercise, index): ReactNode => {

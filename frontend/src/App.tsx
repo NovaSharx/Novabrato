@@ -1,8 +1,8 @@
 import { FC, ReactElement } from 'react';
 import './stylesheets/css/main.css';
-import ThemeProvider from './components/Contexts/ThemeContext';
+import ThemeProvider from './components/contexts/ThemeContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import VirtualGuitarProvider from './components/Contexts/VirtualGuitarContext';
+import VirtualGuitarProvider from './components/contexts/VirtualGuitarContext';
 import Navigation from './components/Navigation/Navigation';
 import Home from './components/Home/Home';
 import Exercises from './components/Exercises/Exercises';

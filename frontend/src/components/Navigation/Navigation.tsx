@@ -1,5 +1,5 @@
 import { FC, ReactElement, useContext, useState } from 'react';
-import { ThemeContext } from '../Contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';

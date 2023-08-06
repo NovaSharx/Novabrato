@@ -1081,19 +1081,19 @@ p {
 #exercise-content #interval-range-selection-window #interval-range-start-button:hover {
   cursor: pointer;
 }
-#exercise-content #interval-training-window #interval-training-selection-window {
+#exercise-content #interval-training-window {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window {
+#exercise-content #interval-training-window #note-interval-window {
   margin: 2rem 0rem;
   display: grid;
   grid-template: 8rem/repeat(2, 12rem);
   gap: 5rem;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button {
+#exercise-content #interval-training-window #note-interval-window .play-note-button {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1103,45 +1103,46 @@ p {
   border-style: solid;
   border-width: 0.2rem;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button span {
+#exercise-content #interval-training-window #note-interval-window .play-note-button span {
   z-index: 2;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button:hover {
+#exercise-content #interval-training-window #note-interval-window .play-note-button:hover {
   cursor: pointer;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button .play-note-button-title {
+#exercise-content #interval-training-window #note-interval-window .play-note-button .play-note-button-title {
   font-family: "Inter";
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button .play-note-button-value span {
+#exercise-content #interval-training-window #note-interval-window .play-note-button .play-note-button-value span {
   font-family: "Inter";
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button .play-note-button-overlay {
+#exercise-content #interval-training-window #note-interval-window .play-note-button .play-note-button-overlay {
   position: absolute;
   font-size: 8em;
+  transform: rotate(270deg);
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window {
+#exercise-content #interval-training-window #note-selection-window {
   display: grid;
   grid-template: repeat(3, 6rem)/18rem;
   gap: 1rem;
   font-size: 2rem;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window span {
+#exercise-content #interval-training-window #note-selection-window span {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window .note-change-button {
+#exercise-content #interval-training-window #note-selection-window .note-change-button {
   margin: 1rem 3rem;
   border-width: 0.2rem;
   border-style: solid;
   transition: 0.3s;
   -webkit-user-select: none;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window .note-change-button:hover {
+#exercise-content #interval-training-window #note-selection-window .note-change-button:hover {
   cursor: pointer;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window #note-select-button {
+#exercise-content #interval-training-window #note-selection-window #note-select-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1152,7 +1153,7 @@ p {
   animation-duration: 0.3s;
   animation-name: expand;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window #note-select-button:hover {
+#exercise-content #interval-training-window #note-selection-window #note-select-button:hover {
   cursor: pointer;
 }
 @keyframes expand {
@@ -1163,10 +1164,10 @@ p {
     transform: scale(1);
   }
 }
-#exercise-content #interval-training-window #interval-training-selection-window #octave-window {
+#exercise-content #interval-training-window #octave-window {
   font-size: 1.5rem;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #octave-window span {
+#exercise-content #interval-training-window #octave-window span {
   font-family: "Inter";
 }
 

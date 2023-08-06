@@ -1,5 +1,5 @@
 import { FC, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../Contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const About: FC = (): ReactElement => {
 

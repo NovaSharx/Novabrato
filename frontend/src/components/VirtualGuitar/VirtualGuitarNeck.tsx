@@ -1,5 +1,5 @@
 import { FC, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../Contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import styled from '@emotion/styled';
 import VirtualGuitarString from './VirtualGuitarString';
 import SettingsIcon from '@mui/icons-material/Settings';

@@ -1,6 +1,6 @@
 import { FC, ReactElement, useContext } from 'react';
 import VirtualGuitarNote from './VirtualGuitarNote';
-import { VirtualGuitarContext } from '../Contexts/VirtualGuitarContext';
+import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
 
 interface VirtualGuitarStringProps {
     stringNote: string,

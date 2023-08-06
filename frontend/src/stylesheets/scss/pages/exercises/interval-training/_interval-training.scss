@@ -68,113 +68,111 @@
     }
 
     #interval-training-window {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
 
-        #interval-training-selection-window {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+        #note-interval-window {
+            margin: 2rem 0rem;
+            display: grid;
+            grid-template: 8rem / repeat(2, 12rem);
+            gap: 5rem;
 
-            #note-interval-window {
-                margin: 2rem 0rem;
-                display: grid;
-                grid-template: 8rem / repeat(2, 12rem);
-                gap: 5rem;
+            .play-note-button {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.8rem;
+                border-style: solid;
+                border-width: 0.2rem;
 
-                .play-note-button {
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 0.8rem;
-                    border-style: solid;
-                    border-width: 0.2rem;
+                span {
+                    z-index: 2;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .play-note-button-title {
+                    font-family: 'Inter';
+                }
+
+                .play-note-button-value {
 
                     span {
-                        z-index: 2;
-                    }
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-
-                    .play-note-button-title {
                         font-family: 'Inter';
                     }
+                }
 
-                    .play-note-button-value {
+                .play-note-button-overlay {
+                    position: absolute;
+                    font-size: 8em;
+                    transform: rotate(270deg);
+                }
+            }
+        }
 
-                        span {
-                            font-family: 'Inter';
-                        }
-                    }
+        #note-selection-window {
+            display: grid;
+            grid-template: repeat(3, 6rem) / 18rem;
+            gap: 1rem;
+            font-size: 2rem;
 
-                    .play-note-button-overlay {
-                        position: absolute;
-                        font-size: 8em;
-                    }
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5rem;
+            }
+
+            .note-change-button {
+                margin: 1rem 3rem;
+                border-width: 0.2rem;
+                border-style: solid;
+                transition: 0.3s;
+                -webkit-user-select: none;
+
+                &:hover {
+                    cursor: pointer;
                 }
             }
 
-            #note-selection-window {
-                display: grid;
-                grid-template: repeat(3, 6rem) / 18rem;
-                gap: 1rem;
-                font-size: 2rem;
+            #note-select-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Inter';
+                font-size: 2em;
+                border-width: 0.2rem;
+                border-style: solid;
+                animation-duration: 0.3s;
+                animation-name: expand;
 
-                span {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 0.5rem;
+                &:hover {
+                    cursor: pointer;
                 }
 
-                .note-change-button {
-                    margin: 1rem 3rem;
-                    border-width: 0.2rem;
-                    border-style: solid;
-                    transition: 0.3s;
-                    -webkit-user-select: none;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-
-                #note-select-button {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-family: 'Inter';
-                    font-size: 2em;
-                    border-width: 0.2rem;
-                    border-style: solid;
-                    animation-duration: 0.3s;
-                    animation-name: expand;
-
-                    &:hover {
-                        cursor: pointer;
+                @keyframes expand {
+                    0% {
+                        transform: scale(0.8);
                     }
 
-                    @keyframes expand {
-                        0% {
-                            transform: scale(0.8);
-                        }
-
-                        100% {
-                            transform: scale(1);
-                        }
+                    100% {
+                        transform: scale(1);
                     }
                 }
             }
+        }
 
-            #octave-window {
-                font-size: 1.5rem;
+        #octave-window {
+            font-size: 1.5rem;
 
-                span {
-                    font-family: 'Inter';
-                }
+            span {
+                font-family: 'Inter';
             }
         }
     }

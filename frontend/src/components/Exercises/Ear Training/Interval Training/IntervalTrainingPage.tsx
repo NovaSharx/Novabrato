@@ -1,5 +1,5 @@
 import { FC, Fragment, ReactElement, useContext, useState } from 'react';
-import { ThemeContext } from '../../../Contexts/ThemeContext';
+import { ThemeContext } from '../../../contexts/ThemeContext';
 import styled from '@emotion/styled';
 import IntervalTrainingExercise from './IntervalTrainingExercise';
 
@@ -43,7 +43,7 @@ const IntervalTrainingPage: FC = (): ReactElement => {
     const renderPreExercise: ReactElement = (
         <Fragment>
 
-            <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please select an interval range.</p>
+            <p id='exercise-content-prompt' style={{ color: theme.palette.text.secondary }}>Please select an interval range</p>
 
             <div id='interval-range-selection-window'>
 
