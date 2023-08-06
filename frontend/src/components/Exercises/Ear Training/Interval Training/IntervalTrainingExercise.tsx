@@ -58,8 +58,9 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
     const [firstNoteIndex, setFirstNoteIndex] = useState<number>(getFirstNoteIndex());
     const [secondNoteIndex, setSecondNoteIndex] = useState<number>(getSecondNoteIndex(firstNoteIndex));
     const [selectedNoteIndex, setSelectedNoteIndex] = useState<number>(firstNoteIndex);
+    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
 
-    const NoteSelectionButton = styled.span`
+    const NoteChangeButton = styled.span`
         border-color: transparent;
         background-color: ${theme.palette.background.full};
 
@@ -68,14 +69,28 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
         }
     `
 
-    const PlayNoteButton = styled.span`
+    const NoteSelectButton = styled.span`
+        color: inherit;
         border-color: transparent;
         background-color: transparent;
+        box-shadow: 0rem 0.2rem 0rem 0.4rem ${theme.palette.shadow.primary};
+
+        &:hover {
+            color: ${theme.palette.primary.main};
+            border-color: ${theme.palette.primary.main};
+            background-color: ${theme.palette.background.full};
+            box-shadow: 0rem 0.3rem 0rem 0.4rem transparent;
+        }
+    `
+
+    const PlayNoteButton = styled.span`
+        border-color: transparent;
+        background-color: ${theme.palette.background.primary};
         box-shadow: 0rem 0rem 0.8rem 0.1rem ${theme.palette.shadow.primary};
 
         &:hover {
             border-color: ${theme.palette.primary.main};
-            background-color: ${theme.palette.background.primary};
+            background-color: transparent;
             box-shadow: 0rem 0rem 0rem 0rem ${theme.palette.shadow.primary};
         }
     `
@@ -91,6 +106,57 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
         }
     }
 
+    const renderNoteSelection = (
+        <div id='interval-training-selection-window'>
+
+            <div id='note-interval-window'>
+
+                <PlayNoteButton className='play-note-button' onClick={() => { playNote(fullFrequencyArray[firstNoteIndex]) }}>
+                    <span className='play-note-button-title'>Play First Note</span>
+                    <span className='play-note-button-value'>Note: <span>{noteLibrary[firstNoteIndex % 12]}</span></span>
+                    <span className='play-note-button-value'>Octave: <span>{Math.floor(firstNoteIndex / 12) + 2}</span></span>
+                    <VolumeUpIcon className='play-note-button-overlay' style={{ color: theme.palette.text.disabled }} />
+                </PlayNoteButton>
+
+                <PlayNoteButton className='play-note-button' onClick={() => { playNote(fullFrequencyArray[secondNoteIndex]) }}>
+                    <span className='play-note-button-title'>Play Second Note</span>
+                    <span className='play-note-button-value'>Note: <span>?</span></span>
+                    <span className='play-note-button-value'>Octave: <span>?</span></span>
+                    <VolumeUpIcon className='play-note-button-overlay' style={{ color: theme.palette.text.disabled }} />
+                </PlayNoteButton>
+
+            </div>
+
+            <div id='note-selection-window'>
+
+                <NoteChangeButton className='note-change-button' style={{ color: selectedNoteIndex < (firstNoteIndex + intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(1)}>
+                    +
+                </NoteChangeButton>
+
+                <NoteSelectButton id='note-select-button' key={selectedNoteIndex} onClick={() => { setSelectedAnswerIndex(selectedNoteIndex) }}>
+                    {noteLibrary[selectedNoteIndex % 12]}
+                </NoteSelectButton>
+
+                <NoteChangeButton className='note-change-button' style={{ color: selectedNoteIndex > (firstNoteIndex - intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(-1)}>
+                    -
+                </NoteChangeButton>
+            </div>
+
+            <div id='octave-window'>
+                Octave: <span>{Math.floor(selectedNoteIndex / 12) + 2}</span>
+            </div>
+
+        </div>
+    )
+
+    const renderResultScreen = (
+        <div>
+            <div>First Note: Note: {noteLibrary[firstNoteIndex % 12]} Octave: {Math.floor(firstNoteIndex / 12) + 2}</div>
+            <div>Choice: Note: {noteLibrary[selectedAnswerIndex! % 12]} Octave: {Math.floor(selectedNoteIndex / 12) + 2}</div>
+            <div>Answer: Note: {noteLibrary[secondNoteIndex % 12]} Octave: {Math.floor(secondNoteIndex / 12) + 2}</div>
+        </div>
+    )
+
     return (
         <Fragment>
 
@@ -100,52 +166,7 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
 
             <div id='interval-training-window'>
 
-                {/* {fullFrequencyArray[firstNoteIndex]} - {fullFrequencyArray[secondNoteIndex]}
-
-                <div onClick={() => { playNote(fullFrequencyArray[secondNoteIndex]) }}>
-                    {noteLibrary[secondNoteIndex % 12]}
-                </div> */}
-
-                <div id='interval-training-selection-window'>
-
-                    <div id='note-interval-window'>
-
-                        <PlayNoteButton className='play-note-button' onClick={() => { playNote(fullFrequencyArray[firstNoteIndex]) }}>
-                            <span className='play-note-button-title'>Play First Note</span>
-                            <span className='play-note-button-value'>Note: <span>{noteLibrary[firstNoteIndex % 12]}</span></span>
-                            <span className='play-note-button-value'>Octave: <span>{Math.floor(firstNoteIndex / 12) + 2}</span></span>
-                            <VolumeUpIcon className='play-note-button-overlay' style={{ color: theme.palette.text.disabled }} />
-                        </PlayNoteButton>
-
-                        <PlayNoteButton className='play-note-button' onClick={() => { playNote(fullFrequencyArray[secondNoteIndex]) }}>
-                            <span className='play-note-button-title'>Play Second Note</span>
-                            <span className='play-note-button-value'>Note: <span>?</span></span>
-                            <span className='play-note-button-value'>Octave: <span>?</span></span>
-                            <VolumeUpIcon className='play-note-button-overlay' style={{ color: theme.palette.text.disabled }} />
-                        </PlayNoteButton>
-
-                    </div>
-
-                    <div id='note-selection-window'>
-
-                        <NoteSelectionButton className='note-selection-button' style={{ color: selectedNoteIndex < (firstNoteIndex + intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(1)}>
-                            +
-                        </NoteSelectionButton>
-
-                        <span id='note-selection-display' key={selectedNoteIndex}>
-                            {noteLibrary[selectedNoteIndex % 12]}
-                        </span>
-
-                        <NoteSelectionButton className='note-selection-button' style={{ color: selectedNoteIndex > (firstNoteIndex - intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(-1)}>
-                            -
-                        </NoteSelectionButton>
-                    </div>
-
-                    <div id='octave-window'>
-                        Octave: <span>{Math.floor(selectedNoteIndex / 12) + 2}</span>
-                    </div>
-
-                </div>
+                {selectedAnswerIndex ? renderResultScreen : renderNoteSelection}
 
             </div>
 

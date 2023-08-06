@@ -1090,7 +1090,7 @@ p {
 #exercise-content #interval-training-window #interval-training-selection-window #note-interval-window {
   margin: 2rem 0rem;
   display: grid;
-  grid-template: 10rem/repeat(2, 12rem);
+  grid-template: 8rem/repeat(2, 12rem);
   gap: 5rem;
 }
 #exercise-content #interval-training-window #interval-training-selection-window #note-interval-window .play-note-button {
@@ -1121,7 +1121,8 @@ p {
 }
 #exercise-content #interval-training-window #interval-training-selection-window #note-selection-window {
   display: grid;
-  grid-template: repeat(3, 6rem)/8rem;
+  grid-template: repeat(3, 6rem)/18rem;
+  gap: 1rem;
   font-size: 2rem;
 }
 #exercise-content #interval-training-window #interval-training-selection-window #note-selection-window span {
@@ -1130,24 +1131,29 @@ p {
   align-items: center;
   border-radius: 0.5rem;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window .note-selection-button {
-  margin: 1rem;
+#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window .note-change-button {
+  margin: 1rem 3rem;
   border-width: 0.2rem;
   border-style: solid;
   transition: 0.3s;
   -webkit-user-select: none;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window .note-selection-button:hover {
+#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window .note-change-button:hover {
   cursor: pointer;
 }
-#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window #note-selection-display {
+#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window #note-select-button {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Inter";
   font-size: 2em;
+  border-width: 0.2rem;
+  border-style: solid;
   animation-duration: 0.3s;
   animation-name: expand;
+}
+#exercise-content #interval-training-window #interval-training-selection-window #note-selection-window #note-select-button:hover {
+  cursor: pointer;
 }
 @keyframes expand {
   0% {
