@@ -167,11 +167,157 @@
             }
         }
 
+
         #octave-window {
             font-size: 1.5rem;
 
             span {
                 font-family: 'Inter';
+            }
+        }
+
+        #interval-training-result-window {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+
+            #result-data-display {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                #result-icon-badge {
+                    display: flex;
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 0.5rem;
+
+                    #result-icon {
+                        padding: 1rem;
+                        color: white;
+                        font-size: 6em;
+                        border-radius: 50%;
+                        animation-duration: 0.3s;
+                        animation-name: burst-out;
+
+                        @keyframes burst-out {
+                            0% {
+                                transform: scale(0.2);
+                            }
+
+                            90% {
+                                transform: scale(1.1);
+                            }
+
+                            100% {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+
+                #detailed-results {
+                    font-size: 0.6em;
+                    margin: 1rem 0rem;
+
+                    #detailed-results-button {
+
+                        &:hover {
+                            cursor: pointer;
+                            font-weight: 900;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    #detailed-results-dialog-backdrop {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #00000095;
+                        z-index: 3;
+
+                        #detailed-results-dialog {
+                            padding: 2rem;
+                            display: grid;
+                            gap: 2rem;
+                            border-radius: 1rem;
+
+                            #detailed-results-title {
+                                font-size: 1.5rem;
+                                text-align: center;
+                                font-family: 'Inter';
+                            }
+
+                            #detailed-result-items {
+                                display: grid;
+                                gap: 0.5rem;
+
+                                .detailed-result-item {
+                                    display: flex;
+                                    align-items: center;
+
+                                    .play-note-result-button {
+                                        margin: 0rem 1rem;
+                                        padding: 0.5rem;
+                                        display: flex;
+                                        border-radius: 0.5rem;
+                                        border-style: solid;
+                                        border-width: 0.2rem;
+
+                                        &:hover {
+                                            cursor: pointer;
+                                        }
+                                    }
+
+                                    .detailed-result-note {
+
+                                        span {
+                                            font-family: 'Inter';
+                                        }
+                                    }
+                                }
+                            }
+
+                            #detailed-results-dialog-actions {
+                                display: flex;
+                                justify-content: center;
+
+                                button {
+                                    padding: 0.5rem 1rem;
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            #result-window-actions {
+
+                #next-question-button {
+                    padding: 1rem;
+                    font-family: 'Inter';
+                    border-radius: 0.5rem;
+                    border-style: solid;
+                    border-width: 0.2rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }

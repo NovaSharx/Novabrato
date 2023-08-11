@@ -45,12 +45,12 @@ const ExerciseSelection: FC<CategoryProp> = ({ category }): ReactElement => {
                     path: 'interval-training'
                 },
                 {
-                    name: 'Note Recognition',
-                    path: 'note-recognition'
+                    name: 'Coming Soon',
+                    path: ''
                 },
                 {
-                    name: 'Major & Minor Key Recognition',
-                    path: 'major-&-minor-key-recognition'
+                    name: 'Coming Soon',
+                    path: ''
                 },
             ]
         },
