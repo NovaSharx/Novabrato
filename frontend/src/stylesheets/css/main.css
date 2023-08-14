@@ -938,17 +938,25 @@ p {
 }
 #exercises .page-title {
   margin-top: 2rem;
-  margin-bottom: 3rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 3rem;
   font-family: "Inter";
 }
 #exercises .page-title a {
+  white-space: nowrap;
   font-family: inherit;
   text-decoration: none;
   color: inherit;
+  transition: 0.2s;
+}
+#exercises .page-title a:hover {
+  opacity: 0.2;
 }
 #exercises #exercise-content {
+  margin: 3rem 0rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -1020,8 +1028,83 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 15rem;
+}
+@media (max-width: 1200px) {
+  #exercises #exercise-content #exercise-categories .exercise-category {
+    width: 25rem;
+    height: 25rem;
+    font-size: 1.5rem;
+  }
+  #exercises #exercise-content #exercise-categories .exercise-category:hover {
+    padding: 0.8rem;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  #exercises #exercise-content #exercise-categories .exercise-category {
+    width: 20rem;
+    height: 20rem;
+    font-size: 1.2rem;
+  }
+  #exercises #exercise-content #exercise-categories .exercise-category:hover {
+    width: 20rem;
+    height: 20rem;
+    font-size: 1.6rem;
+  }
+  #exercises #exercise-content #category-exercises .category-exercise-button {
+    width: 10rem;
+    height: 10rem;
+    font-size: 1rem;
+  }
+  #exercises #exercise-content #category-exercises .category-exercise-button:hover {
+    width: 13rem;
+    height: 13rem;
+  }
+}
+@media (max-width: 768px) {
+  #exercises .page-title {
+    font-size: 2.5rem;
+  }
+  #exercises #exercise-content #exercise-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+  #exercises #exercise-content #exercise-categories .exercise-category {
+    width: 20rem;
+    height: 15rem;
+    font-size: 1.2rem;
+  }
+  #exercises #exercise-content #exercise-categories .exercise-category:hover {
+    width: 20rem;
+    height: 15rem;
+    font-size: 1.5rem;
+  }
+  #exercises #exercise-content #category-exercises {
+    flex-direction: column;
+    height: 100%;
+  }
+  #exercises #exercise-content #category-exercises .category-exercise-button {
+    margin: 1rem 0rem;
+    width: 15rem;
+    height: 8rem;
+  }
+  #exercises #exercise-content #category-exercises .category-exercise-button:hover {
+    margin: 0rem;
+    width: 15rem;
+    height: 10rem;
+  }
+}
+@media (max-width: 480px) {
+  #exercises #exercise-content #exercise-categories .exercise-category {
+    width: 20rem;
+    height: 10rem;
+    font-size: 1rem;
+  }
+  #exercises #exercise-content #exercise-categories .exercise-category:hover {
+    width: 20rem;
+    height: 10rem;
+    font-size: 1.2rem;
+  }
 }
 
 #exercise-content {
@@ -1283,6 +1366,27 @@ p {
 }
 #exercise-content #interval-training-window #interval-training-result-window #result-window-actions #next-question-button:hover {
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  #exercise-content #interval-training-window #note-interval-window {
+    font-size: 0.8rem;
+    grid-template: 6rem/repeat(2, 10rem);
+    gap: 2rem;
+  }
+  #exercise-content #interval-training-window #note-interval-window .play-note-button .play-note-button-overlay {
+    font-size: 5em;
+  }
+}
+@media (max-width: 480px) {
+  #exercise-content #interval-training-window #note-interval-window {
+    font-size: 0.8rem;
+    grid-template: 5rem/repeat(2, 9rem);
+    gap: 1.5rem;
+  }
+  #exercise-content #interval-training-window #interval-training-result-window #result-data-display #detailed-results #detailed-results-dialog-backdrop #detailed-results-dialog {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 #about {

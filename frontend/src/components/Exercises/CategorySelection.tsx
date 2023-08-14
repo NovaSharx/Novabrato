@@ -23,7 +23,7 @@ const CategorySelection: FC = (): ReactElement => {
         <Fragment>
 
             <h2 className='page-title' style={{ borderBottom: `2px solid ${theme.palette.divider.tertiary}` }}>
-                <a href="/exercises">EXERCISE</a>
+                <a href="/exercises">EXERCISES</a>
             </h2>
 
             <div id='exercise-content'>

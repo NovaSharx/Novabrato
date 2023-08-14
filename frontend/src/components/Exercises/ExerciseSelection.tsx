@@ -78,7 +78,7 @@ const ExerciseSelection: FC<CategoryProp> = ({ category }): ReactElement => {
         <Fragment>
 
             <h2 className='page-title' style={{ borderBottom: `2px solid ${theme.palette.divider.tertiary}` }}>
-                <a href="/exercises">EXERCISE</a><a href={category} style={{ fontSize: '0.8em' }}> / {categories[category].title}</a>
+                <a href="/exercises">EXERCISES</a><a href={category} style={{ fontSize: '0.8em' }}>{categories[category].title}</a>
             </h2>
 
             <div id='exercise-content'>

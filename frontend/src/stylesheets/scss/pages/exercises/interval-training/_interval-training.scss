@@ -304,7 +304,6 @@
                 }
             }
 
-
             #result-window-actions {
 
                 #next-question-button {
@@ -317,6 +316,525 @@
                     &:hover {
                         cursor: pointer;
                     }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $tv-width) {
+
+        #interval-range-selection-window {
+
+            #interval-range-controls {
+
+                #interval-range-display {}
+
+                .interval-range-control-button {}
+            }
+
+            #interval-range-unit {}
+
+            #interval-range-start-button {}
+        }
+
+        #interval-training-window {
+
+            #note-interval-window {
+
+                .play-note-button {
+
+                    span {}
+
+                    .play-note-button-title {}
+
+                    .play-note-button-value {
+
+                        span {}
+                    }
+
+                    .play-note-button-overlay {}
+                }
+            }
+
+            #note-selection-window {
+
+                span {}
+
+                .note-change-button {}
+
+                #note-select-button {}
+            }
+
+
+            #octave-window {
+
+                span {}
+            }
+
+            #interval-training-result-window {
+
+                #result-data-display {
+
+                    #result-icon-badge {
+
+                        #result-icon {}
+                    }
+
+                    #detailed-results {
+
+                        #detailed-results-button {
+
+                            &:hover {}
+                        }
+
+                        #detailed-results-dialog-backdrop {
+
+                            #detailed-results-dialog {
+
+                                #detailed-results-title {}
+
+                                #detailed-result-items {
+
+                                    .detailed-result-item {
+
+                                        .play-note-result-button {}
+
+                                        .detailed-result-note {
+
+                                            span {}
+                                        }
+                                    }
+                                }
+
+                                #detailed-results-dialog-actions {
+
+                                    button {}
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #result-window-actions {
+
+                    #next-question-button {}
+                }
+            }
+        }
+    }
+
+    @media (max-width: $desktop-width) {
+
+        #interval-range-selection-window {
+
+            #interval-range-controls {
+
+                #interval-range-display {}
+
+                .interval-range-control-button {}
+            }
+
+            #interval-range-unit {}
+
+            #interval-range-start-button {}
+        }
+
+        #interval-training-window {
+
+            #note-interval-window {
+
+                .play-note-button {
+
+                    span {}
+
+                    .play-note-button-title {}
+
+                    .play-note-button-value {
+
+                        span {}
+                    }
+
+                    .play-note-button-overlay {}
+                }
+            }
+
+            #note-selection-window {
+
+                span {}
+
+                .note-change-button {}
+
+                #note-select-button {}
+            }
+
+
+            #octave-window {
+
+                span {}
+            }
+
+            #interval-training-result-window {
+
+                #result-data-display {
+
+                    #result-icon-badge {
+
+                        #result-icon {}
+                    }
+
+                    #detailed-results {
+
+                        #detailed-results-button {
+
+                            &:hover {}
+                        }
+
+                        #detailed-results-dialog-backdrop {
+
+                            #detailed-results-dialog {
+
+                                #detailed-results-title {}
+
+                                #detailed-result-items {
+
+                                    .detailed-result-item {
+
+                                        .play-note-result-button {}
+
+                                        .detailed-result-note {
+
+                                            span {}
+                                        }
+                                    }
+                                }
+
+                                #detailed-results-dialog-actions {
+
+                                    button {}
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #result-window-actions {
+
+                    #next-question-button {}
+                }
+            }
+        }
+    }
+
+    @media (max-width: $laptop-width) {
+
+        #interval-range-selection-window {
+
+            #interval-range-controls {
+
+                #interval-range-display {}
+
+                .interval-range-control-button {}
+            }
+
+            #interval-range-unit {}
+
+            #interval-range-start-button {}
+        }
+
+        #interval-training-window {
+
+            #note-interval-window {
+
+                .play-note-button {
+
+                    span {}
+
+                    .play-note-button-title {}
+
+                    .play-note-button-value {
+
+                        span {}
+                    }
+
+                    .play-note-button-overlay {}
+                }
+            }
+
+            #note-selection-window {
+
+                span {}
+
+                .note-change-button {}
+
+                #note-select-button {}
+            }
+
+
+            #octave-window {
+
+                span {}
+            }
+
+            #interval-training-result-window {
+
+                #result-data-display {
+
+                    #result-icon-badge {
+
+                        #result-icon {}
+                    }
+
+                    #detailed-results {
+
+                        #detailed-results-button {
+
+                            &:hover {}
+                        }
+
+                        #detailed-results-dialog-backdrop {
+
+                            #detailed-results-dialog {
+
+                                #detailed-results-title {}
+
+                                #detailed-result-items {
+
+                                    .detailed-result-item {
+
+                                        .play-note-result-button {}
+
+                                        .detailed-result-note {
+
+                                            span {}
+                                        }
+                                    }
+                                }
+
+                                #detailed-results-dialog-actions {
+
+                                    button {}
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #result-window-actions {
+
+                    #next-question-button {}
+                }
+            }
+        }
+    }
+
+    @media (max-width: $tablet-width) {
+        #interval-range-selection-window {
+
+            #interval-range-controls {
+
+                #interval-range-display {}
+
+                .interval-range-control-button {}
+            }
+
+            #interval-range-unit {}
+
+            #interval-range-start-button {}
+        }
+
+        #interval-training-window {
+
+            #note-interval-window {
+                font-size: 0.8rem;
+                grid-template: 6rem / repeat(2, 10rem);
+                gap: 2rem;
+
+                .play-note-button {
+
+                    span {}
+
+                    .play-note-button-title {}
+
+                    .play-note-button-value {
+
+                        span {}
+                    }
+
+                    .play-note-button-overlay {
+                        font-size: 5em;
+                    }
+                }
+            }
+
+            #note-selection-window {
+
+                span {}
+
+                .note-change-button {}
+
+                #note-select-button {}
+            }
+
+
+            #octave-window {
+
+                span {}
+            }
+
+            #interval-training-result-window {
+
+                #result-data-display {
+
+                    #result-icon-badge {
+
+                        #result-icon {}
+                    }
+
+                    #detailed-results {
+
+                        #detailed-results-button {
+
+                            &:hover {}
+                        }
+
+                        #detailed-results-dialog-backdrop {
+
+                            #detailed-results-dialog {
+
+                                #detailed-results-title {}
+
+                                #detailed-result-items {
+
+                                    .detailed-result-item {
+
+                                        .play-note-result-button {}
+
+                                        .detailed-result-note {
+
+                                            span {}
+                                        }
+                                    }
+                                }
+
+                                #detailed-results-dialog-actions {
+
+                                    button {}
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #result-window-actions {
+
+                    #next-question-button {}
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+
+        #interval-range-selection-window {
+
+            #interval-range-controls {
+
+                #interval-range-display {}
+
+                .interval-range-control-button {}
+            }
+
+            #interval-range-unit {}
+
+            #interval-range-start-button {}
+        }
+
+        #interval-training-window {
+
+            #note-interval-window {
+                font-size: 0.8rem;
+                grid-template: 5rem / repeat(2, 9rem);
+                gap: 1.5rem;
+
+                .play-note-button {
+
+                    span {}
+
+                    .play-note-button-title {}
+
+                    .play-note-button-value {
+
+                        span {}
+                    }
+
+                    .play-note-button-overlay {}
+                }
+            }
+
+            #note-selection-window {
+
+                span {}
+
+                .note-change-button {}
+
+                #note-select-button {}
+            }
+
+
+            #octave-window {
+
+                span {}
+            }
+
+            #interval-training-result-window {
+
+                #result-data-display {
+
+                    #result-icon-badge {
+
+                        #result-icon {}
+                    }
+
+                    #detailed-results {
+
+                        #detailed-results-button {
+
+                            &:hover {}
+                        }
+
+                        #detailed-results-dialog-backdrop {
+
+                            #detailed-results-dialog {
+                                padding: 1rem;
+                                font-size: 0.8rem;
+
+                                #detailed-results-title {}
+
+                                #detailed-result-items {
+
+                                    .detailed-result-item {
+
+                                        .play-note-result-button {}
+
+                                        .detailed-result-note {
+
+                                            span {}
+                                        }
+                                    }
+                                }
+
+                                #detailed-results-dialog-actions {
+
+                                    button {}
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #result-window-actions {
+
+                    #next-question-button {}
                 }
             }
         }
