@@ -124,7 +124,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
                     <SecondaryPanelItem className='virtual-guitar-secondary-panel-item'>
                         <span className='secondary-panel-label' style={{ color: theme.palette.text.primary }}>Chord Constructor</span>
                         <div id='virtual-guitar-chord-constructor'>
-                            <p style={{ color: theme.palette.text.disabled }}>Coming soon...</p>
+                            <p style={{ color: theme.palette.text.tertiary }}>Coming soon...</p>
                         </div>
                     </SecondaryPanelItem>
                 }

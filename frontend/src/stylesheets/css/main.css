@@ -1398,4 +1398,59 @@ p {
   font-size: 3rem;
   font-family: "Inter";
   text-align: center;
+}
+#about #about-content {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+#about #about-content p {
+  font-size: 1em;
+  line-height: 2em;
+  text-align: center;
+}
+#about #about-content p:first-child {
+  font-size: 1.5em;
+}
+#about #about-content p span {
+  font-family: Inter;
+}
+@media (max-width: 1536px) {
+  #about #about-content p {
+    font-size: 0.9em;
+  }
+  #about #about-content p:first-child {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 1200px) {
+  #about #about-content p {
+    font-size: 0.8em;
+  }
+  #about #about-content p:first-child {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 1024px) {
+  #about #about-content p {
+    font-size: 0.7em;
+  }
+  #about #about-content p:first-child {
+    font-size: 1em;
+  }
+}
+@media (max-width: 768px) {
+  #about #about-content p {
+    font-size: 0.6em;
+  }
+  #about #about-content p:first-child {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 480px) {
+  #about #about-content p {
+    font-size: 0.5em;
+  }
+  #about #about-content p:first-child {
+    font-size: 0.7em;
+  }
 }/*# sourceMappingURL=main.css.map */

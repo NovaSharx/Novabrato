@@ -8,4 +8,98 @@
         font-family: 'Inter';
         text-align: center;
     }
+
+    #about-content {
+        padding: 1rem;
+        font-size: 1.5rem;
+
+        p {
+            font-size: 1em;
+            line-height: 2em;
+            text-align: center;
+
+            &:first-child {
+                font-size: 1.5em;
+            }
+
+            span {
+                font-family: Inter;
+            }
+        }
+    }
+
+    @media (max-width: $tv-width) {
+        .page-title {}
+
+        #about-content {
+
+            p {
+                font-size: 0.9em;
+
+                &:first-child {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $desktop-width) {
+        .page-title {}
+
+        #about-content {
+
+            p {
+                font-size: 0.8em;
+
+                &:first-child {
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $laptop-width) {
+        .page-title {}
+
+        #about-content {
+
+            p {
+                font-size: 0.7em;
+
+                &:first-child {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $tablet-width) {
+        .page-title {}
+
+        #about-content {
+
+            p {
+                font-size: 0.6em;
+
+                &:first-child {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+        .page-title {}
+
+        #about-content {
+
+            p {
+                font-size: 0.5em;
+
+                &:first-child {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
 }

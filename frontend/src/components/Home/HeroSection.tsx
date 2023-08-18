@@ -38,7 +38,7 @@ const HeroSection: FC = (): ReactElement => {
                     <span style={{
                         color: 'white'
                     }}>
-                        Improve your improvisational skills on the guitar through fun, interactive and engaging exercises
+                        Improve your knowledge and skills on the guitar through fun, interactive and engaging exercises
                     </span>
                 </span>
 
