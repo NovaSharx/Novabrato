@@ -616,6 +616,47 @@ p {
   height: 2rem;
   font-family: "Inter";
 }
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+  z-index: 3;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-title {
+  font-family: "Inter";
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings .guitar-tuning-string {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings .guitar-tuning-string .guitar-tuning-change-icon {
+  padding: 1rem;
+  font-size: 2rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings .guitar-tuning-string .guitar-tuning-display {
+  display: flex;
+  flex-direction: column;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings .guitar-tuning-string .guitar-tuning-display .guitar-tuning-display-section span {
+  font-family: "Inter";
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-dialog-actions button {
+  padding: 0.5rem 1rem;
+}
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-dialog-actions button:hover {
+  cursor: pointer;
+}
 @media (max-width: 1536px) {
   #virtual-guitar-container #virtual-guitar-title h2 {
     font-size: 2.8rem;

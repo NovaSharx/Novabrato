@@ -1,8 +1,19 @@
 import { ReactNode, createContext, useState } from "react";
 
+interface IGuitarTuning {
+    'firstString': { note: string, octave: number },
+    'secondString': { note: string, octave: number },
+    'thirdString': { note: string, octave: number },
+    'forthString': { note: string, octave: number },
+    'fifthString': { note: string, octave: number },
+    'sixthString': { note: string, octave: number }
+};
+
 interface IVirtualGuitar {
     highlightedNotes: string[],
     setHighlightedNotes: React.Dispatch<React.SetStateAction<string[]>>,
+    guitarTuning: IGuitarTuning,
+    setGuitarTuning: React.Dispatch<React.SetStateAction<IGuitarTuning>>
 
     scaleNotes: string[],
     root: string,
@@ -26,6 +37,14 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
 
     const [highlightedNotes, setHighlightedNotes] = useState<string[]>([])
     const [scaleNotes, setScaleNotes] = useState<string[]>([])
+    const [guitarTuning, setGuitarTuning] = useState<IGuitarTuning>({
+        'firstString': { note: 'E', octave: 2 },
+        'secondString': { note: 'A', octave: 2 },
+        'thirdString': { note: 'D', octave: 3 },
+        'forthString': { note: 'G', octave: 3 },
+        'fifthString': { note: 'B', octave: 3 },
+        'sixthString': { note: 'E', octave: 4 }
+    })
 
     const [root, setRoot] = useState<string>('');
     const [mode, setMode] = useState<string>('');
@@ -116,6 +135,8 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
         <VirtualGuitarContext.Provider value={{
             highlightedNotes,
             setHighlightedNotes,
+            guitarTuning,
+            setGuitarTuning,
             scaleNotes,
             root,
             mode,
@@ -126,7 +147,7 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
             getTriadNotes,
             noteLibrary,
             baseFrequencyLibrary,
-            noteLabelLibrary
+            noteLabelLibrary,
         }}>
             {children}
         </VirtualGuitarContext.Provider>

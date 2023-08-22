@@ -353,6 +353,66 @@
                         font-family: 'Inter';
                     }
                 }
+
+                #guitar-tuning-dialog-backdrop {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #00000095;
+                    z-index: 3;
+
+                    #guitar-tuning-dialog {
+                        padding: 2rem;
+                        border-radius: 1rem;
+
+                        #guitar-tuning-title {
+                            font-family: 'Inter';
+                        }
+
+                        #guitar-tuning-strings {
+
+                            .guitar-tuning-string {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .guitar-tuning-change-icon {
+                                    padding: 1rem;
+                                    font-size: 2rem;
+                                }
+
+                                .guitar-tuning-display {
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    .guitar-tuning-display-section {
+
+                                        span {
+                                            font-family: 'Inter';
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+                        #guitar-tuning-dialog-actions {
+
+                            button {
+                                padding: 0.5rem 1rem;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

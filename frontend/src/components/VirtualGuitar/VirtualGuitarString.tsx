@@ -3,8 +3,8 @@ import VirtualGuitarNote from './VirtualGuitarNote';
 import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
 
 interface VirtualGuitarStringProps {
-    stringNote: string,
-    stringOctave: number
+    stringNote: string;
+    stringOctave: number;
 }
 
 const VirtualGuitarString: FC<VirtualGuitarStringProps> = ({ stringNote, stringOctave }): ReactElement => {

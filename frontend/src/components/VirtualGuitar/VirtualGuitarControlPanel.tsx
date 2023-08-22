@@ -12,6 +12,7 @@ const VirtualGuitarControlPanel: FC = (): ReactElement => {
     const [showSecondaryPanelDialog, setShowSecondaryPanelDialog] = useState<boolean>(false)
     const [showTriadsPanel, setShowTriadsPanel] = useState<boolean>(false)
     const [showChordConstructorPanel, setShowChordConstructorPanel] = useState<boolean>(false)
+    const [showGuitarTuningDialog, setShowGuitarTuningDialog] = useState<boolean>(false)
 
     const VirtualGuitarSelect = styled.select`
         color: ${theme.palette.text.primary};
