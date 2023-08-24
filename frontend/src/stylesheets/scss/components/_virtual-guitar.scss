@@ -367,7 +367,7 @@
                     z-index: 3;
 
                     #guitar-tuning-dialog {
-                        padding: 2rem;
+                        padding: 1.5rem;
                         border-radius: 1rem;
 
                         #guitar-tuning-title {
@@ -375,10 +375,11 @@
                         }
 
                         #guitar-tuning-strings {
+                            width: 15rem;
 
                             .guitar-tuning-string {
                                 display: flex;
-                                justify-content: center;
+                                justify-content: space-between;
                                 align-items: center;
 
                                 .guitar-tuning-change-icon {

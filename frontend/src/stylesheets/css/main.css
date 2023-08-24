@@ -629,15 +629,18 @@ p {
   z-index: 3;
 }
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog {
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
 }
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-title {
   font-family: "Inter";
 }
+#virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings {
+  width: 15rem;
+}
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings .guitar-tuning-string {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 #virtual-guitar-container #virtual-guitar-content #virtual-guitar-fretboard-container #virtual-guitar-neck-container #guitar-tuning-dialog-backdrop #guitar-tuning-dialog #guitar-tuning-strings .guitar-tuning-string .guitar-tuning-change-icon {
