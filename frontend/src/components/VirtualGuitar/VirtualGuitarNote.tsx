@@ -5,21 +5,22 @@ import { VirtualGuitarContext } from '../contexts/VirtualGuitarContext';
 
 interface VirtualGuitarNoteProps {
     note: string,
+    noteIndexId: number,
     frequency: number
 }
 
-const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, frequency }): ReactElement => {
+const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, noteIndexId, frequency }): ReactElement => {
 
     const { theme } = useContext(ThemeContext)!
 
-    const { highlightedNotes, setHighlightedNotes, playNote, scaleNotes, noteLabel, noteLabelLibrary } = useContext(VirtualGuitarContext)!
+    const { noteLibrary, highlightedNoteIds, setHighlightedNoteIds, playNote, scaleNotes, noteLabel, noteLabelLibrary } = useContext(VirtualGuitarContext)!
 
     const StyledNote = styled.div`
-        color: ${highlightedNotes.includes(note) ? 'white'
+        color: ${highlightedNoteIds.includes(noteLibrary.indexOf(note)) ? 'white'
             : scaleNotes.length ? scaleNotes.includes(note) ? theme.palette.primary.main : 'white'
                 : theme.palette.primary.main};
-        border-width: ${highlightedNotes.includes(note) ? '3px' : '1px'};
-        border-color: ${highlightedNotes.includes(note) ? theme.palette.secondary.main
+        border-width: ${highlightedNoteIds.includes(noteLibrary.indexOf(note)) ? '3px' : '1px'};
+        border-color: ${highlightedNoteIds.includes(noteLibrary.indexOf(note)) ? theme.palette.secondary.main
             : scaleNotes.length ? scaleNotes.includes(note) ? theme.palette.primary.main : 'white'
                 : theme.palette.primary.main};
         opacity: ${scaleNotes.length ? scaleNotes.includes(note) ? '100%' : '20%'
@@ -38,15 +39,14 @@ const VirtualGuitarNote: FC<VirtualGuitarNoteProps> = ({ note, frequency }): Rea
 
     function handleRightClick(event: any): void {
         event.preventDefault();
-        const clickedNote: string = event.target.innerHTML
 
-        if (!highlightedNotes.includes(clickedNote)) {
-            setHighlightedNotes([...highlightedNotes, clickedNote])
+        if (!highlightedNoteIds.includes(noteIndexId)) {
+            setHighlightedNoteIds([...highlightedNoteIds, noteIndexId])
         } else {
-            let updatedHighlightedNotesArray: string[] = highlightedNotes
-            const indexToRemove: number = highlightedNotes.indexOf(clickedNote)
-            updatedHighlightedNotesArray.splice(indexToRemove, 1)
-            setHighlightedNotes([...updatedHighlightedNotesArray])
+            let updatedHighlightedNoteIdsArray: number[] = highlightedNoteIds
+            const indexToRemove: number = highlightedNoteIds.indexOf(noteIndexId)
+            updatedHighlightedNoteIdsArray.splice(indexToRemove, 1)
+            setHighlightedNoteIds([...updatedHighlightedNoteIdsArray])
         }
     }
 

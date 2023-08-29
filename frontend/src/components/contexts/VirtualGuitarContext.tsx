@@ -10,8 +10,8 @@ interface IGuitarTuning {
 };
 
 interface IVirtualGuitar {
-    highlightedNotes: string[],
-    setHighlightedNotes: React.Dispatch<React.SetStateAction<string[]>>,
+    highlightedNoteIds: number[],
+    setHighlightedNoteIds: React.Dispatch<React.SetStateAction<number[]>>,
     guitarTuning: IGuitarTuning,
     setGuitarTuning: React.Dispatch<React.SetStateAction<IGuitarTuning>>
 
@@ -35,7 +35,7 @@ export const VirtualGuitarContext = createContext<IVirtualGuitar | null>(null);
 
 function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Element {
 
-    const [highlightedNotes, setHighlightedNotes] = useState<string[]>([])
+    const [highlightedNoteIds, setHighlightedNoteIds] = useState<number[]>([])
     const [scaleNotes, setScaleNotes] = useState<string[]>([])
     const [guitarTuning, setGuitarTuning] = useState<IGuitarTuning>({
         'firstString': { note: 'E', octave: 2 },
@@ -86,7 +86,7 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
                 iteration += modeIntervalPatterns[newMode]![modeIndex]
             }
 
-            setHighlightedNotes([])
+            setHighlightedNoteIds([])
         }
 
         setScaleNotes(newScale)
@@ -133,8 +133,8 @@ function VirtualGuitarProvider({ children }: { children: ReactNode }): JSX.Eleme
 
     return (
         <VirtualGuitarContext.Provider value={{
-            highlightedNotes,
-            setHighlightedNotes,
+            highlightedNoteIds,
+            setHighlightedNoteIds,
             guitarTuning,
             setGuitarTuning,
             scaleNotes,

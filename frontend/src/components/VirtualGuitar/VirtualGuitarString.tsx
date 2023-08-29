@@ -37,13 +37,13 @@ const VirtualGuitarString: FC<VirtualGuitarStringProps> = ({ stringNote, stringO
 
     const renderVirtualGuitarNotes: JSX.Element[] = stringNotesArray.map((note: string, index: number) => {
         return (
-            <VirtualGuitarNote key={index} note={note} frequency={stringFrequencyArray[index + 1]} />
+            <VirtualGuitarNote key={index} note={note} noteIndexId={noteLibrary.indexOf(note)} frequency={stringFrequencyArray[index + 1]} />
         )
     })
 
     return (
         <div className='virtual-guitar-string'>
-            <VirtualGuitarNote note={stringNote} frequency={stringFrequencyArray[0]} />
+            <VirtualGuitarNote note={stringNote} noteIndexId={noteLibrary.indexOf(stringNote)} frequency={stringFrequencyArray[0]} />
             <span>
                 {renderVirtualGuitarNotes}
             </span>
