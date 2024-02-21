@@ -116,6 +116,10 @@
             }
         }
 
+        #half-step-window {
+            font-weight: bold;
+        }
+
         #note-selection-window {
             display: grid;
             grid-template: repeat(3, 6rem) / 18rem;
@@ -356,6 +360,8 @@
                 }
             }
 
+            #half-step-window {}
+
             #note-selection-window {
 
                 span {}
@@ -458,6 +464,8 @@
                 }
             }
 
+            #half-step-window {}
+
             #note-selection-window {
 
                 span {}
@@ -559,6 +567,8 @@
                     .play-note-button-overlay {}
                 }
             }
+
+            #half-step-window {}
 
             #note-selection-window {
 
@@ -666,6 +676,8 @@
                 }
             }
 
+            #half-step-window {}
+
             #note-selection-window {
 
                 span {}
@@ -770,6 +782,8 @@
                     .play-note-button-overlay {}
                 }
             }
+
+            #half-step-window {}
 
             #note-selection-window {
 

@@ -145,6 +145,10 @@ const IntervalTrainingExercise: FC<IntervalRangeProp> = ({ intervalRange }): Rea
     const renderNoteSelectionWindow = (
         <Fragment>
 
+            <div id='half-step-window'>
+                Half Steps: {selectedNoteIndex - firstNoteIndex}
+            </div>
+
             <div id='note-selection-window'>
 
                 <NoteChangeButton className='note-change-button' style={{ color: selectedNoteIndex < (firstNoteIndex + intervalRange) ? 'inherit' : theme.palette.text.disabled }} onClick={() => updateSelectedNoteIndex(1)}>
