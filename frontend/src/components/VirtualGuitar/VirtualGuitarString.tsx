@@ -19,6 +19,7 @@ const VirtualGuitarString: FC<VirtualGuitarStringProps> = ({ stringNote, stringO
         let index: number = (iteration + noteIndex) % noteLibrary.length
         let currentOctave: number = Math.floor((iteration + noteIndex) / noteLibrary.length) + stringOctave
 
+        /* Old method using recuresion
         const recursivelyMultiplyByTwo = (num: number, recursiveDepth: number = currentOctave): number => {
             if (recursiveDepth <= 0) {
                 return num
@@ -28,6 +29,13 @@ const VirtualGuitarString: FC<VirtualGuitarStringProps> = ({ stringNote, stringO
         }
 
         let frequency: number = recursivelyMultiplyByTwo(baseFrequencyLibrary[index])
+        */
+
+        let frequency: number = baseFrequencyLibrary[index];
+
+        for (let i: number = currentOctave; i > 0; i--) {
+            frequency *= 2;
+        }
 
         stringFrequencyArray.push(frequency)
         stringNotesArray.push(noteLibrary[index])
