@@ -1,5 +1,6 @@
 import { FC, ReactElement, useContext, useState } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { HashLink } from 'react-router-hash-link';
 import styled from '@emotion/styled';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -23,6 +24,14 @@ const Navigation: FC = (): ReactElement => {
     )
 
     const NavButtonOption = styled.a`
+        color: white;
+
+        &:hover {
+            color: ${theme.palette.primary.main};
+        }
+    `;
+
+    const StyledFretboardNavButton = styled.span`
         color: white;
 
         &:hover {
@@ -68,9 +77,9 @@ const Navigation: FC = (): ReactElement => {
 
                     <ul>
                         <li>
-                            <NavButtonOption className='nav-option-button' href='/#virtual-guitar-container'>
-                                Fretboard
-                            </NavButtonOption>
+                            <HashLink to='/#virtual-guitar-container' className='nav-option-button'>
+                                <StyledFretboardNavButton>Fretboard</StyledFretboardNavButton>
+                            </HashLink>
                         </li>
 
                         <li>
