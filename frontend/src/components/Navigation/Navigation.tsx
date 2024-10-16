@@ -23,15 +23,7 @@ const Navigation: FC = (): ReactElement => {
         </span>
     )
 
-    const NavButtonOption = styled.a`
-        color: white;
-
-        &:hover {
-            color: ${theme.palette.primary.main};
-        }
-    `;
-
-    const StyledFretboardNavButton = styled.span`
+    const NavButtonOption = styled.span`
         color: white;
 
         &:hover {
@@ -78,21 +70,26 @@ const Navigation: FC = (): ReactElement => {
                     <ul>
                         <li>
                             <HashLink to='/#virtual-guitar-container' className='nav-option-button'>
-                                <StyledFretboardNavButton>Fretboard</StyledFretboardNavButton>
+                                <NavButtonOption>
+                                    Fretboard
+                                </NavButtonOption>
                             </HashLink>
                         </li>
 
                         <li>
-                            <NavButtonOption className='nav-option-button' href='/exercises'>
-                                Exercises
-                            </NavButtonOption>
+                            <a href='/exercises' className='nav-option-button'>
+                                <NavButtonOption>
+                                    Exercises
+                                </NavButtonOption>
+                            </a>
                         </li>
 
                         <li>
-                            <NavButtonOption className='nav-option-button' href='/about'>
-                                About
-                            </NavButtonOption>
-
+                            <a href='/about' className='nav-option-button' >
+                                <NavButtonOption>
+                                    About
+                                </NavButtonOption>
+                            </a>
                         </li>
 
                         <li>
